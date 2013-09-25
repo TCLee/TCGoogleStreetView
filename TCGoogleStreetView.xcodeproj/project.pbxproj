@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814B527A17F2B9F6000606F1 /* TCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCViewController.m */; };
+		814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B527517F2B9F6000606F1 /* Images.xcassets */; };
+		814B527C17F2B9F6000606F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B527817F2B9F6000606F1 /* Main.storyboard */; };
+		814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814B527E17F2BA24000606F1 /* InfoPlist.strings */; };
+		814B528417F2BA24000606F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528017F2BA24000606F1 /* main.m */; };
+		814B528517F2BA24000606F1 /* TCGoogleStreetView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */; };
 		81EFBA2317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */; };
 		81EFBA2517F1B2F100F6FCD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */; };
 		81EFBA2717F1B2F100F6FCD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */; };
-		81EFBA2D17F1B2F100F6FCD4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81EFBA2B17F1B2F100F6FCD4 /* InfoPlist.strings */; };
-		81EFBA2F17F1B2F100F6FCD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EFBA2E17F1B2F100F6FCD4 /* main.m */; };
 		81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */; };
-		81EFBA3617F1B2F100F6FCD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EFBA3417F1B2F100F6FCD4 /* Main.storyboard */; };
-		81EFBA3917F1B2F100F6FCD4 /* TCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EFBA3817F1B2F100F6FCD4 /* TCViewController.m */; };
-		81EFBA3B17F1B2F100F6FCD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EFBA3A17F1B2F100F6FCD4 /* Images.xcassets */; };
 		81EFBA4217F1B2F100F6FCD4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */; };
 		81EFBA4317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */; };
 		81EFBA4417F1B2F100F6FCD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */; };
 		81EFBA4C17F1B2F100F6FCD4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81EFBA4A17F1B2F100F6FCD4 /* InfoPlist.strings */; };
 		81EFBA4E17F1B2F100F6FCD4 /* TCGoogleStreetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EFBA4D17F1B2F100F6FCD4 /* TCGoogleStreetViewTests.m */; };
+		A2840343F485485B921D6A03 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,20 +36,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F96339919746DFA4BCB6CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		27A5E0350E1B4D76AD19A28A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		814B527017F2B9F6000606F1 /* TCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewController.h; sourceTree = "<group>"; };
+		814B527117F2B9F6000606F1 /* TCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewController.m; sourceTree = "<group>"; };
+		814B527517F2B9F6000606F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		814B527917F2B9F6000606F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		814B527F17F2BA24000606F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		814B528017F2BA24000606F1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetView-Info.plist"; sourceTree = "<group>"; };
+		814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TCGoogleStreetView-Prefix.pch"; sourceTree = "<group>"; };
 		81EFBA1F17F1B2F100F6FCD4 /* TCGoogleStreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCGoogleStreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		81EFBA2A17F1B2F100F6FCD4 /* TCGoogleStreetView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetView-Info.plist"; sourceTree = "<group>"; };
-		81EFBA2C17F1B2F100F6FCD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		81EFBA2E17F1B2F100F6FCD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		81EFBA3017F1B2F100F6FCD4 /* TCGoogleStreetView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TCGoogleStreetView-Prefix.pch"; sourceTree = "<group>"; };
 		81EFBA3117F1B2F100F6FCD4 /* TCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
 		81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
-		81EFBA3517F1B2F100F6FCD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		81EFBA3717F1B2F100F6FCD4 /* TCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCViewController.h; sourceTree = "<group>"; };
-		81EFBA3817F1B2F100F6FCD4 /* TCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCViewController.m; sourceTree = "<group>"; };
-		81EFBA3A17F1B2F100F6FCD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		81EFBA4017F1B2F100F6FCD4 /* TCGoogleStreetViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCGoogleStreetViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		81EFBA4917F1B2F100F6FCD4 /* TCGoogleStreetViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetViewTests-Info.plist"; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 				81EFBA2517F1B2F100F6FCD4 /* CoreGraphics.framework in Frameworks */,
 				81EFBA2717F1B2F100F6FCD4 /* UIKit.framework in Frameworks */,
 				81EFBA2317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */,
+				A2840343F485485B921D6A03 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		814B526F17F2B9F6000606F1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				814B527017F2B9F6000606F1 /* TCViewController.h */,
+				814B527117F2B9F6000606F1 /* TCViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		814B527217F2B9F6000606F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		814B527317F2B9F6000606F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				814B527417F2B9F6000606F1 /* Assets */,
+				814B527617F2B9F6000606F1 /* Data */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		814B527417F2B9F6000606F1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				814B527517F2B9F6000606F1 /* Images.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		814B527617F2B9F6000606F1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		814B527717F2B9F6000606F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				814B527817F2B9F6000606F1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		814B527D17F2BA24000606F1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				814B527E17F2BA24000606F1 /* InfoPlist.strings */,
+				814B528017F2BA24000606F1 /* main.m */,
+				814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */,
+				814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		81EFBA1617F1B2F100F6FCD4 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +150,7 @@
 				81EFBA4717F1B2F100F6FCD4 /* TCGoogleStreetViewTests */,
 				81EFBA2117F1B2F100F6FCD4 /* Frameworks */,
 				81EFBA2017F1B2F100F6FCD4 /* Products */,
+				00F96339919746DFA4BCB6CF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +170,7 @@
 				81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */,
 				81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */,
 				81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */,
+				27A5E0350E1B4D76AD19A28A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,24 +180,13 @@
 			children = (
 				81EFBA3117F1B2F100F6FCD4 /* TCAppDelegate.h */,
 				81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */,
-				81EFBA3417F1B2F100F6FCD4 /* Main.storyboard */,
-				81EFBA3717F1B2F100F6FCD4 /* TCViewController.h */,
-				81EFBA3817F1B2F100F6FCD4 /* TCViewController.m */,
-				81EFBA3A17F1B2F100F6FCD4 /* Images.xcassets */,
-				81EFBA2917F1B2F100F6FCD4 /* Supporting Files */,
+				814B527217F2B9F6000606F1 /* Models */,
+				814B526F17F2B9F6000606F1 /* Controllers */,
+				814B527717F2B9F6000606F1 /* Views */,
+				814B527317F2B9F6000606F1 /* Resources */,
+				814B527D17F2BA24000606F1 /* SupportingFiles */,
 			);
 			path = TCGoogleStreetView;
-			sourceTree = "<group>";
-		};
-		81EFBA2917F1B2F100F6FCD4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				81EFBA2A17F1B2F100F6FCD4 /* TCGoogleStreetView-Info.plist */,
-				81EFBA2B17F1B2F100F6FCD4 /* InfoPlist.strings */,
-				81EFBA2E17F1B2F100F6FCD4 /* main.m */,
-				81EFBA3017F1B2F100F6FCD4 /* TCGoogleStreetView-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		81EFBA4717F1B2F100F6FCD4 /* TCGoogleStreetViewTests */ = {
@@ -159,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81EFBA5117F1B2F100F6FCD4 /* Build configuration list for PBXNativeTarget "TCGoogleStreetView" */;
 			buildPhases = (
+				8557B0B79D9C491689AB964B /* Check Pods Manifest.lock */,
 				81EFBA1B17F1B2F100F6FCD4 /* Sources */,
 				81EFBA1C17F1B2F100F6FCD4 /* Frameworks */,
 				81EFBA1D17F1B2F100F6FCD4 /* Resources */,
+				EBEE1BA1B61D4BE98A64FF2E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +286,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81EFBA3B17F1B2F100F6FCD4 /* Images.xcassets in Resources */,
-				81EFBA2D17F1B2F100F6FCD4 /* InfoPlist.strings in Resources */,
-				81EFBA3617F1B2F100F6FCD4 /* Main.storyboard in Resources */,
+				814B527C17F2B9F6000606F1 /* Main.storyboard in Resources */,
+				814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */,
+				814B528517F2BA24000606F1 /* TCGoogleStreetView-Info.plist in Resources */,
+				814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,13 +303,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8557B0B79D9C491689AB964B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EBEE1BA1B61D4BE98A64FF2E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		81EFBA1B17F1B2F100F6FCD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81EFBA3917F1B2F100F6FCD4 /* TCViewController.m in Sources */,
-				81EFBA2F17F1B2F100F6FCD4 /* main.m in Sources */,
+				814B527A17F2B9F6000606F1 /* TCViewController.m in Sources */,
+				814B528417F2BA24000606F1 /* main.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,20 +366,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		81EFBA2B17F1B2F100F6FCD4 /* InfoPlist.strings */ = {
+		814B527817F2B9F6000606F1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				81EFBA2C17F1B2F100F6FCD4 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		81EFBA3417F1B2F100F6FCD4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				81EFBA3517F1B2F100F6FCD4 /* Base */,
+				814B527917F2B9F6000606F1 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		814B527E17F2BA24000606F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				814B527F17F2BA24000606F1 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		81EFBA4A17F1B2F100F6FCD4 /* InfoPlist.strings */ = {
@@ -329,6 +420,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -363,6 +455,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -378,12 +471,13 @@
 		};
 		81EFBA5217F1B2F100F6FCD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F96339919746DFA4BCB6CF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TCGoogleStreetView/TCGoogleStreetView-Prefix.pch";
-				INFOPLIST_FILE = "TCGoogleStreetView/TCGoogleStreetView-Info.plist";
+				GCC_PREFIX_HEADER = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch";
+				INFOPLIST_FILE = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -391,12 +485,13 @@
 		};
 		81EFBA5317F1B2F100F6FCD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00F96339919746DFA4BCB6CF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TCGoogleStreetView/TCGoogleStreetView-Prefix.pch";
-				INFOPLIST_FILE = "TCGoogleStreetView/TCGoogleStreetView-Info.plist";
+				GCC_PREFIX_HEADER = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch";
+				INFOPLIST_FILE = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +558,7 @@
 				81EFBA5317F1B2F100F6FCD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81EFBA5417F1B2F100F6FCD4 /* Build configuration list for PBXNativeTarget "TCGoogleStreetViewTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +567,7 @@
 				81EFBA5617F1B2F100F6FCD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
