@@ -1,0 +1,115 @@
+{
+    "art_projects": [
+        /* Place museums here when you're done. Xcode screws up the formatting! */
+    ]
+    
+    {
+        "name": "Palace of Versailles",
+        "city": "Versailles, France",
+        "description": "Versailles was the home of the French monarch from the time of Louis XIV to Louis XVI. The palace stands today as an icon of nobility and artistic triumph.",
+        "speech": "Versailles was the home of the French monarch from the time of Louis the 14th to Louis the 16th. The palace stands today as an icon of nobility and artistic triumph."
+        
+        "static_map_url": "http://maps.googleapis.com/maps/api/staticmap?center=48.804541,2.12013&zoom=12&size=400x300&markers=color:red|48.804541,2.1201&visual_refresh=true&sensor=false",
+        
+        "coordinate": {
+            "latitude": 48.804541,
+            "longitude": 2.12013
+        },
+        "camera": {
+            "FOV": 75,
+            "zoom": 1,
+            "heading": 21,
+            "pitch": 9
+        },
+    },
+    
+    {
+        "name": "Royal Palaces Amsterdam",
+        "city": "Amsterdam, Netherlands",
+        "description": "The Royal Palace in Amsterdam was built as city hall during the Dutch Golden Age in the seventeenth century. The building became the royal palace of king Louis Napoleon and later of the Dutch Royal House.",
+        "speech": "The Royal Palace in Amsterdam was built as city hall during the Dutch Golden Age in the seventeenth century. The building became the royal palace of king Louis Napoleon and later of the Dutch Royal House."
+        
+        "static_map_url": "http://maps.googleapis.com/maps/api/staticmap?center=52.373155,4.891174&zoom=12&size=400x300&markers=color:red|52.373155,4.891174&visual_refresh=true&sensor=false",
+        "panorama": {
+            "coordinate": {
+                "latitude": 52.373155,
+                "longitude": 4.891174
+            },
+            "camera": {
+                "FOV": 75,
+                "zoom": 1,
+                "heading": 96,
+                "pitch": 18
+            },
+        }
+    },
+    
+    {
+        "name": "American Art Museum, Smithsonian",
+        "city": "DC, Washington, United States",
+        "description": "Located in Washington D.C., The Smithsonian American Art Museum is the nation's first collection of American art. The museum has been a leader in identifying and collecting significant aspects of American visual culture.",
+        "speech": "Located in Washington D.C., The Smithsonian American Art Museum is the nation's first collection of American art. The museum has been a leader in identifying and collecting significant aspects of American visual culture."
+        
+        "static_map_url": "http://maps.googleapis.com/maps/api/staticmap?center=38.897756,-77.023656&zoom=12&size=400x300&markers=color:red|38.897756,-77.023656&visual_refresh=true&sensor=false",
+        "panorama": {
+            "coordinate": {
+                "latitude": 38.897756,
+                "longitude": -77.023656
+            },
+            "camera": {
+                "FOV": 75,
+                "zoom": 1,
+                "heading": 182,
+                "pitch": 10
+            },
+        }
+    },
+    
+    https://www.google.com/maps/views/view/streetview/art-project/the-frick-collection/pcxoloBweM5T9zR384OzyA?gl=my&heading=216&pitch=92&fovy=75
+    https://maps.google.com/?ll=40.771275,-73.967062&t=m&layer=c&panoid=pcxoloBweM5T9zR384OzyA&cbp=12,,,,0&z=16&cbll=40.771275,-73.967062
+    {
+        "name": "The Frick Collection",
+        "city": "New York, New York, United States",
+        "description": "Opened on December 16, 1935, The Frick is one of most distinguished small art museums in the world. The Frick Collection includes some of the best-known paintings by the European masters, major works of sculpture (among them one of the finest groups of small bronzes in the world), superb eighteenth-century French furniture and porcelains, Limoges enamels, Oriental rugs, and other works of remarkable quality.",
+        "speech": "Opened on December 16, 1935, The Frick is one of most distinguished small art museums in the world. The Frick Collection includes some of the best-known paintings by the European masters, major works of sculpture (among them one of the finest groups of small bronzes in the world), superb eighteenth-century French furniture and porcelains, Limoges enamels, Oriental rugs, and other works of remarkable quality."
+        
+        "static_map_url": "http://maps.googleapis.com/maps/api/staticmap?center=38.897756,-77.023656&zoom=12&size=400x300&markers=color:red|38.897756,-77.023656&visual_refresh=true&sensor=false",
+        "panorama": {
+            "coordinate": {
+                "latitude": 38.897756,
+                "longitude": -77.023656
+            },
+            "camera": {
+                "FOV": 75,
+                "zoom": 1,
+                "heading": 182,
+                "pitch": 10
+            },
+        }
+    },
+    
+//    Castle de Fontainebleau
+//    Paris, France
+    https://www.google.com/maps/views/view/streetview/art-project/castle-de-fontainebleau/KkM-ypEGVgB8E33g6XEn0w?gl=my&heading=7&pitch=103&fovy=75
+    https://maps.google.com/?ll=48.402574,2.701026&t=m&layer=c&panoid=KkM-ypEGVgB8E33g6XEn0w&cbp=12,,,,0&z=16&cbll=48.402574,2.701026
+    
+//    Museum of Islamic Art
+//    Doha, Qatar
+    https://www.google.com/maps/views/view/streetview/art-project/museum-of-islamic-art/6QHVKDyGyEmiRa7mrJYjmw?gl=my&heading=243&pitch=107&fovy=75
+    https://maps.google.com/?ll=25.295495,51.539292&t=m&layer=c&panoid=6QHVKDyGyEmiRa7mrJYjmw&cbp=12,,,,0&z=16&cbll=25.295495,51.539292
+    
+//    Musei Capitolini
+//    Rome, Italy
+    https://www.google.com/maps/views/view/streetview/art-project/musei-capitolini/QXANK_jXxPL7i1sFGWXT2w?gl=my&heading=475&pitch=93&fovy=75
+    https://maps.google.com/?ll=41.892813,12.482282&t=m&layer=c&panoid=jreLAB6noDFtneLx8FKjCQ&cbp=12,,,,0&z=16&cbll=41.892813,12.482282
+    
+//    Pergamon Museum
+//    Berlin, Germany
+    https://www.google.com/maps/views/view/streetview/art-project/pergamon-museum/2ohRs1p8tU7oUWZ_YNHpaw?gl=my&heading=33&pitch=96&fovy=75
+    https://maps.google.com/?ll=52.5211,13.397098&t=m&layer=c&panoid=nhfcBN3J5GImQjQuCzPvKA&cbp=12,,,,0&z=16&cbll=52.5211,13.397098
+    
+//    White House
+//    DC, Washington, United States
+    https://www.google.com/maps/views/view/streetview/art-project/white-house/iKije2lto_r5OcgKX4sleg?gl=my&heading=180&pitch=94&fovy=75
+    https://maps.google.com/?ll=38.897766,-77.036504&t=m&layer=c&panoid=iKije2lto_r5OcgKX4sleg&cbp=12,,,,0&z=16&cbll=38.897766,-77.036504
+}

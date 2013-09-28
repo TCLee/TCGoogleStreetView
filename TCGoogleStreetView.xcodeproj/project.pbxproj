@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
 		814B527A17F2B9F6000606F1 /* TCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCViewController.m */; };
 		814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B527517F2B9F6000606F1 /* Images.xcassets */; };
-		814B527C17F2B9F6000606F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B527817F2B9F6000606F1 /* Main.storyboard */; };
 		814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814B527E17F2BA24000606F1 /* InfoPlist.strings */; };
 		814B528417F2BA24000606F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528017F2BA24000606F1 /* main.m */; };
-		814B528517F2BA24000606F1 /* TCGoogleStreetView-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */; };
+		814B528617F2C104000606F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B527817F2B9F6000606F1 /* Main.storyboard */; };
+		814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */; };
+		814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */; };
+		814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */; };
 		81EFBA2317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */; };
 		81EFBA2517F1B2F100F6FCD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */; };
 		81EFBA2717F1B2F100F6FCD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */; };
@@ -38,6 +41,7 @@
 /* Begin PBXFileReference section */
 		00F96339919746DFA4BCB6CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		27A5E0350E1B4D76AD19A28A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
 		814B527017F2B9F6000606F1 /* TCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCViewController.h; sourceTree = "<group>"; };
 		814B527117F2B9F6000606F1 /* TCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCViewController.m; sourceTree = "<group>"; };
 		814B527517F2B9F6000606F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -46,6 +50,12 @@
 		814B528017F2BA24000606F1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetView-Info.plist"; sourceTree = "<group>"; };
 		814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TCGoogleStreetView-Prefix.pch"; sourceTree = "<group>"; };
+		814B528817F2C951000606F1 /* UIAlertView+NSErrorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+NSErrorAdditions.h"; sourceTree = "<group>"; };
+		814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NSErrorAdditions.m"; sourceTree = "<group>"; };
+		814B528B17F3D65B000606F1 /* GMSPanorama+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanorama+Debug.h"; sourceTree = "<group>"; };
+		814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanorama+Debug.m"; sourceTree = "<group>"; };
+		814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaCamera+Debug.h"; sourceTree = "<group>"; };
+		814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaCamera+Debug.m"; sourceTree = "<group>"; };
 		81EFBA1F17F1B2F100F6FCD4 /* TCGoogleStreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCGoogleStreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +130,7 @@
 		814B527617F2B9F6000606F1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8104F7C717F553EE00FA96BB /* GoogleArtProject.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -141,6 +152,19 @@
 				814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		814B528717F2C902000606F1 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				814B528817F2C951000606F1 /* UIAlertView+NSErrorAdditions.h */,
+				814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */,
+				814B528B17F3D65B000606F1 /* GMSPanorama+Debug.h */,
+				814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */,
+				814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */,
+				814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		81EFBA1617F1B2F100F6FCD4 = {
@@ -180,6 +204,7 @@
 			children = (
 				81EFBA3117F1B2F100F6FCD4 /* TCAppDelegate.h */,
 				81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */,
+				814B528717F2C902000606F1 /* Lib */,
 				814B527217F2B9F6000606F1 /* Models */,
 				814B526F17F2B9F6000606F1 /* Controllers */,
 				814B527717F2B9F6000606F1 /* Views */,
@@ -286,9 +311,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814B527C17F2B9F6000606F1 /* Main.storyboard in Resources */,
+				8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */,
+				814B528617F2C104000606F1 /* Main.storyboard in Resources */,
 				814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */,
-				814B528517F2BA24000606F1 /* TCGoogleStreetView-Info.plist in Resources */,
 				814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,8 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				814B527A17F2B9F6000606F1 /* TCViewController.m in Sources */,
+				814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */,
 				814B528417F2BA24000606F1 /* main.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
+				814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */,
+				814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
