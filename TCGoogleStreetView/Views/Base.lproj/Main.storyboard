@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Street View Controller - Google Street View-->
+        <!--Street View Controller - Google Art Project-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="TCViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TCStreetViewController" sceneMemberID="viewController">
@@ -27,6 +27,13 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versailles, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK1-ow-2aO">
+                                        <rect key="frame" x="20" y="52" width="260" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-gw-6Wc">
                                         <rect key="frame" x="20" y="77" width="260" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,19 +42,12 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versailles, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK1-ow-2aO">
-                                        <rect key="frame" x="20" y="52" width="260" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staticmap" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-sb-5lC">
                                         <rect key="frame" x="20" y="181" width="260" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="oK1-ow-2aO" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" id="03N-W6-xdb"/>
                                     <constraint firstItem="ZwX-gw-6Wc" firstAttribute="top" secondItem="oK1-ow-2aO" secondAttribute="bottom" constant="8" symbolic="YES" id="FJV-f8-Gnz"/>
@@ -72,9 +72,19 @@
                             <constraint firstItem="7fn-LD-3gc" firstAttribute="top" secondItem="XDL-bL-Hlr" secondAttribute="bottom" constant="20" id="U42-5S-xLa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Google Street View" id="Fkt-ZC-bnS"/>
+                    <navigationItem key="navigationItem" title="Google Art Project" id="Fkt-ZC-bnS">
+                        <barButtonItem key="leftBarButtonItem" image="LeftArrow" id="fdA-Li-4XG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="RightArrow" id="uxo-zW-eSB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="descriptionLabel" destination="ZwX-gw-6Wc" id="44Y-hh-juA"/>
+                        <outlet property="cityLabel" destination="oK1-ow-2aO" id="83e-HR-Br7"/>
+                        <outlet property="descriptionLabel" destination="ZwX-gw-6Wc" id="yfU-Gs-SH3"/>
+                        <outlet property="mapImageView" destination="Fhg-sb-5lC" id="wGo-sf-0hp"/>
+                        <outlet property="titleLabel" destination="IEO-5r-ELs" id="DkD-9A-ozC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,6 +116,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LeftArrow" width="13" height="21"/>
+        <image name="RightArrow" width="13" height="21"/>
         <image name="staticmap" width="250" height="165"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
