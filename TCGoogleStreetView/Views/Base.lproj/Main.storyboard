@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="154-Y1-gtc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Street View Controller - Google Street View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TCViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TCViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TCStreetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tNG-3k-zh8"/>
                         <viewControllerLayoutGuide type="bottom" id="7fn-LD-3gc"/>
@@ -15,14 +15,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-bL-Hlr">
+                                <rect key="frame" x="20" y="638" width="300" height="366"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palace of Versailles " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="IEO-5r-ELs">
+                                        <rect key="frame" x="20" y="20" width="260" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-gw-6Wc">
+                                        <rect key="frame" x="20" y="77" width="260" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Versailles was the home of the French monarch from the time of Louis XIV to Louis XVI. The palace stands today as an icon of nobility and artistic triumph.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versailles, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK1-ow-2aO">
+                                        <rect key="frame" x="20" y="52" width="260" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staticmap" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-sb-5lC">
+                                        <rect key="frame" x="20" y="181" width="260" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="oK1-ow-2aO" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" id="03N-W6-xdb"/>
+                                    <constraint firstItem="ZwX-gw-6Wc" firstAttribute="top" secondItem="oK1-ow-2aO" secondAttribute="bottom" constant="8" symbolic="YES" id="FJV-f8-Gnz"/>
+                                    <constraint firstAttribute="width" constant="300" id="NPJ-ox-bok"/>
+                                    <constraint firstItem="ZwX-gw-6Wc" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" symbolic="YES" id="Png-cW-hE4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fhg-sb-5lC" secondAttribute="bottom" constant="20" symbolic="YES" id="UI7-gg-GWd"/>
+                                    <constraint firstAttribute="trailing" secondItem="oK1-ow-2aO" secondAttribute="trailing" constant="20" symbolic="YES" id="VPE-Ic-a8A"/>
+                                    <constraint firstItem="oK1-ow-2aO" firstAttribute="top" secondItem="IEO-5r-ELs" secondAttribute="bottom" constant="8" symbolic="YES" id="Z7L-Pd-3KK"/>
+                                    <constraint firstItem="IEO-5r-ELs" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" symbolic="YES" id="ZXe-uX-rb9"/>
+                                    <constraint firstItem="Fhg-sb-5lC" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" symbolic="YES" id="ifJ-hL-YC7"/>
+                                    <constraint firstItem="Fhg-sb-5lC" firstAttribute="top" secondItem="ZwX-gw-6Wc" secondAttribute="bottom" constant="8" symbolic="YES" id="lW8-ez-AEj"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZwX-gw-6Wc" secondAttribute="trailing" constant="20" symbolic="YES" id="saC-0c-Zwf"/>
+                                    <constraint firstItem="IEO-5r-ELs" firstAttribute="top" secondItem="XDL-bL-Hlr" secondAttribute="top" constant="20" symbolic="YES" id="tWD-Es-Yh3"/>
+                                    <constraint firstAttribute="trailing" secondItem="IEO-5r-ELs" secondAttribute="trailing" constant="20" symbolic="YES" id="vha-0h-75e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fhg-sb-5lC" secondAttribute="trailing" constant="20" symbolic="YES" id="wRx-8Q-xb9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XDL-bL-Hlr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="DzL-TU-wgT"/>
+                            <constraint firstItem="7fn-LD-3gc" firstAttribute="top" secondItem="XDL-bL-Hlr" secondAttribute="bottom" constant="20" id="U42-5S-xLa"/>
+                        </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Google Street View" id="Fkt-ZC-bnS"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ZwX-gw-6Wc" id="44Y-hh-juA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="847" y="-474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VkL-J8-0Rb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="154-Y1-gtc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="up8-3J-epY">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="90r-UP-ean"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kv-J4-uSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="-474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="staticmap" width="250" height="165"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>

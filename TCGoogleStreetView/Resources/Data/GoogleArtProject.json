@@ -2,14 +2,14 @@
     "art_projects": [
         /* Place museums here when you're done. Xcode screws up the formatting! */
     ]
-    
+
     {
         "name": "Palace of Versailles",
         "city": "Versailles, France",
         "description": "Versailles was the home of the French monarch from the time of Louis XIV to Louis XVI. The palace stands today as an icon of nobility and artistic triumph.",
         "speech": "Versailles was the home of the French monarch from the time of Louis the 14th to Louis the 16th. The palace stands today as an icon of nobility and artistic triumph."
         
-        "static_map_url": "http://maps.googleapis.com/maps/api/staticmap?center=48.804541,2.12013&zoom=12&size=400x300&markers=color:red|48.804541,2.1201&visual_refresh=true&sensor=false",
+        "static_map_url": "http://maps.googleapis.com/maps/api/staticmap?center=48.804541,2.12013&zoom=12&size=250x165&markers=color:red|48.804541,2.1201&visual_refresh=true&sensor=false",
         
         "coordinate": {
             "latitude": 48.804541,
