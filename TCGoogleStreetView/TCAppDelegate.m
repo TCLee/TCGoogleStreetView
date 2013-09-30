@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Lee Tze Cheun. All rights reserved.
 //
 
-#import "TCAppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
+
+#import "TCAppDelegate.h"
+#import "TCStreetViewController.h"
+#import "TCMuseumDataController.h"
 
 // Replace with your own API key generated using Google APIs Console.
 static NSString * const kTCGoogleMapsAPIKey = @"AIzaSyAbmPatPdSYWzYNZip_26u3N8fH1NiBMkw";
@@ -16,8 +19,13 @@ static NSString * const kTCGoogleMapsAPIKey = @"AIzaSyAbmPatPdSYWzYNZip_26u3N8fH
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // We need the API key to use Google Maps SDK for iOS.
     [GMSServices provideAPIKey:kTCGoogleMapsAPIKey];
+
+    // Create the data controller that manages the model objects and pass it to
+    // the initial view controller.
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    TCStreetViewController *streetViewController = (TCStreetViewController *)navigationController.topViewController;
+    streetViewController.dataController = [[TCMuseumDataController alloc] init];
     
     return YES;
 }

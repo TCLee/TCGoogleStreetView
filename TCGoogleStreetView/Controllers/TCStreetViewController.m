@@ -6,48 +6,56 @@
 //  Copyright (c) 2013 Lee Tze Cheun. All rights reserved.
 //
 
+// Text-to-Speech framework
+@import AVFoundation.AVSpeechSynthesis;
+
 #import "TCStreetViewController.h"
+#import "TCMuseumDataController.h"
+#import "TCMuseum.h"
+
 #import "UIAlertView+NSErrorAdditions.h"
 #import "GMSPanorama+Debug.h"
 #import "GMSPanoramaCamera+Debug.h"
 
-@import AVFoundation.AVSpeechSynthesis;
-
 @interface TCStreetViewController ()
 
-@property (nonatomic, strong) GMSPanoramaView *panoramaView;
+/**
+ * A reference to the GMSPanoramaView subview for easy access.
+ *
+ * The \c panoramaView property is a weak reference because our
+ * controller's view owns (strong reference) the \c GMSPanoramaView instance.
+ */
+@property (nonatomic, weak) GMSPanoramaView *panoramaView;
 
-/// The label that contains the description text to be spoken.
+/**
+ * The museum currently displayed in the panorama view.
+ */
+@property (nonatomic, strong) TCMuseum *museum;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
 @end
 
 @implementation TCStreetViewController
 
-#pragma mark - Memory Management
-
-// Dispose of any resources that can be recreated.
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-
-    // Clear the panorama view's data.
-    self.panoramaView.panorama = nil;
-}
-
-#pragma mark - View
+#pragma mark - View Events
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    NSAssert(self.dataController, @"TCMuseumDataController must be provided for TCStreetViewController to access the TCMuseum model objects.");
+    
+    // We have to create the GMSPanoramaView programatically because
+    // Google Maps SDK require that we call the initWithFrame: method.
     [self createPanoramaView];
-
-    [self.panoramaView moveNearCoordinate:CLLocationCoordinate2DMake(48.804541, 2.12013)];
-    self.panoramaView.camera = [GMSPanoramaCamera cameraWithHeading:21.0f
-                                                              pitch:9.0f
-                                                               zoom:1.0f
-                                                                FOV:75.0f];
+    
+    // Show the street view for the first museum in the collection.
+    self.museum = [self.dataController firstMuseum];
+    [self showPanoramaWithMuseum:self.museum];
 }
 
 #pragma mark - GMSPanoramaView
@@ -58,29 +66,27 @@
  */
 - (void)createPanoramaView
 {
-    // Only create the panorama view once.
-    if (self.panoramaView) { return; }
-    
-    // Do not specify a frame, since we're using auto layout.
-    self.panoramaView = [[GMSPanoramaView alloc] initWithFrame:CGRectZero];
-    self.panoramaView.navigationLinksHidden = YES;
-    self.panoramaView.streetNamesHidden = YES;
-    self.panoramaView.delegate = self;
+    // The frame does not matter, since we're using auto layout.
+    GMSPanoramaView *panoView = [[GMSPanoramaView alloc] initWithFrame:CGRectZero];
+    panoView.navigationLinksHidden = YES;
+    panoView.streetNamesHidden = YES;
+    panoView.delegate = self;
     
     // Add to the bottom of all other subviews.
-    [self.view insertSubview:self.panoramaView atIndex:0];
+    [self.view insertSubview:panoView atIndex:0];
+    self.panoramaView = panoView;
     
-    // Disable this, otherwise we get auto layout constraint conflicts.
-    self.panoramaView.translatesAutoresizingMaskIntoConstraints = NO;
+    // Disable this, otherwise we get auto layout constraint conflicts!
+    panoView.translatesAutoresizingMaskIntoConstraints = NO;
     
     // Add the auto layout constraints for the Panorama View.
-    GMSPanoramaView *myPanoramaView = self.panoramaView;
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(myPanoramaView);
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[myPanoramaView]-0-|"
+    // Basically, we specify zero leading, trailing, top and bottom space to the superview.
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(panoView);
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[panoView]-0-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:viewsDictionary];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[myPanoramaView]-0-|"
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[panoView]-0-|"
                                                                            options:0
                                                                            metrics:nil
                                                                              views:viewsDictionary];
@@ -88,16 +94,27 @@
     [self.view addConstraints:verticalConstraints];
 }
 
-#pragma mark - GMSPanoramaViewDelegate
-
-// Called when the panorama change was caused by invoking moveToPanoramaNearCoordinate:
-// The coordinate passed to that method will also be passed here.
-- (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
+/**
+ * Updates the \b GMSPanoramaView to show the panorama for the given museum.
+ *
+ * @param museum The \p TCMuseum object containing the data for the panorama view.
+ */
+- (void)showPanoramaWithMuseum:(TCMuseum *)museum
 {
-    NSLog(@"Did Move To Panorama:\n%@", panorama);    
+    [self.panoramaView moveNearCoordinate:museum.coordinate];
+    self.panoramaView.camera = museum.camera;
 }
 
-// Called when moveNearCoordinate: produces an error.
+#pragma mark - GMSPanoramaViewDelegate
+
+- (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    NSLog(@"Did Move To Panorama:\n%@", panorama);
+    
+    // Once the panorama view is available, we will start the talking tour guide.
+//    [self startSpeechGuideWithMuseum:self.museum];
+}
+
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
 {
     UIAlertView *alertView = [UIAlertView alertWithError:error];
@@ -125,13 +142,26 @@
 
 #pragma mark - AVSpeechSynthesis
 
-// Speech test using Siri's default voice.
-- (void)startSpeechGuide
+- (void)startSpeechGuideWithMuseum:(TCMuseum *)museum
 {
     AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"Versailles was the home of the French monarch from the time of Louis the 14th to Louis the 16th. The palace stands today as an icon of nobility and artistic triumph."];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:museum.speechText];
     utterance.rate = 0.2; // Min = 0.0, Default = 0.5, Max = 1.0
     [synthesizer speakUtterance:utterance];
+}
+
+#pragma mark - IBAction
+
+- (IBAction)nextMuseum:(id)sender
+{
+    self.museum = [self.dataController nextMuseum];
+    [self showPanoramaWithMuseum:self.museum];
+}
+
+- (IBAction)previousMuseum:(id)sender
+{
+    self.museum = [self.dataController previousMuseum];
+    [self showPanoramaWithMuseum:self.museum];
 }
 
 @end

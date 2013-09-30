@@ -8,6 +8,16 @@
 
 @import UIKit;
 
-@interface TCStreetViewController : UIViewController <GMSPanoramaViewDelegate>
+@class TCMuseumDataController;
+
+/**
+ * This view controller manages a GMSPanoramaView instance that displays 
+ * street views of the museums.
+ */
+@interface TCStreetViewController : UIViewController
+    <GMSPanoramaViewDelegate>
+
+/** The data controller that manages the TCMuseum model objects. */
+@property (nonatomic, strong) TCMuseumDataController *dataController;
 
 @end

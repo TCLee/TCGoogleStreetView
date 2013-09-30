@@ -1,0 +1,37 @@
+//
+//  TCMuseumDataController.m
+//  TCGoogleStreetView
+//
+//  Created by Lee Tze Cheun on 9/29/13.
+//  Copyright (c) 2013 Lee Tze Cheun. All rights reserved.
+//
+
+#import "TCMuseumDataController.h"
+
+@implementation TCMuseumDataController
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (TCMuseum *)firstMuseum
+{
+    return nil;
+}
+
+- (TCMuseum *)nextMuseum
+{
+    return nil;
+}
+
+- (TCMuseum *)previousMuseum
+{
+    return nil;
+}
+
+@end
