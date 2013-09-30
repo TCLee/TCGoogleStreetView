@@ -75,9 +75,15 @@
                     <navigationItem key="navigationItem" title="Google Art Project" id="Fkt-ZC-bnS">
                         <barButtonItem key="leftBarButtonItem" image="LeftArrow" id="fdA-Li-4XG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="previousMuseum:" destination="BYZ-38-t0r" id="zNi-ak-zGn"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="RightArrow" id="uxo-zW-eSB">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="nextMuseum:" destination="BYZ-38-t0r" id="doI-Y9-n6Y"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
