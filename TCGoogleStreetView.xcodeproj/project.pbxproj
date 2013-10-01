@@ -10,15 +10,14 @@
 		744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
 		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
-		81316BE617FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */; };
 		814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCStreetViewController.m */; };
 		814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B527517F2B9F6000606F1 /* Images.xcassets */; };
 		814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814B527E17F2BA24000606F1 /* InfoPlist.strings */; };
 		814B528417F2BA24000606F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528017F2BA24000606F1 /* main.m */; };
 		814B528617F2C104000606F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B527817F2B9F6000606F1 /* Main.storyboard */; };
 		814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */; };
-		814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */; };
-		814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */; };
+		814B528D17F3D65B000606F1 /* GMSPanorama+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528C17F3D65B000606F1 /* GMSPanorama+NSObject.m */; };
+		814B529017F3E863000606F1 /* GMSPanoramaCamera+ NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528F17F3E863000606F1 /* GMSPanoramaCamera+ NSObject.m */; };
 		81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51317F8211C00A93925 /* TCMuseum.m */; };
 		81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51617F830C500A93925 /* TCMuseumDataController.m */; };
 		81E6C51917F95DCA00A93925 /* TCMuseumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51817F95DCA00A93925 /* TCMuseumTests.m */; };
@@ -58,10 +57,10 @@
 		814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TCGoogleStreetView-Prefix.pch"; sourceTree = "<group>"; };
 		814B528817F2C951000606F1 /* UIAlertView+NSErrorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+NSErrorAdditions.h"; sourceTree = "<group>"; };
 		814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NSErrorAdditions.m"; sourceTree = "<group>"; };
-		814B528B17F3D65B000606F1 /* GMSPanorama+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanorama+Debug.h"; sourceTree = "<group>"; };
-		814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanorama+Debug.m"; sourceTree = "<group>"; };
-		814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaCamera+Debug.h"; sourceTree = "<group>"; };
-		814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaCamera+Debug.m"; sourceTree = "<group>"; };
+		814B528B17F3D65B000606F1 /* GMSPanorama+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanorama+NSObject.h"; sourceTree = "<group>"; };
+		814B528C17F3D65B000606F1 /* GMSPanorama+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanorama+NSObject.m"; sourceTree = "<group>"; };
+		814B528E17F3E863000606F1 /* GMSPanoramaCamera+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaCamera+NSObject.h"; sourceTree = "<group>"; };
+		814B528F17F3E863000606F1 /* GMSPanoramaCamera+ NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaCamera+ NSObject.m"; sourceTree = "<group>"; };
 		81E6C51217F8211C00A93925 /* TCMuseum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseum.h; sourceTree = "<group>"; };
 		81E6C51317F8211C00A93925 /* TCMuseum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseum.m; sourceTree = "<group>"; };
 		81E6C51517F830C500A93925 /* TCMuseumDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseumDataController.h; sourceTree = "<group>"; };
@@ -181,10 +180,10 @@
 			children = (
 				814B528817F2C951000606F1 /* UIAlertView+NSErrorAdditions.h */,
 				814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */,
-				814B528B17F3D65B000606F1 /* GMSPanorama+Debug.h */,
-				814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */,
-				814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */,
-				814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */,
+				814B528B17F3D65B000606F1 /* GMSPanorama+NSObject.h */,
+				814B528C17F3D65B000606F1 /* GMSPanorama+NSObject.m */,
+				814B528E17F3E863000606F1 /* GMSPanoramaCamera+NSObject.h */,
+				814B528F17F3E863000606F1 /* GMSPanoramaCamera+ NSObject.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -337,7 +336,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81316BE617FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist in Resources */,
 				81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,13 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */,
-				814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */,
+				814B529017F3E863000606F1 /* GMSPanoramaCamera+ NSObject.m in Sources */,
 				814B528417F2BA24000606F1 /* main.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
 				81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */,
 				81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */,
 				814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */,
-				814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */,
+				814B528D17F3D65B000606F1 /* GMSPanorama+NSObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

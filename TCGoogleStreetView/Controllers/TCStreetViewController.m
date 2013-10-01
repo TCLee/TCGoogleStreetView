@@ -14,8 +14,8 @@
 #import "TCMuseum.h"
 
 #import "UIAlertView+NSErrorAdditions.h"
-#import "GMSPanorama+Debug.h"
-#import "GMSPanoramaCamera+Debug.h"
+#import "GMSPanorama+NSObject.h"
+#import "GMSPanoramaCamera+NSObject.h"
 
 @interface TCStreetViewController ()
 
