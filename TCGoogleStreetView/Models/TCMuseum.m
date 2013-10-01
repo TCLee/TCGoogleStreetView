@@ -14,7 +14,8 @@
 {
     self = [super init];
     if (self) {
-        
+        _name = [properties[@"name"] copy];
+        _city = [properties[@"city"] copy];
     }
     return self;
 }
