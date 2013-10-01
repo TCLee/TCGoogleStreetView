@@ -27,11 +27,6 @@
  */
 @property (nonatomic, weak) GMSPanoramaView *panoramaView;
 
-/**
- * The museum currently displayed in the panorama view.
- */
-@property (nonatomic, strong) TCMuseum *museum;
-
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
@@ -54,8 +49,7 @@
     [self createPanoramaView];
     
     // Show the street view for the first museum in the collection.
-    self.museum = [self.dataController firstMuseum];
-    [self showPanoramaWithMuseum:self.museum];
+    [self showPanoramaWithMuseum:[self.dataController firstMuseum]];
 }
 
 #pragma mark - GMSPanoramaView
@@ -112,7 +106,7 @@
     NSLog(@"Did Move To Panorama:\n%@", panorama);
     
     // Once the panorama view is available, we will start the talking tour guide.
-//    [self startSpeechGuideWithMuseum:self.museum];
+//    [self startSpeechGuideWithMuseum:[self.dataController currentMuseum]];
 }
 
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -154,14 +148,12 @@
 
 - (IBAction)nextMuseum:(id)sender
 {
-    self.museum = [self.dataController nextMuseum];
-    [self showPanoramaWithMuseum:self.museum];
+    [self showPanoramaWithMuseum:[self.dataController nextMuseum]];
 }
 
 - (IBAction)previousMuseum:(id)sender
 {
-    self.museum = [self.dataController previousMuseum];
-    [self showPanoramaWithMuseum:self.museum];
+    [self showPanoramaWithMuseum:[self.dataController previousMuseum]];
 }
 
 @end

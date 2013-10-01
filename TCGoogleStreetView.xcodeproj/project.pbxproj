@@ -10,6 +10,8 @@
 		744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
 		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
+		81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */; };
+		81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 81316BEB17FAA22200A2CA17 /* MuseumTestData.json */; };
 		814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCStreetViewController.m */; };
 		814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B527517F2B9F6000606F1 /* Images.xcassets */; };
 		814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814B527E17F2BA24000606F1 /* InfoPlist.strings */; };
@@ -47,6 +49,8 @@
 		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
 		81316BE317FA73E300A2CA17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetViewTests-Info.plist"; sourceTree = "<group>"; };
+		81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumDataControllerTests.m; sourceTree = "<group>"; };
+		81316BEB17FAA22200A2CA17 /* MuseumTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MuseumTestData.json; sourceTree = "<group>"; };
 		814B527017F2B9F6000606F1 /* TCStreetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStreetViewController.h; sourceTree = "<group>"; };
 		814B527117F2B9F6000606F1 /* TCStreetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStreetViewController.m; sourceTree = "<group>"; };
 		814B527517F2B9F6000606F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -109,6 +113,14 @@
 				81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		81316BEA17FAA20A00A2CA17 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				81316BEB17FAA22200A2CA17 /* MuseumTestData.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		814B526F17F2B9F6000606F1 /* Controllers */ = {
@@ -238,8 +250,10 @@
 		81EFBA4717F1B2F100F6FCD4 /* TCGoogleStreetViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				81316BE117FA73E300A2CA17 /* SupportingFiles */,
+				81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */,
 				81E6C51817F95DCA00A93925 /* TCMuseumTests.m */,
+				81316BEA17FAA20A00A2CA17 /* Data */,
+				81316BE117FA73E300A2CA17 /* SupportingFiles */,
 			);
 			path = TCGoogleStreetViewTests;
 			sourceTree = "<group>";
@@ -337,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */,
+				81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */,
 				81E6C51917F95DCA00A93925 /* TCMuseumTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

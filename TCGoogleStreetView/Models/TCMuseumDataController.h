@@ -14,20 +14,46 @@
 @interface TCMuseumDataController : NSObject
 
 /**
- * Returns the first museum in the list.
+ * Returns the first museum object in the collection.
+ * Also, moves the enumerator to the first museum object.
  */
 - (TCMuseum *)firstMuseum;
 
 /**
- * Returns the next museum in the list.
+ * Returns the last museum object in the collection.
+ * Also, moves the enumerator to the last museum object.
+ */
+- (TCMuseum *)lastMuseum;
+
+/**
+ * Returns the next museum object in the collection.
  * If we're at the last museum, it will loop back to the first museum.
  */
 - (TCMuseum *)nextMuseum;
 
 /**
- * Returns the previous museum in the list.
+ * Returns the current museum in the collection.
+ */
+- (TCMuseum *)currentMuseum;
+
+/**
+ * Returns the previous museum in the collection.
  * If we're at the first museum, it will loop back to the last museum.
  */
 - (TCMuseum *)previousMuseum;
+
+/**
+ * Returns all the museums in the collection as an array.
+ */
+- (NSArray *)allMuseums;
+
+/**
+ * Initialize the data controller with data from the given URL.
+ *
+ * @param url The URL of the data.
+ *
+ * @return An initialized TCMuseumDataController with data from the given URL.
+ */
+- (id)initWithURL:(NSURL *)url;
 
 @end

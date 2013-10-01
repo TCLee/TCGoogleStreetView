@@ -11,6 +11,10 @@
 #import "TCMuseum.h"
 #import "GMSPanoramaCamera+NSObject.h"
 
+/**
+ * Test class that contains the test methods to exercise the \b TCMuseum
+ * model class API.
+ */
 @interface TCMuseumTests : XCTestCase
 
 @end

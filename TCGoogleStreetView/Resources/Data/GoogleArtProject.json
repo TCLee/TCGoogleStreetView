@@ -7,7 +7,7 @@
             "name": "Palace of Versailles",
             "city": "Versailles, France",
             "description": "Versailles was the home of the French monarch from the time of Louis XIV to Louis XVI. The palace stands today as an icon of nobility and artistic triumph.",
-            "speech": "Versailles was the home of the French monarch from the time of Louis the 14th to Louis the 16th. The palace stands today as an icon of nobility and artistic triumph."
+            "speech": "Versailles was the home of the French monarch from the time of Louis the 14th to Louis the 16th. The palace stands today as an icon of nobility and artistic triumph.",
             "coordinate": {
                 "latitude": 48.804541,
                 "longitude": 2.12013
@@ -23,7 +23,7 @@
             "name": "Royal Palaces Amsterdam",
             "city": "Amsterdam, Netherlands",
             "description": "The Royal Palace in Amsterdam was built as city hall during the Dutch Golden Age in the seventeenth century. The building became the royal palace of king Louis Napoleon and later of the Dutch Royal House.",
-            "speech": "The Royal Palace in Amsterdam was built as city hall during the Dutch Golden Age in the seventeenth century. The building became the royal palace of king Louis Napoleon and later of the Dutch Royal House."
+            "speech": "The Royal Palace in Amsterdam was built as city hall during the Dutch Golden Age in the seventeenth century. The building became the royal palace of king Louis Napoleon and later of the Dutch Royal House.",
             "coordinate": {
                 "latitude": 52.373155,
                 "longitude": 4.891174
@@ -39,7 +39,7 @@
             "name": "American Art Museum, Smithsonian",
             "city": "DC, Washington, United States",
             "description": "Located in Washington D.C., The Smithsonian American Art Museum is the nation's first collection of American art. The museum has been a leader in identifying and collecting significant aspects of American visual culture.",
-            "speech": "Located in Washington DC, The Smithsonian American Art Museum is the nation's first collection of American art. The museum has been a leader in identifying and collecting significant aspects of American visual culture."
+            "speech": "Located in Washington DC, The Smithsonian American Art Museum is the nation's first collection of American art. The museum has been a leader in identifying and collecting significant aspects of American visual culture.",
             "coordinate": {
                 "latitude": 38.897756,
                 "longitude": -77.023656
@@ -55,7 +55,7 @@
             "name": "The Frick Collection",
             "city": "New York, New York, United States",
             "description": "Opened on December 16, 1935, The Frick is one of most distinguished small art museums in the world. The Frick Collection includes some of the best-known paintings by the European masters, major works of sculpture (among them one of the finest groups of small bronzes in the world), superb eighteenth-century French furniture and porcelains, Limoges enamels, Oriental rugs, and other works of remarkable quality.",
-            "speech": "Opened on December 16, 1935, The Frick is one of most distinguished small art museums in the world. The Frick Collection includes some of the best-known paintings by the European masters, major works of sculpture, among them one of the finest groups of small bronzes in the world, superb eighteenth-century French furniture and porcelains, Limoges enamels, Oriental rugs, and other works of remarkable quality."
+            "speech": "Opened on December 16, 1935, The Frick is one of most distinguished small art museums in the world. The Frick Collection includes some of the best-known paintings by the European masters, major works of sculpture, among them one of the finest groups of small bronzes in the world, superb eighteenth-century French furniture and porcelains, Limoges enamels, Oriental rugs, and other works of remarkable quality.",
             "coordinate": {
                 "latitude": 40.771275,
                 "longitude": -73.967062
@@ -71,7 +71,7 @@
             "name": "Castle de Fontainebleau",
             "city": "Paris, France",
             "description": "Fontainebleau was a royal country house for more than eight centuries. The art, architecture and gardens are a monument of French history.\nWith over 1500 rooms at the heart of 130 acres of parkland and gardens, Fontainebleau is the only royal and imperial château to have been continuously inhabited for seven centuries.",
-            "speech": "Fontainebleau was a royal country house for more than eight centuries. The art, architecture and gardens are a monument of French history.\nWith over 1500 rooms at the heart of 130 acres of parkland and gardens, Fontainebleau is the only royal and imperial château to have been continuously inhabited for seven centuries."
+            "speech": "Fontainebleau was a royal country house for more than eight centuries. The art, architecture and gardens are a monument of French history.\nWith over 1500 rooms at the heart of 130 acres of parkland and gardens, Fontainebleau is the only royal and imperial château to have been continuously inhabited for seven centuries.",
             "coordinate": {
                 "latitude": 48.402574,
                 "longitude": 2.701026
