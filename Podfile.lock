@@ -1,10 +1,27 @@
 PODS:
   - Google-Maps-iOS-SDK (1.5.0)
+  - libwebp (0.3.0-rc7):
+    - libwebp/dec
+    - libwebp/dsp
+    - libwebp/utils
+    - libwebp/webp
+  - libwebp/dec (0.3.0-rc7)
+  - libwebp/dsp (0.3.0-rc7)
+  - libwebp/utils (0.3.0-rc7)
+  - libwebp/webp (0.3.0-rc7)
+  - SDWebImage (3.4):
+    - libwebp
+    - SDWebImage/MapKit
+  - SDWebImage/MapKit (3.4):
+    - libwebp
 
 DEPENDENCIES:
   - Google-Maps-iOS-SDK (~> 1.5.0)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   Google-Maps-iOS-SDK: a7ae159dce2959927aeec2ebae1765f3b64e20b4
+  libwebp: 40517fa1fd3716eded73b4696c45fc0b66e4b414
+  SDWebImage: f13f791e411c632489824aa7f129e230b52bf5c4
 
 COCOAPODS: 0.25.0

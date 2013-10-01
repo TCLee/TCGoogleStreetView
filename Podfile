@@ -4,3 +4,4 @@ platform :ios, '7.0'
 link_with ['TCGoogleStreetView', 'TCGoogleStreetViewTests']
 
 pod 'Google-Maps-iOS-SDK', '~> 1.5.0'
+pod 'SDWebImage'

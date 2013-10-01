@@ -12,6 +12,8 @@
 		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
 		81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */; };
 		81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 81316BEB17FAA22200A2CA17 /* MuseumTestData.json */; };
+		81316BEE17FAB13C00A2CA17 /* Temp in Resources */ = {isa = PBXBuildFile; fileRef = 81316BED17FAB13C00A2CA17 /* Temp */; };
+		81316BF117FABED700A2CA17 /* TCStaticMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BF017FABED700A2CA17 /* TCStaticMap.m */; };
 		814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCStreetViewController.m */; };
 		814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B527517F2B9F6000606F1 /* Images.xcassets */; };
 		814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814B527E17F2BA24000606F1 /* InfoPlist.strings */; };
@@ -51,6 +53,9 @@
 		81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetViewTests-Info.plist"; sourceTree = "<group>"; };
 		81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumDataControllerTests.m; sourceTree = "<group>"; };
 		81316BEB17FAA22200A2CA17 /* MuseumTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MuseumTestData.json; sourceTree = "<group>"; };
+		81316BED17FAB13C00A2CA17 /* Temp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Temp; sourceTree = "<group>"; };
+		81316BEF17FABED700A2CA17 /* TCStaticMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStaticMap.h; sourceTree = "<group>"; };
+		81316BF017FABED700A2CA17 /* TCStaticMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStaticMap.m; sourceTree = "<group>"; };
 		814B527017F2B9F6000606F1 /* TCStreetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStreetViewController.h; sourceTree = "<group>"; };
 		814B527117F2B9F6000606F1 /* TCStreetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStreetViewController.m; sourceTree = "<group>"; };
 		814B527517F2B9F6000606F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -139,6 +144,8 @@
 				81E6C51317F8211C00A93925 /* TCMuseum.m */,
 				81E6C51517F830C500A93925 /* TCMuseumDataController.h */,
 				81E6C51617F830C500A93925 /* TCMuseumDataController.m */,
+				81316BEF17FABED700A2CA17 /* TCStaticMap.h */,
+				81316BF017FABED700A2CA17 /* TCStaticMap.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				8104F7C717F553EE00FA96BB /* GoogleArtProject.json */,
+				81316BED17FAB13C00A2CA17 /* Temp */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 			files = (
 				8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */,
 				814B528617F2C104000606F1 /* Main.storyboard in Resources */,
+				81316BEE17FAB13C00A2CA17 /* Temp in Resources */,
 				814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */,
 				814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */,
 			);
@@ -433,6 +442,7 @@
 				81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */,
 				814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */,
 				814B528D17F3D65B000606F1 /* GMSPanorama+NSObject.m in Sources */,
+				81316BF117FABED700A2CA17 /* TCStaticMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
