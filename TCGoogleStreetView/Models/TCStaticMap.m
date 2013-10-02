@@ -60,17 +60,9 @@ NSString * const TCGoogleStaticMapsAPIBaseURLString = @"http://maps.googleapis.c
                              (unsigned long)self.scale,
                              TCStringFromCLLocationCoordinate2D(self.markerLocation)];
     
-    // How to encode a NSURL?
-    // http://stackoverflow.com/a/1749000
-    NSString *escapedQueryString = (__bridge_transfer NSString *) CFURLCreateStringByAddingPercentEscapes(
-                                       kCFAllocatorDefault,
-                                       (CFStringRef)queryString,
-                                       NULL,
-                                       (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                       kCFStringEncodingUTF8);
-    
+    // We do not have to encode the query string as it contains only valid characters specified by ourselves.
     _imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@",
-                                      TCGoogleStaticMapsAPIBaseURLString, escapedQueryString]];
+                                      TCGoogleStaticMapsAPIBaseURLString, queryString]];
     return _imageURL;
 }
 

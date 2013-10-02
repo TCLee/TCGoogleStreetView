@@ -9,9 +9,13 @@
 // Text-to-Speech framework
 @import AVFoundation.AVSpeechSynthesis;
 
+// Asynchronously load and cache the Google Static Maps images.
+#import <SDWebImage/UIImageView+WebCache.h>
+
 #import "TCStreetViewController.h"
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
+#import "TCStaticMap.h"
 
 #import "UIAlertView+NSErrorAdditions.h"
 #import "GMSPanorama+NSObject.h"
@@ -36,7 +40,7 @@
 
 @implementation TCStreetViewController
 
-#pragma mark - View Events
+#pragma mark - Views
 
 - (void)viewDidLoad
 {
@@ -49,10 +53,8 @@
     [self createPanoramaView];
     
     // Show the street view for the first museum in the collection.
-    [self showPanoramaWithMuseum:[self.dataController firstMuseum]];
+    [self updateViewWithMuseum:[self.dataController firstMuseum]];
 }
-
-#pragma mark - GMSPanoramaView
 
 /**
  * Create the panorama view and add it as a subview to the controller's view.
@@ -89,14 +91,44 @@
 }
 
 /**
- * Updates the \b GMSPanoramaView to show the panorama for the given museum.
+ * Updates the views to reflect the details of the given museum model object.
  *
- * @param museum The \p TCMuseum object containing the data for the panorama view.
+ * @param museum The \c TCMuseum model object containing the data for the views.
  */
-- (void)showPanoramaWithMuseum:(TCMuseum *)museum
+- (void)updateViewWithMuseum:(TCMuseum *)museum
 {
     [self.panoramaView moveNearCoordinate:museum.coordinate];
     self.panoramaView.camera = museum.camera;
+    
+    self.titleLabel.text = museum.name;
+    self.cityLabel.text = museum.city;
+    self.descriptionLabel.text = museum.text;
+    
+    [self showMapImageWithMuseum:museum];
+}
+
+/**
+ * Shows the map for the given museum on the image view.
+ *
+ * @param museum The \c TCMuseum object to show the map for.
+ */
+- (void)showMapImageWithMuseum:(TCMuseum *)museum
+{
+    // Create the static map for the museum, if it does not exist yet.
+    if (!museum.map) {
+        museum.map = [[TCStaticMap alloc] initWithMarkerLocation:museum.coordinate
+                                                            zoom:12
+                                                            size:self.mapImageView.bounds.size
+                                                           scale:[[UIScreen mainScreen] scale]];
+    }
+    
+    // Load the static map's image asynchronously.
+    [self.mapImageView setImageWithURL:museum.map.imageURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+        if (!image) {
+            UIAlertView *alertView = [UIAlertView alertWithError:error];
+            [alertView show];
+        }
+    }];
 }
 
 #pragma mark - GMSPanoramaViewDelegate
@@ -148,12 +180,12 @@
 
 - (IBAction)nextMuseum:(id)sender
 {
-    [self showPanoramaWithMuseum:[self.dataController nextMuseum]];
+    [self updateViewWithMuseum:[self.dataController nextMuseum]];
 }
 
 - (IBAction)previousMuseum:(id)sender
 {
-    [self showPanoramaWithMuseum:[self.dataController previousMuseum]];
+    [self updateViewWithMuseum:[self.dataController previousMuseum]];
 }
 
 @end

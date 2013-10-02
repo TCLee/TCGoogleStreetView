@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Street View Controller - Google Art Project-->
+        <!--Street View Controller - Google Museum View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="TCViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TCStreetViewController" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <constraint firstItem="7fn-LD-3gc" firstAttribute="top" secondItem="XDL-bL-Hlr" secondAttribute="bottom" constant="20" id="U42-5S-xLa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Google Art Project" id="Fkt-ZC-bnS">
+                    <navigationItem key="navigationItem" title="Google Museum View" id="Fkt-ZC-bnS">
                         <barButtonItem key="leftBarButtonItem" image="LeftArrow" id="fdA-Li-4XG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
