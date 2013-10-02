@@ -58,7 +58,7 @@
                                                                     size:CGSizeMake(200.0f, 300.0f)
                                                                    scale:2];
     
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?center=10.5,20.5&zoom=12&size=200x300&scale=2&markers=10.5,20.5&visual_refresh=true&sensor=false",
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?center%%3D10.5%%2C20.5%%26zoom%%3D12%%26size%%3D200x300%%26scale%%3D2%%26markers%%3D10.5%%2C20.5%%26visual_refresh%%3Dtrue%%26sensor%%3Dfalse",
                                               TCGoogleStaticMapsAPIBaseURLString]];
     
     XCTAssertEqualObjects(staticMap.imageURL, requestURL, @"The static map image URL does not match the expected request URL.");

@@ -48,7 +48,7 @@ FOUNDATION_EXPORT NSString * const TCGoogleStaticMapsAPIBaseURLString;
  * Returns the URL that can be used to send a request to Google Static Maps API
  * to get the map image.
  */
-@property (nonatomic, readonly) NSURL *imageURL;
+@property (nonatomic, copy, readonly) NSURL *imageURL;
 
 /**
  * Initializes a static map with the given parameters.
