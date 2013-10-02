@@ -25,7 +25,9 @@ static NSString * const kTCGoogleMapsAPIKey = @"AIzaSyAbmPatPdSYWzYNZip_26u3N8fH
     // the initial view controller.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     TCStreetViewController *streetViewController = (TCStreetViewController *)navigationController.topViewController;
-    streetViewController.dataController = [[TCMuseumDataController alloc] init];
+    streetViewController.dataController = [[TCMuseumDataController alloc] initWithURL:
+                                           [[NSBundle mainBundle] URLForResource:@"GoogleArtProject"
+                                                                   withExtension:@"json"]];
     
     return YES;
 }
