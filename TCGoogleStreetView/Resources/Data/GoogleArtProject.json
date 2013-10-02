@@ -1,7 +1,4 @@
 {
-// Static Map URL Template
-// http://maps.googleapis.com/maps/api/staticmap?center=48.804541,2.12013&zoom=12&size=250x165&markers=color:red|48.804541,2.1201&visual_refresh=true&sensor=false,
-
     "museums": [
         {
             "name": "Palace of Versailles",
@@ -84,24 +81,4 @@
             }
         },
     ]
-    
-//    Museum of Islamic Art
-//    Doha, Qatar
-//    https://www.google.com/maps/views/view/streetview/art-project/museum-of-islamic-art/6QHVKDyGyEmiRa7mrJYjmw?gl=my&heading=243&pitch=107&fovy=75
-//    https://maps.google.com/?ll=25.295495,51.539292&t=m&layer=c&panoid=6QHVKDyGyEmiRa7mrJYjmw&cbp=12,,,,0&z=16&cbll=25.295495,51.539292
-    
-//    Musei Capitolini
-//    Rome, Italy
-//    https://www.google.com/maps/views/view/streetview/art-project/musei-capitolini/QXANK_jXxPL7i1sFGWXT2w?gl=my&heading=475&pitch=93&fovy=75
-//    https://maps.google.com/?ll=41.892813,12.482282&t=m&layer=c&panoid=jreLAB6noDFtneLx8FKjCQ&cbp=12,,,,0&z=16&cbll=41.892813,12.482282
-    
-//    Pergamon Museum
-//    Berlin, Germany
-//    https://www.google.com/maps/views/view/streetview/art-project/pergamon-museum/2ohRs1p8tU7oUWZ_YNHpaw?gl=my&heading=33&pitch=96&fovy=75
-//    https://maps.google.com/?ll=52.5211,13.397098&t=m&layer=c&panoid=nhfcBN3J5GImQjQuCzPvKA&cbp=12,,,,0&z=16&cbll=52.5211,13.397098
-    
-//    White House
-//    DC, Washington, United States
-//    https://www.google.com/maps/views/view/streetview/art-project/white-house/iKije2lto_r5OcgKX4sleg?gl=my&heading=180&pitch=94&fovy=75
-//    https://maps.google.com/?ll=38.897766,-77.036504&t=m&layer=c&panoid=iKije2lto_r5OcgKX4sleg&cbp=12,,,,0&z=16&cbll=38.897766,-77.036504
 }
