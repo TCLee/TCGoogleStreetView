@@ -51,7 +51,7 @@
     XCTAssertNotNil(museum, @"Should return a non-nil TCMuseum instance, if we passed in valid properties.");
     XCTAssertEqualObjects(museum.name, @"Museum Name", @"Museum's name was not initialized properly from dictionary.");
     XCTAssertEqualObjects(museum.city, @"City, Country", @"City was not initialized properly from dictionary.");
-    XCTAssertEqualObjects(museum.description, @"The museum's description.", @"Museum's description was not initialized properly from dictionary.");
+    XCTAssertEqualObjects(museum.text, @"The museum's description.", @"Museum's description was not initialized properly from dictionary.");
     XCTAssertEqualObjects(museum.speechText, @"The text to be spoken.", @"Speech string was not initialized properly from dictionary.");
     XCTAssertEqual(museum.coordinate, CLLocationCoordinate2DMake(10, 20), @"Coordinate was not initialized properly from dictionary.");
 

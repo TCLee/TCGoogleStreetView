@@ -8,6 +8,8 @@
 
 @import Foundation;
 
+@class TCStaticMap;
+
 /**
  * The model class to represent a museum.
  */
@@ -26,7 +28,7 @@
 /**
  * A short description of the museum.
  */
-@property (nonatomic, copy, readonly) NSString *description;
+@property (nonatomic, copy, readonly) NSString *text;
 
 /**
  * The text to be spoken. This string is usually similar to the description, but 
@@ -43,6 +45,14 @@
  * The initial camera position for the panorama view.
  */
 @property (nonatomic, strong, readonly) GMSPanoramaCamera *camera;
+
+/**
+ * The static map to visually show where this museum is located.
+ * 
+ * The static map is represented by an image and does not allow for
+ * user interaction.
+ */
+@property (nonatomic, strong) TCStaticMap *map;
 
 /**
  * Initializes a TCMuseum model object with the properties parsed from 

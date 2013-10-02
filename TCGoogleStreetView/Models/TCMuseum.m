@@ -18,7 +18,7 @@
     if (self) {
         _name = [properties[@"name"] copy];
         _city = [properties[@"city"] copy];
-        _description = [properties[@"description"] copy];
+        _text = [properties[@"description"] copy];
         _speechText = [properties[@"speech"] copy];
         _coordinate = CLLocationCoordinate2DFromDictionary(properties[@"coordinate"]);
         _camera = GMSPanoramaCameraFromDictionary(properties[@"camera"]);
@@ -27,11 +27,11 @@
 }
 
 /**
- * Creates a \b CLLocationCoordinate2D struct from the given dictionary.
+ * Creates a \c CLLocationCoordinate2D struct from the given dictionary.
  *
  * @param dictionary The \c NSDictionary instance containing the latitude and longitude values.
  *
- * @return A new \b CLLocationCoordinate2D struct.
+ * @return A new \c CLLocationCoordinate2D struct.
  */
 FOUNDATION_STATIC_INLINE CLLocationCoordinate2D CLLocationCoordinate2DFromDictionary(NSDictionary *dictionary)
 {
@@ -40,11 +40,11 @@ FOUNDATION_STATIC_INLINE CLLocationCoordinate2D CLLocationCoordinate2DFromDictio
 }
 
 /**
- * <#Description#>
+ * Creates a \c GMSPanoramaCamera instance from the given dictionary.
  *
- * @param dictionary <#dictionary description#>
+ * @param dictionary The \c NSDictionary instance containing the camera's properties.
  *
- * @return <#return value description#>
+ * @return A new \c GMSPanoramaCamera instance.
  */
 FOUNDATION_STATIC_INLINE GMSPanoramaCamera *GMSPanoramaCameraFromDictionary(NSDictionary *dictionary)
 {
