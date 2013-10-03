@@ -1,5 +1,5 @@
 //
-//  GMSPanoramaCamera+NSObject.h
+//  GMSPanorama+Debug.h
 //  TCGoogleStreetView
 //
 //  Created by Lee Tze Cheun on 9/26/13.
@@ -8,6 +8,6 @@
 
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface GMSPanoramaCamera (NSObject)
+@interface GMSPanorama (Debug)
 
 @end

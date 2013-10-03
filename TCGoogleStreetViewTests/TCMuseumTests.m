@@ -56,7 +56,7 @@
     XCTAssertEqual(museum.coordinate, CLLocationCoordinate2DMake(10, 20), @"Coordinate was not initialized properly from dictionary.");
 
     GMSPanoramaCamera *panoramaCamera = [GMSPanoramaCamera cameraWithHeading:20.0f pitch:10.0f zoom:1.0f FOV:75.0f];
-    XCTAssertEqualObjects(museum.camera, panoramaCamera, @"Street View camera was not initialized properly from dictionary.");
+    XCTAssertTrue([museum.camera isEqualToPanoramaCamera:panoramaCamera], @"GMSPanoramaCamera was not initialized properly from dictionary.");
 }
 
 /**

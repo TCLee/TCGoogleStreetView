@@ -60,7 +60,7 @@ NSString * const TCGoogleStaticMapsAPIBaseURLString = @"http://maps.googleapis.c
                              (unsigned long)self.scale,
                              TCStringFromCLLocationCoordinate2D(self.markerLocation)];
     
-    // We do not have to encode the query string as it contains only valid characters specified by ourselves.
+    // We do not have to encode the query string as it contains only valid characters specified by us.
     _imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@",
                                       TCGoogleStaticMapsAPIBaseURLString, queryString]];
     return _imageURL;

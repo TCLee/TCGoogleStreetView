@@ -18,8 +18,8 @@
 #import "TCStaticMap.h"
 
 #import "UIAlertView+NSErrorAdditions.h"
-#import "GMSPanorama+NSObject.h"
-#import "GMSPanoramaCamera+NSObject.h"
+#import "GMSPanorama+Debug.h"
+#import "GMSPanoramaCamera+Debug.h"
 
 @interface TCStreetViewController ()
 
@@ -31,6 +31,7 @@
  */
 @property (nonatomic, weak) GMSPanoramaView *panoramaView;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
@@ -122,8 +123,17 @@
                                                            scale:[[UIScreen mainScreen] scale]];
     }
     
+    [self.activityIndicator startAnimating];
+    self.mapImageView.alpha = 0.0f;
+    
     // Load the static map's image asynchronously.
     [self.mapImageView setImageWithURL:museum.map.imageURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+        [self.activityIndicator stopAnimating];
+        
+        [UIView animateWithDuration:1.0f animations:^{
+            self.mapImageView.alpha = 1.0f;
+        }];
+        
         if (!image) {
             UIAlertView *alertView = [UIAlertView alertWithError:error];
             [alertView show];
