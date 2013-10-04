@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "TCMuseum.h"
-#import "GMSPanoramaCamera+NSObject.h"
+#import "GMSPanoramaCamera+Debug.h"
 
 /**
  * Test class that contains the test methods to exercise the \b TCMuseum
