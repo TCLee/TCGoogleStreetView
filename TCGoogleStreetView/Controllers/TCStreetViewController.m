@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Lee Tze Cheun. All rights reserved.
 //
 
-// Text-to-Speech framework
-@import AVFoundation.AVSpeechSynthesis;
-
 // Asynchronously load and cache the Google Static Maps images.
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -37,6 +34,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
+/**
+ * The \c AVSpeechSynthesizer instance used for the speaking tour guide.
+ * We keep a \b strong reference to the \c AVSpeechSynthesizer, so that we
+ * can cancel the speech at any time.
+ */
+@property (nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
+
 @end
 
 @implementation TCStreetViewController
@@ -47,19 +51,16 @@
 {
     [super viewDidLoad];
     
-    NSAssert(self.dataController, @"TCMuseumDataController must be provided for TCStreetViewController to access the TCMuseum model objects.");
-    
     // We have to create the GMSPanoramaView programatically because
     // Google Maps SDK require that we call the initWithFrame: method.
     [self createPanoramaView];
     
-    // Show the street view for the first museum in the collection.
+    // Show panorama view for the first museum in the list.
     [self updateViewWithMuseum:[self.dataController firstMuseum]];
 }
 
 /**
  * Create the panorama view and add it as a subview to the controller's view.
- * If panorama view has already been created, then it does nothing.
  */
 - (void)createPanoramaView
 {
@@ -99,7 +100,6 @@
 - (void)updateViewWithMuseum:(TCMuseum *)museum
 {
     [self.panoramaView moveNearCoordinate:museum.coordinate];
-    self.panoramaView.camera = museum.camera;
     
     self.titleLabel.text = museum.name;
     self.cityLabel.text = museum.city;
@@ -123,14 +123,15 @@
                                                            scale:[[UIScreen mainScreen] scale]];
     }
     
+    // Show activity indicator while map image is fetched from Google's servers.
+    // When map image is ready it will smoothly fade in.
     [self.activityIndicator startAnimating];
     self.mapImageView.alpha = 0.0f;
     
     // Load the static map's image asynchronously.
     [self.mapImageView setImageWithURL:museum.map.imageURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         [self.activityIndicator stopAnimating];
-        
-        [UIView animateWithDuration:1.0f animations:^{
+        [UIView animateWithDuration:0.8f animations:^{
             self.mapImageView.alpha = 1.0f;
         }];
         
@@ -143,12 +144,38 @@
 
 #pragma mark - GMSPanoramaViewDelegate
 
+// Called only when the panorama change was caused by invoking moveToPanoramaNearCoordinate:
 - (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    NSLog(@"Did Move To Panorama:\n%@", panorama);
+    TCMuseum *museum = [self.dataController currentMuseum];
     
-    // Once the panorama view is available, we will start the talking tour guide.
-//    [self startSpeechGuideWithMuseum:[self.dataController currentMuseum]];
+    // Update the camera for this panorama view.
+    // Each panorama view will have their own unique camera settings.
+    view.camera = museum.camera;
+
+    // Fade in the panorama view.
+    view.alpha = 0.0f;
+    [UIView animateWithDuration:0.8f animations:^{
+        view.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+        // Start the talking tour guide for the current museum.
+        [self startSpeechGuideWithMuseum:museum];
+    }];
+}
+
+- (void)panoramaView:(GMSPanoramaView *)view willMoveToPanoramaID:(NSString *)panoramaID
+{
+//    NSLog(@"Will Move To Panorama ID: %@", panoramaID);
+}
+
+- (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama
+{
+//    NSLog(@"Did Move To Panorama:\n%@", panorama);
+}
+
+- (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveCamera:(GMSPanoramaCamera *)camera
+{
+//    NSLog(@"Did Move Camera:\n%@", camera);
 }
 
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -157,45 +184,72 @@
     [alertView show];
 }
 
-// This is invoked every time the view.panorama property changes.
-- (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama
-{
-    NSLog(@"Did Move To Panorama:\n%@", panorama);
-}
-
-// Called when moveToPanoramaID: produces an error.
 - (void)panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveToPanoramaID:(NSString *)panoramaID
 {
     UIAlertView *alertView = [UIAlertView alertWithError:error];
     [alertView show];
 }
 
-// Called repeatedly during changes to the camera on GMSPanoramaView.
-- (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveCamera:(GMSPanoramaCamera *)camera
-{
-    NSLog(@"Did Move Camera: %@", camera);
-}
+#pragma mark - Speaking Tour Guide
 
-#pragma mark - AVSpeechSynthesis
-
+/**
+ * Starts the speaking tour guide for the given museum.
+ *
+ * @param museum The \c TCMuseum object that contains the speech text for the speaking tour guide.
+ */
 - (void)startSpeechGuideWithMuseum:(TCMuseum *)museum
 {
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    // --- Is this an Apple bug? ---
+    // Sending a stopSpeaking message does not always stop the speech.
+    // Sending a stopSpeaking message AND creating a new AVSpeechSynthesizer
+    // instance each time will stop the speech immediately. Go figure.
+    
+    self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:museum.speechText];
-    utterance.rate = 0.2; // Min = 0.0, Default = 0.5, Max = 1.0
-    [synthesizer speakUtterance:utterance];
+    utterance.rate = 0.2f; // Min = 0.0, Default = 0.5, Max = 1.0
+    [self.speechSynthesizer speakUtterance:utterance];
 }
 
-#pragma mark - IBAction
+/**
+ * Stops the speaking tour guide immediately. This method is called when
+ * user navigates to the next or previous museum.
+ */
+- (void)stopSpeechGuide
+{
+    if (self.speechSynthesizer.isSpeaking) {
+        [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+        self.speechSynthesizer = nil;
+    }
+}
+
+#pragma mark - Museum Collection Navigation
 
 - (IBAction)nextMuseum:(id)sender
 {
-    [self updateViewWithMuseum:[self.dataController nextMuseum]];
+    [self navigateToMuseum:[self.dataController nextMuseum]];
 }
 
 - (IBAction)previousMuseum:(id)sender
 {
-    [self updateViewWithMuseum:[self.dataController previousMuseum]];
+    [self navigateToMuseum:[self.dataController previousMuseum]];
+}
+
+/**
+ * Navigates the user to the given museum.
+ *
+ * @param museum The \c TCMuseum model object to navigate to.
+ */
+- (void)navigateToMuseum:(TCMuseum *)museum
+{
+    // Clear the current panorama before moving to the next panorama.
+    self.panoramaView.panorama = nil;
+    
+    // Stop the speaking tour guide immediately. We will need to prepare
+    // the speech for the next museum.
+    [self stopSpeechGuide];
+    
+    [self updateViewWithMuseum:museum];
+
 }
 
 @end

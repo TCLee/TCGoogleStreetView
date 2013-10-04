@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@import AVFoundation.AVSpeechSynthesis;
 
 @class TCMuseumDataController;
 
