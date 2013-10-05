@@ -17,6 +17,7 @@
 #import "UIAlertView+NSErrorAdditions.h"
 #import "GMSPanorama+Debug.h"
 #import "GMSPanoramaCamera+Debug.h"
+#import "GMSPanoramaLayer+Debug.h"
 
 @interface TCStreetViewController ()
 
@@ -144,38 +145,53 @@
 
 #pragma mark - GMSPanoramaViewDelegate
 
-// Called only when the panorama change was caused by invoking moveToPanoramaNearCoordinate:
-- (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
+/**
+ * Called when the panorama change was caused by invoking
+ * moveToPanoramaNearCoordinate:. The coordinate passed to that method will also
+ * be passed here.
+ */
+- (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
 {
     TCMuseum *museum = [self.dataController currentMuseum];
     
     // Update the camera for this panorama view.
     // Each panorama view will have their own unique camera settings.
-    view.camera = museum.camera;
+    panoramaView.camera = museum.camera;
 
     // Fade in the panorama view.
-    view.alpha = 0.0f;
+    panoramaView.alpha = 0.0f;
     [UIView animateWithDuration:0.8f animations:^{
-        view.alpha = 1.0f;
-    } completion:^(BOOL finished) {
+        panoramaView.alpha = 1.0f;
+    }
+    completion:^(BOOL finished) {
         // Start the talking tour guide for the current museum.
-        [self startSpeechGuideWithMuseum:museum];
+//        [self startSpeechGuideWithMuseum:museum];
     }];
 }
 
-- (void)panoramaView:(GMSPanoramaView *)view willMoveToPanoramaID:(NSString *)panoramaID
-{
-//    NSLog(@"Will Move To Panorama ID: %@", panoramaID);
-}
-
-- (void)panoramaView:(GMSPanoramaView *)view didMoveToPanorama:(GMSPanorama *)panorama
-{
-//    NSLog(@"Did Move To Panorama:\n%@", panorama);
-}
-
+/**
+ * Called repeatedly during changes to the camera on GMSPanoramaView. This may
+ * not be called for all intermediate camera values, but is always called for
+ * the final position of the camera after an animation or gesture.
+ */
 - (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveCamera:(GMSPanoramaCamera *)camera
 {
-//    NSLog(@"Did Move Camera:\n%@", camera);
+    // Google Maps SDK will call this delegate method even if there's no
+    // panorama data available.
+    if (!panoramaView.panorama) {
+        return;
+    }
+    
+    NSUInteger finalCameraHeading = floorf(panoramaView.camera.orientation.heading);
+    NSUInteger currentCameraHeading = floorf(camera.orientation.heading);
+    
+    // When we've reached the final position of the camera animation, we
+    // will start a new rotation animation. Camera rotation animation never
+    // stops until user takes over.
+    if (currentCameraHeading == finalCameraHeading) {
+        [panoramaView updateCamera:[GMSPanoramaCameraUpdate rotateBy:90.0f]
+                 animationDuration:13.0f];
+    }
 }
 
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -244,12 +260,14 @@
     // Clear the current panorama before moving to the next panorama.
     self.panoramaView.panorama = nil;
     
+    // Stop any ongoing camera animations.
+    [self.panoramaView.layer removeAllAnimations];
+    
     // Stop the speaking tour guide immediately. We will need to prepare
     // the speech for the next museum.
     [self stopSpeechGuide];
     
     [self updateViewWithMuseum:museum];
-
 }
 
 @end
