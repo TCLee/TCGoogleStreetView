@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
+		812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */; };
 		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
 		81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */; };
 		81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 81316BEB17FAA22200A2CA17 /* MuseumTestData.json */; };
@@ -50,6 +51,9 @@
 		00F96339919746DFA4BCB6CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		27A5E0350E1B4D76AD19A28A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
+		812A33ED17FE69E200DC5F3F /* GMSPanoramaCameraHeading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMSPanoramaCameraHeading.h; sourceTree = "<group>"; };
+		812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaLayer+Debug.h"; sourceTree = "<group>"; };
+		812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaLayer+Debug.m"; sourceTree = "<group>"; };
 		81316BE317FA73E300A2CA17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetViewTests-Info.plist"; sourceTree = "<group>"; };
 		81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumDataControllerTests.m; sourceTree = "<group>"; };
@@ -206,6 +210,9 @@
 				814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */,
 				814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */,
 				814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */,
+				812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */,
+				812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */,
+				812A33ED17FE69E200DC5F3F /* GMSPanoramaCameraHeading.h */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -441,6 +448,7 @@
 				814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */,
 				814B528417F2BA24000606F1 /* main.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
+				812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */,
 				81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */,
 				81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */,
 				814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */,
