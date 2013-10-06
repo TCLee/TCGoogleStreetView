@@ -241,6 +241,11 @@
 - (void)stopCameraRotation
 {
     [self.panoramaView.layer removeAnimationForKey:kGMSLayerPanoramaHeadingKey];
+    
+    // Update the model layer's camera heading with the value from the last frame
+    // of the animation before it was stopped. If we don't do this, the camera
+    // will jump back to the model layer's camera heading.
+    self.panoramaView.layer.cameraHeading = [self.panoramaView.layer.presentationLayer cameraHeading];
 }
 
 #pragma mark - Speaking Tour Guide
