@@ -10,7 +10,7 @@
                 "longitude": 2.12013
             },
             "camera": {
-                "FOV": 75,
+                "FOV": 90,
                 "zoom": 1,
                 "heading": 21,
                 "pitch": 9
@@ -26,7 +26,7 @@
                 "longitude": 4.891174
             },
             "camera": {
-                "FOV": 75,
+                "FOV": 90,
                 "zoom": 1,
                 "heading": 96,
                 "pitch": 18
@@ -42,7 +42,7 @@
                 "longitude": -77.023656
             },
             "camera": {
-                "FOV": 75,
+                "FOV": 90,
                 "zoom": 1,
                 "heading": 182,
                 "pitch": 10
@@ -58,7 +58,7 @@
                 "longitude": -73.967062
             },
             "camera": {
-                "FOV": 75,
+                "FOV": 90,
                 "zoom": 1,
                 "heading": 216,
                 "pitch": 2
@@ -74,10 +74,58 @@
                 "longitude": 2.701026
             },
             "camera": {
-                "FOV": 75,
+                "FOV": 90,
                 "zoom": 1,
                 "heading": 7,
                 "pitch": 13
+            }
+        },
+        {
+            "name": "Museum of Islamic Art",
+            "city": "Doha, Qatar",
+            "description": "The Museum of Islamic Art exhibits masterpieces from the 7th through the 19th century. The museum -- designed by I.M. Pei -- houses works from three continents.",
+            "speech": "The Museum of Islamic Art exhibits masterpieces from the 7th through the 19th century. The museum -- designed by I.M Pei -- houses works from three continents.",
+            "coordinate": {
+                "latitude": 25.295495,
+                "longitude": 51.539292
+            },
+            "camera": {
+                "FOV": 90,
+                "zoom": 1,
+                "heading": 243,
+                "pitch": 17
+            }
+        },
+        {
+            "name": "Musei Capitolini",
+            "city": "Rome, Italy",
+            "description": "The Musei Capitolini are a group of art and archeological museums in Piazza del Campidoglio, on top of the Capitoline Hill in Rome, Italy. The museum is the oldest public collection of art in the world, dating back to 1471 when Pope Sixtus IV donated a group of important ancient sculptures to the people of Rome.",
+            "speech": "The Musei Capitolini are a group of art and archeological museums in Piazza del Campidoglio, on top of the Capitoline Hill in Rome Italy. The museum is the oldest public collection of art in the world, dating back to 14 71 when Pope Sixtus the 4th donated a group of important ancient sculptures to the people of Rome.",
+            "coordinate": {
+                "latitude": 41.892813,
+                "longitude": 12.482282
+            },
+            "camera": {
+                "FOV": 90,
+                "zoom": 1,
+                "heading": 205,
+                "pitch": 3
+            }
+        },
+        {
+            "name": "Pergamon Museum",
+            "city": "Berlin, Germany",
+            "description": "Built between 1910 and 1930, the Pergamon Museum is subdivided into the antiquity collection, the Middle East museum, and the museum of Islamic art.",
+            "speech": "Built between 1910 and 1930, the Pergamon Museum is subdivided into the antiquity collection, the Middle East museum, and the museum of Islamic art.",
+            "coordinate": {
+                "latitude": 52.5211,
+                "longitude": 13.397098
+            },
+            "camera": {
+                "FOV": 90,
+                "zoom": 1,
+                "heading": 0,
+                "pitch": 6
             }
         },
     ]
