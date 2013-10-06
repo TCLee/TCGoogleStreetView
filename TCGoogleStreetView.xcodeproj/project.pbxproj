@@ -51,7 +51,6 @@
 		00F96339919746DFA4BCB6CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		27A5E0350E1B4D76AD19A28A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
-		812A33ED17FE69E200DC5F3F /* GMSPanoramaCameraHeading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMSPanoramaCameraHeading.h; sourceTree = "<group>"; };
 		812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaLayer+Debug.h"; sourceTree = "<group>"; };
 		812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaLayer+Debug.m"; sourceTree = "<group>"; };
 		81316BE317FA73E300A2CA17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 				814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */,
 				812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */,
 				812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */,
-				812A33ED17FE69E200DC5F3F /* GMSPanoramaCameraHeading.h */,
 			);
 			path = Lib;
 			sourceTree = "<group>";

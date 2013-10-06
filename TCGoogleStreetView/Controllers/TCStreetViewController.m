@@ -9,6 +9,10 @@
 // Asynchronously load and cache the Google Static Maps images.
 #import <SDWebImage/UIImageView+WebCache.h>
 
+// Type generic math library.
+// Refer to http://stackoverflow.com/a/1271136
+#import <tgmath.h>
+
 #import "TCStreetViewController.h"
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
@@ -125,7 +129,7 @@
     }
     
     // Show activity indicator while map image is fetched from Google's servers.
-    // When map image is ready it will smoothly fade in.
+    // When map image is ready, it will smoothly fade in.
     [self.activityIndicator startAnimating];
     self.mapImageView.alpha = 0.0f;
     
@@ -146,9 +150,8 @@
 #pragma mark - GMSPanoramaViewDelegate
 
 /**
- * Called when the panorama change was caused by invoking
- * moveToPanoramaNearCoordinate:. The coordinate passed to that method will also
- * be passed here.
+ * Called when the panorama change was caused by invoking moveToPanoramaNearCoordinate:. 
+ * The coordinate passed to that method will also be passed here.
  */
 - (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
 {
@@ -164,34 +167,24 @@
         panoramaView.alpha = 1.0f;
     }
     completion:^(BOOL finished) {
-        // Start the talking tour guide for the current museum.
-//        [self startSpeechGuideWithMuseum:museum];
+        [self startSpeechGuideWithMuseum:museum];
     }];
+    
+    // Begin camera rotation animation.
+    [self rotatePanoramaCamera:panoramaView.camera];
 }
 
-/**
- * Called repeatedly during changes to the camera on GMSPanoramaView. This may
- * not be called for all intermediate camera values, but is always called for
- * the final position of the camera after an animation or gesture.
- */
-- (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveCamera:(GMSPanoramaCamera *)camera
+- (void)panoramaView:(GMSPanoramaView *)view willMoveToPanoramaID:(NSString *)panoramaID
 {
-    // Google Maps SDK will call this delegate method even if there's no
-    // panorama data available.
-    if (!panoramaView.panorama) {
-        return;
-    }
-    
-    NSUInteger finalCameraHeading = floorf(panoramaView.camera.orientation.heading);
-    NSUInteger currentCameraHeading = floorf(camera.orientation.heading);
-    
-    // When we've reached the final position of the camera animation, we
-    // will start a new rotation animation. Camera rotation animation never
-    // stops until user takes over.
-    if (currentCameraHeading == finalCameraHeading) {
-        [panoramaView updateCamera:[GMSPanoramaCameraUpdate rotateBy:90.0f]
-                 animationDuration:13.0f];
-    }
+    // When user double taps the screen to navigate around in the panorama,
+    // we will stop the camera rotation.
+    [self stopCameraRotation];
+}
+
+- (void)panoramaView:(GMSPanoramaView *)panoramaView didTap:(CGPoint)point
+{
+    // When user taps anywhere on the screen, we will stop the camera rotation.
+    [self stopCameraRotation];
 }
 
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -204,6 +197,50 @@
 {
     UIAlertView *alertView = [UIAlertView alertWithError:error];
     [alertView show];
+}
+
+#pragma mark - GMSPanoramaCamera Animations
+
+/**
+ * Rotates the given panorama camera's heading by 360 degrees.
+ * This camera animation loops forever and can only be interrupted by
+ * the user's interaction.
+ *
+ * @note We are using Core Animation to animate the camera instead of
+ * \c GMSPanoramaView built-in animation methods. This gives us more control
+ * over each key frame of the camera animation.
+ *
+ * @param camera The \c GMSPanoramaCamera object to rotate the heading for.
+ */
+- (void)rotatePanoramaCamera:(GMSPanoramaCamera *)camera
+{
+    // The camera headings representing the key frame values in the animation.
+    // We move the camera heading by +90 degrees each time, to rotate the
+    // camera clockwise. The final camera heading will be the same as the start
+    // camera heading.
+    CGFloat currentHeading = camera.orientation.heading;
+    NSArray *cameraHeadings = @[@(currentHeading),
+                                @(currentHeading + 90.0f),
+                                @(currentHeading + 180.0f),
+                                @(currentHeading + 270.0f),
+                                @(currentHeading + 360.0f)];
+    
+    // Create the animation with the cameraHeading property key path.
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:kGMSLayerPanoramaHeadingKey];
+    animation.values = cameraHeadings;
+    animation.duration = 40.0f;
+    animation.repeatCount = HUGE_VALF;
+    
+    // Add the animation to the layer to begin the animation.
+    [self.panoramaView.layer addAnimation:animation forKey:kGMSLayerPanoramaHeadingKey];    
+}
+
+/**
+ * Stops the panorama view's camera rotation animation immediately.
+ */
+- (void)stopCameraRotation
+{
+    [self.panoramaView.layer removeAnimationForKey:kGMSLayerPanoramaHeadingKey];
 }
 
 #pragma mark - Speaking Tour Guide
@@ -222,7 +259,7 @@
     
     self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:museum.speechText];
-    utterance.rate = 0.2f; // Min = 0.0, Default = 0.5, Max = 1.0
+    utterance.rate = 0.15f; // Min = 0.0, Default = 0.5, Max = 1.0
     [self.speechSynthesizer speakUtterance:utterance];
 }
 
@@ -260,13 +297,10 @@
     // Clear the current panorama before moving to the next panorama.
     self.panoramaView.panorama = nil;
     
-    // Stop any ongoing camera animations.
-    [self.panoramaView.layer removeAllAnimations];
-    
-    // Stop the speaking tour guide immediately. We will need to prepare
-    // the speech for the next museum.
+    [self stopCameraRotation];
     [self stopSpeechGuide];
     
+    // Update view for the next (or previous) museum.
     [self updateViewWithMuseum:museum];
 }
 
