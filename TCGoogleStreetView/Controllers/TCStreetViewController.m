@@ -17,6 +17,7 @@
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
 #import "TCStaticMap.h"
+#import "TCSpeechSynthesizer.h"
 
 #import "UIAlertView+NSErrorAdditions.h"
 #import "GMSPanorama+Debug.h"
@@ -40,15 +41,23 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
 /**
- * The \c AVSpeechSynthesizer instance used for the speaking tour guide.
- * We keep a \b strong reference to the \c AVSpeechSynthesizer, so that we
- * can cancel the speech at any time.
+ * The speech synthesizer that acts as the museum tour guide.
  */
-@property (nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
+@property (nonatomic, strong, readonly) TCSpeechSynthesizer *speechSynthesizer;
 
 @end
 
 @implementation TCStreetViewController
+
+@synthesize speechSynthesizer = _speechSynthesizer;
+
+- (TCSpeechSynthesizer *)speechSynthesizer
+{
+    if (!_speechSynthesizer) {
+        _speechSynthesizer = [[TCSpeechSynthesizer alloc] init];
+    }
+    return _speechSynthesizer;
+}
 
 #pragma mark - Views
 
@@ -167,7 +176,7 @@
         panoramaView.alpha = 1.0f;
     }
     completion:^(BOOL finished) {
-        [self startSpeechGuideWithMuseum:museum];
+        [self.speechSynthesizer startSpeakingWithString:museum.speechText];
     }];
     
     // Begin camera rotation animation.
@@ -248,39 +257,7 @@
     self.panoramaView.layer.cameraHeading = [self.panoramaView.layer.presentationLayer cameraHeading];
 }
 
-#pragma mark - Speaking Tour Guide
-
-/**
- * Starts the speaking tour guide for the given museum.
- *
- * @param museum The \c TCMuseum object that contains the speech text for the speaking tour guide.
- */
-- (void)startSpeechGuideWithMuseum:(TCMuseum *)museum
-{
-    // --- Is this an Apple bug? ---
-    // Sending a stopSpeaking message does not always stop the speech.
-    // Sending a stopSpeaking message AND creating a new AVSpeechSynthesizer
-    // instance each time will stop the speech immediately. Go figure.
-    
-    self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:museum.speechText];
-    utterance.rate = 0.15f; // Min = 0.0, Default = 0.5, Max = 1.0
-    [self.speechSynthesizer speakUtterance:utterance];
-}
-
-/**
- * Stops the speaking tour guide immediately. This method is called when
- * user navigates to the next or previous museum.
- */
-- (void)stopSpeechGuide
-{
-    if (self.speechSynthesizer.isSpeaking) {
-        [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
-        self.speechSynthesizer = nil;
-    }
-}
-
-#pragma mark - Museum Collection Navigation
+#pragma mark - Museum Navigation
 
 - (IBAction)nextMuseum:(id)sender
 {
@@ -302,8 +279,8 @@
     // Clear the current panorama before moving to the next panorama.
     self.panoramaView.panorama = nil;
     
-    [self stopCameraRotation];
-    [self stopSpeechGuide];
+    [self stopCameraRotation];    
+    [self.speechSynthesizer stopSpeaking];
     
     // Update view for the next (or previous) museum.
     [self updateViewWithMuseum:museum];
