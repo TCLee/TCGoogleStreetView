@@ -13,7 +13,6 @@
 		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
 		81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */; };
 		81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 81316BEB17FAA22200A2CA17 /* MuseumTestData.json */; };
-		81316BEE17FAB13C00A2CA17 /* Temp in Resources */ = {isa = PBXBuildFile; fileRef = 81316BED17FAB13C00A2CA17 /* Temp */; };
 		81316BF117FABED700A2CA17 /* TCStaticMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BF017FABED700A2CA17 /* TCStaticMap.m */; };
 		81316BF317FAECBB00A2CA17 /* TCStaticMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */; };
 		814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCStreetViewController.m */; };
@@ -58,7 +57,6 @@
 		81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetViewTests-Info.plist"; sourceTree = "<group>"; };
 		81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumDataControllerTests.m; sourceTree = "<group>"; };
 		81316BEB17FAA22200A2CA17 /* MuseumTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MuseumTestData.json; sourceTree = "<group>"; };
-		81316BED17FAB13C00A2CA17 /* Temp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Temp; sourceTree = "<group>"; };
 		81316BEF17FABED700A2CA17 /* TCStaticMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStaticMap.h; sourceTree = "<group>"; };
 		81316BF017FABED700A2CA17 /* TCStaticMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStaticMap.m; sourceTree = "<group>"; };
 		81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStaticMapTests.m; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				8104F7C717F553EE00FA96BB /* GoogleArtProject.json */,
-				81316BED17FAB13C00A2CA17 /* Temp */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 			files = (
 				8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */,
 				814B528617F2C104000606F1 /* Main.storyboard in Resources */,
-				81316BEE17FAB13C00A2CA17 /* Temp in Resources */,
 				814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */,
 				814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */,
 			);
