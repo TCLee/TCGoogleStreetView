@@ -12,6 +12,8 @@
 
 - (id)initWithProperties:(NSDictionary *)properties
 {
+    NSParameterAssert(properties);
+    
     self = [super init];
     if (self) {
         _name = [properties[@"name"] copy];

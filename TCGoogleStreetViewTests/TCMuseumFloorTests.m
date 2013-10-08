@@ -55,4 +55,14 @@
     XCTAssertTrue([floor.camera isEqualToPanoramaCamera:expectedCamera], @"Museum floor's camera does not match properties dictionary.");
 }
 
+/**
+ * Test that \c TCMuseumFloor will thrown an exception if properties dictionary
+ * is \c nil.
+ */
+- (void)testInitWithNil
+{
+    XCTAssertThrows([[TCMuseumFloor alloc] initWithProperties:nil],
+                    @"TCMuseumFloor should not accept nil properties.");
+}
+
 @end
