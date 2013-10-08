@@ -12,6 +12,8 @@
 #import "TCStreetViewController.h"
 #import "TCMuseumDataController.h"
 
+#import "TCPanoramaLogger.h"
+
 // Replace with your own API key generated using Google APIs Console.
 static NSString * const kTCGoogleMapsAPIKey = @"AIzaSyAbmPatPdSYWzYNZip_26u3N8fH1NiBMkw";
 
@@ -20,6 +22,10 @@ static NSString * const kTCGoogleMapsAPIKey = @"AIzaSyAbmPatPdSYWzYNZip_26u3N8fH
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [GMSServices provideAPIKey:kTCGoogleMapsAPIKey];
+    
+//    TCPanoramaLogger *logger = [[TCPanoramaLogger alloc] init];
+//    [logger logCoordinatesWithPanoramaIDs:@[@"b1WOk8GtrzrJYZoDxieN2Q",
+//                                            @"QEf51Fz8_28ONq8SxSNmSw"]];
 
     // Create the data controller that manages the model objects and pass it to
     // the initial view controller.
