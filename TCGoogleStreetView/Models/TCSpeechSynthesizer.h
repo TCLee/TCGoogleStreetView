@@ -12,7 +12,7 @@
 /**
  * The \c TCSpeechSynthesizer class is a thin wrapper over the
  * \c AVSpeechSynthesizer class. This class is created to workaround
- * the issue where [AVSpeechSynthesizer stopSpeakingAtBoundary:]
+ * the issue of [AVSpeechSynthesizer stopSpeakingAtBoundary:]
  * not stopping the speech immediately.
  */
 @interface TCSpeechSynthesizer : NSObject <AVSpeechSynthesizerDelegate>
