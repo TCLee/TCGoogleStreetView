@@ -11,6 +11,9 @@
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
 
+/**
+ * Test class for \c TCMuseumDataController public methods.
+ */
 @interface TCMuseumDataControllerTests : XCTestCase
 
 @property (nonatomic, strong) TCMuseumDataController *dataController;

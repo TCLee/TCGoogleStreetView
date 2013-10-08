@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "TCMuseum.h"
-#import "GMSPanoramaCamera+Debug.h"
+#import "TCMuseumFloor.h"
 
 /**
  * Test class that contains the test methods to exercise the \b TCMuseum
@@ -34,17 +34,29 @@
 }
 
 /**
- * Test that TCMuseum is initialized properly from the properties dictionary.
+ * Test that \c TCMuseum properties is initialized properly from 
+ * a dictionary.
  */
-- (void)testInitWithProperties
+- (void)testInitWithDictionary
 {
     NSDictionary *properties = @{
         @"name": @"Museum Name",
         @"city": @"City, Country",
         @"description": @"The museum's description.",
         @"speech": @"The text to be spoken.",
-        @"coordinate": @{@"latitude": @10, @"longitude": @20},
-        @"camera": @{@"FOV": @75, @"zoom": @1, @"heading": @20, @"pitch": @10}
+        @"default_floor": @1,
+        @"floors": @[
+            @{
+                @"name": @"First Floor",
+                @"coordinate": @{@"latitude": @10, @"longitude": @20},
+                @"camera": @{@"FOV": @75, @"zoom": @1, @"heading": @20, @"pitch": @10}
+            },
+            @{
+                @"name": @"Second Floor",
+                @"coordinate": @{@"latitude": @10, @"longitude": @20},
+                @"camera": @{@"FOV": @75, @"zoom": @1, @"heading": @20, @"pitch": @10}
+            },
+        ]
     };
     TCMuseum *museum = [[TCMuseum alloc] initWithProperties:properties];
     
@@ -53,14 +65,15 @@
     XCTAssertEqualObjects(museum.city, @"City, Country", @"City was not initialized properly from dictionary.");
     XCTAssertEqualObjects(museum.text, @"The museum's description.", @"Museum's description was not initialized properly from dictionary.");
     XCTAssertEqualObjects(museum.speechText, @"The text to be spoken.", @"Speech string was not initialized properly from dictionary.");
-    XCTAssertEqual(museum.coordinate, CLLocationCoordinate2DMake(10, 20), @"Coordinate was not initialized properly from dictionary.");
-
-    GMSPanoramaCamera *panoramaCamera = [GMSPanoramaCamera cameraWithHeading:20.0f pitch:10.0f zoom:1.0f FOV:75.0f];
-    XCTAssertTrue([museum.camera isEqualToPanoramaCamera:panoramaCamera], @"GMSPanoramaCamera was not initialized properly from dictionary.");
+    
+    XCTAssertTrue(museum.defaultFloorIndex == 1, @"Default floor index was not initialized properly from dictionary.");
+    XCTAssertTrue(museum.floors.count == 2, @"The museum's number of floors does not match dictionary.");
+    XCTAssertTrue([museum.floors[0] isKindOfClass:[TCMuseumFloor class]], @"The floors array should only contain TCMuseumFloor objects.");
 }
 
 /**
- * Test that TCMuseum throws an exception if it was passed in nil as the properties dictionary.
+ * Test that TCMuseum throws an exception if \c initWithProperties:
+ * method was passed in \c nil.
  */
 - (void)testInitWithNil
 {

@@ -7,6 +7,7 @@
 //
 
 #import "TCMuseum.h"
+#import "TCMuseumFloor.h"
 
 @implementation TCMuseum
 
@@ -20,38 +21,29 @@
         _city = [properties[@"city"] copy];
         _text = [properties[@"description"] copy];
         _speechText = [properties[@"speech"] copy];
-        _coordinate = CLLocationCoordinate2DFromDictionary(properties[@"coordinate"]);
-        _camera = GMSPanoramaCameraFromDictionary(properties[@"camera"]);
+        _defaultFloorIndex = [properties[@"default_floor"] unsignedIntegerValue];
+        _floors = TCMuseumFloorsFromArrayProperty(properties[@"floors"]);
     }
     return self;
 }
 
 /**
- * Creates a \c CLLocationCoordinate2D struct from the given dictionary.
+ * Returns a new array of \c TCMuseumFloor objects from given array property.
  *
- * @param dictionary The \c NSDictionary instance containing the latitude and longitude values.
+ * @param floorsArray The \c \@"floors" property that was extracted from the properties dictionary.
  *
- * @return A new \c CLLocationCoordinate2D struct.
+ * @return A new \c NSArray holding \c TCMuseumFloor objects.
  */
-FOUNDATION_STATIC_INLINE CLLocationCoordinate2D CLLocationCoordinate2DFromDictionary(NSDictionary *dictionary)
+FOUNDATION_STATIC_INLINE NSArray *TCMuseumFloorsFromArrayProperty(NSArray *floorsArray)
 {
-    return CLLocationCoordinate2DMake([dictionary[@"latitude"] doubleValue],
-                                      [dictionary[@"longitude"] doubleValue]);
-}
-
-/**
- * Creates a \c GMSPanoramaCamera instance from the given dictionary.
- *
- * @param dictionary The \c NSDictionary instance containing the camera's properties.
- *
- * @return A new \c GMSPanoramaCamera instance.
- */
-FOUNDATION_STATIC_INLINE GMSPanoramaCamera *GMSPanoramaCameraFromDictionary(NSDictionary *dictionary)
-{
-    return [GMSPanoramaCamera cameraWithHeading:[dictionary[@"heading"] floatValue]
-                                          pitch:[dictionary[@"pitch"] floatValue]
-                                           zoom:[dictionary[@"zoom"] floatValue]
-                                            FOV:[dictionary[@"FOV"] floatValue]];
+    NSMutableArray *floors = [[NSMutableArray alloc] initWithCapacity:floorsArray.count];
+    
+    for (NSDictionary *floorProperties in floorsArray) {
+        TCMuseumFloor *floor = [[TCMuseumFloor alloc] initWithProperties:floorProperties];
+        [floors addObject:floor];
+    }
+    
+    return [floors copy];
 }
 
 @end

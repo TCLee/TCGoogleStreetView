@@ -47,6 +47,17 @@
 @property (nonatomic, strong, readonly) GMSPanoramaCamera *camera;
 
 /**
+ * The array of \c TCMuseumFloor objects describing each floor of this 
+ * museum. All museums will have at least one floor or more.
+ */
+@property (nonatomic, copy, readonly) NSArray *floors;
+
+/**
+ * The index of the default floor to be shown.
+ */
+@property (nonatomic, assign, readonly) NSUInteger defaultFloorIndex;
+
+/**
  * The static map to visually show where this museum is located.
  * 
  * The static map is represented by an image and does not allow for
@@ -58,7 +69,7 @@
  * Initializes a TCMuseum model object with the properties parsed from 
  * the JSON data.
  *
- * @param properties The dictionary containing a museum's properties
+ * @param properties The dictionary containing a museum's properties.
  * @return A TCMuseum object with its properties initialized to the values 
            in the dictionary.
  */

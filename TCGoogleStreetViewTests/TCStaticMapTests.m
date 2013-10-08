@@ -10,6 +10,9 @@
 
 #import "TCStaticMap.h"
 
+/**
+ * Test class for \c TCStaticMap public methods.
+ */
 @interface TCStaticMapTests : XCTestCase
 
 @end
