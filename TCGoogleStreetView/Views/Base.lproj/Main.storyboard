@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="154-Y1-gtc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="154-Y1-gtc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-bL-Hlr">
-                                <rect key="frame" x="20" y="638" width="300" height="366"/>
+                                <rect key="frame" x="20" y="628" width="300" height="376"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palace of Versailles " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="IEO-5r-ELs">
@@ -28,14 +28,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versailles, France" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK1-ow-2aO">
-                                        <rect key="frame" x="20" y="52" width="260" height="17"/>
+                                        <rect key="frame" x="20" y="46" width="260" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-gw-6Wc">
-                                        <rect key="frame" x="20" y="77" width="260" height="96"/>
+                                        <rect key="frame" x="20" y="79" width="260" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <string key="text">Versailles was the home of the French monarch from the time of Louis XIV to Louis XVI. The palace stands today as an icon of nobility and artistic triumph.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-sb-5lC">
-                                        <rect key="frame" x="20" y="181" width="260" height="165"/>
+                                        <rect key="frame" x="20" y="191" width="260" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -52,7 +52,7 @@
                                         </constraints>
                                     </imageView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="mGZ-Sj-ty3">
-                                        <rect key="frame" x="140" y="254" width="20" height="20"/>
+                                        <rect key="frame" x="140" y="264" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -60,16 +60,16 @@
                                 <constraints>
                                     <constraint firstItem="oK1-ow-2aO" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" id="03N-W6-xdb"/>
                                     <constraint firstItem="Fhg-sb-5lC" firstAttribute="centerX" secondItem="mGZ-Sj-ty3" secondAttribute="centerX" id="1Oc-hy-NjD"/>
-                                    <constraint firstItem="ZwX-gw-6Wc" firstAttribute="top" secondItem="oK1-ow-2aO" secondAttribute="bottom" constant="8" symbolic="YES" id="FJV-f8-Gnz"/>
+                                    <constraint firstItem="ZwX-gw-6Wc" firstAttribute="top" secondItem="oK1-ow-2aO" secondAttribute="bottom" constant="16" id="FJV-f8-Gnz"/>
                                     <constraint firstItem="Fhg-sb-5lC" firstAttribute="centerY" secondItem="mGZ-Sj-ty3" secondAttribute="centerY" constant="-0.5" id="Lnp-am-h2D"/>
                                     <constraint firstAttribute="width" constant="300" id="NPJ-ox-bok"/>
                                     <constraint firstItem="ZwX-gw-6Wc" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" symbolic="YES" id="Png-cW-hE4"/>
                                     <constraint firstAttribute="bottom" secondItem="Fhg-sb-5lC" secondAttribute="bottom" constant="20" symbolic="YES" id="UI7-gg-GWd"/>
                                     <constraint firstAttribute="trailing" secondItem="oK1-ow-2aO" secondAttribute="trailing" constant="20" symbolic="YES" id="VPE-Ic-a8A"/>
-                                    <constraint firstItem="oK1-ow-2aO" firstAttribute="top" secondItem="IEO-5r-ELs" secondAttribute="bottom" constant="8" symbolic="YES" id="Z7L-Pd-3KK"/>
+                                    <constraint firstItem="oK1-ow-2aO" firstAttribute="top" secondItem="IEO-5r-ELs" secondAttribute="bottom" constant="2" id="Z7L-Pd-3KK"/>
                                     <constraint firstItem="IEO-5r-ELs" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" symbolic="YES" id="ZXe-uX-rb9"/>
                                     <constraint firstItem="Fhg-sb-5lC" firstAttribute="leading" secondItem="XDL-bL-Hlr" secondAttribute="leading" constant="20" symbolic="YES" id="ifJ-hL-YC7"/>
-                                    <constraint firstItem="Fhg-sb-5lC" firstAttribute="top" secondItem="ZwX-gw-6Wc" secondAttribute="bottom" constant="8" symbolic="YES" id="lW8-ez-AEj"/>
+                                    <constraint firstItem="Fhg-sb-5lC" firstAttribute="top" secondItem="ZwX-gw-6Wc" secondAttribute="bottom" constant="16" id="lW8-ez-AEj"/>
                                     <constraint firstAttribute="trailing" secondItem="ZwX-gw-6Wc" secondAttribute="trailing" constant="20" symbolic="YES" id="saC-0c-Zwf"/>
                                     <constraint firstItem="IEO-5r-ELs" firstAttribute="top" secondItem="XDL-bL-Hlr" secondAttribute="top" constant="20" symbolic="YES" id="tWD-Es-Yh3"/>
                                     <constraint firstAttribute="trailing" secondItem="IEO-5r-ELs" secondAttribute="trailing" constant="20" symbolic="YES" id="vha-0h-75e"/>
