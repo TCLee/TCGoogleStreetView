@@ -28,7 +28,7 @@
 {
     NSMutableString *description = [[NSMutableString alloc] init];
     
-    [description appendString:@"  links: {\n"];
+    [description appendString:@"  links: [\n"];
     for (GMSPanoramaLink *link in self.links) {
         [description appendFormat:@"    GMSPanoramaLink <%p>\n", (void *)self];
         [description appendString:@"    {\n"];
@@ -36,7 +36,7 @@
         [description appendFormat:@"      panoramaID: %@,\n", link.panoramaID];
         [description appendString:@"    },\n"];
     }
-    [description appendString:@"  }\n"];
+    [description appendString:@"  ]\n"];
     
     return [description copy];
 }
