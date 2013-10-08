@@ -78,7 +78,23 @@
 - (void)testInitWithNil
 {
     XCTAssertThrows([[TCMuseum alloc] initWithProperties:nil],
-                    @"Should throw an exception if we pass in nil.");
+                    @"TCMuseum should not accept nil properties.");
+}
+
+/**
+ * Test that TCMuseum throws an exception if properties dictionary is missing
+ * expected keys.
+ */
+- (void)testInitWithMissingProperties
+{
+    NSDictionary *missingProperties = @{
+        @"name": @"Museum Name",
+        @"city": @"City, Country",
+        @"description": @"The museum's description.",
+    };
+    
+    XCTAssertThrows([[TCMuseum alloc] initWithProperties:missingProperties],
+                    @"TCMuseum should assert that the dictionary has all the expected properties.");
 }
 
 @end

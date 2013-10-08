@@ -5,48 +5,66 @@
             "city": "The City",
             "description": "The description.",
             "speech": "The speech string.",
-            "coordinate": {
-                "latitude": 10,
-                "longitude": 20
-            },
-            "camera": {
-                "FOV": 90,
-                "zoom": 1,
-                "heading": 20,
-                "pitch": 15
-            },
+            "default_floor": 0,
+            "floors": [
+                {
+                    "name": "G",
+                    "coordinate": {
+                        "latitude": 10,
+                        "longitude": 20
+                    },
+                    "camera": {
+                        "FOV": 90,
+                        "zoom": 1,
+                        "heading": 20,
+                        "pitch": 15
+                    }
+                }
+            ]            
         },
         {
             "name": "Second Museum",
             "city": "The City",
             "description": "The description.",
             "speech": "The speech string.",
-            "coordinate": {
-                "latitude": 10,
-                "longitude": 20
-            },
-            "camera": {
-                "FOV": 90,
-                "zoom": 1,
-                "heading": 20,
-                "pitch": 15
-            },
+            "default_floor": 0,
+            "floors": [
+                {
+                    "name": "G",
+                    "coordinate": {
+                        "latitude": 10,
+                        "longitude": 20
+                    },
+                    "camera": {
+                        "FOV": 90,
+                        "zoom": 1,
+                        "heading": 20,
+                        "pitch": 15
+                    }
+                }
+            ]
         },
         {
             "name": "Last Museum",
             "city": "The City",
             "description": "The description.",
             "speech": "The speech string.",
-            "coordinate": {
-                "latitude": 10,
-                "longitude": 20
-            },
-            "camera": {
-                "FOV": 90,
-                "zoom": 1,
-                "heading": 20,
-                "pitch": 15
-            },
+            "default_floor": 0,
+            "floors": [
+                {
+                    "name": "G",
+                    "coordinate": {
+                        "latitude": 10,
+                        "longitude": 20
+                    },
+                    "camera": {
+                        "FOV": 90,
+                        "zoom": 1,
+                        "heading": 20,
+                        "pitch": 15
+                    }
+                }
+            ]
         }
     ]
 }

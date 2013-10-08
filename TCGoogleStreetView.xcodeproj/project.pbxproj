@@ -274,10 +274,10 @@
 		81EFBA4717F1B2F100F6FCD4 /* TCGoogleStreetViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				81ED17B41803B20B00A17140 /* TCMuseumFloorTests.m */,
-				81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */,
 				81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */,
 				81E6C51817F95DCA00A93925 /* TCMuseumTests.m */,
+				81ED17B41803B20B00A17140 /* TCMuseumFloorTests.m */,
+				81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */,
 				81316BEA17FAA20A00A2CA17 /* Data */,
 				81316BE117FA73E300A2CA17 /* SupportingFiles */,
 			);
