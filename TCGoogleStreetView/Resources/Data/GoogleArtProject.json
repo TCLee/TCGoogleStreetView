@@ -101,16 +101,47 @@
 	        "city": "Rome, Italy",
 	        "description": "The Musei Capitolini are a group of art and archeological museums in Piazza del Campidoglio, on top of the Capitoline Hill in Rome, Italy. The museum is the oldest public collection of art in the world, dating back to 1471 when Pope Sixtus IV donated a group of important ancient sculptures to the people of Rome.",
 	        "speech": "The Musei Capitolini are a group of art and archeological museums in Piazza del Campidoglio, on top of the Capitoline Hill in Rome Italy. The museum is the oldest public collection of art in the world, dating back to 14 71 when Pope Sixtus the 4th donated a group of important ancient sculptures to the people of Rome.",
-            "coordinate": {
-                "latitude": 41.892859,
-                "longitude": 12.482336
-            },
-            "camera": {
-                "FOV": 90,
-                "zoom": 1,
-                "heading": 202,
-                "pitch": 2
-            }	     
+	        "floors": [
+	            {
+	                "label": "0",
+	                "coordinate": {
+	                    "latitude": 41.892859,
+	                    "longitude": 12.482336
+	                },
+	                "camera": {
+	                    "FOV": 90,
+	                    "zoom": 1,
+	                    "heading": 202,
+	                    "pitch": 2
+	                }
+	            },
+	            {
+	                "label": "1",
+	                "coordinate": {
+	                    "latitude": 41.892813,
+	                    "longitude": 12.482282
+	                },
+	                "camera": {
+	                    "FOV": 90,
+	                    "zoom": 1,
+	                    "heading": 205,
+	                    "pitch": 2
+	                }
+	            },
+	            {
+	                "label": "2",
+	                "coordinate": {
+	                    "latitude": 41.892772,
+	                    "longitude": 12.482499
+	                },
+	                "camera": {
+	                    "FOV": 90,
+	                    "zoom": 1,
+	                    "heading": 180,
+	                    "pitch": 2
+	                }
+	            },
+	        ],
 	    },
         {
             "name": "Pergamon Museum",
