@@ -8,6 +8,7 @@
 
 @import Foundation;
 
+@class TCMuseumFloor;
 @class TCStaticMap;
 
 /**
@@ -37,25 +38,26 @@
 @property (nonatomic, copy, readonly) NSString *speechText;
 
 /**
- * The exact coordinates of this museum on the map.
- */
-@property (nonatomic, assign, readonly) CLLocationCoordinate2D coordinate;
-
-/**
- * The initial camera position for the panorama view.
- */
-@property (nonatomic, strong, readonly) GMSPanoramaCamera *camera;
-
-/**
  * The array of \c TCMuseumFloor objects describing each floor of this 
  * museum. All museums will have at least one floor or more.
  */
 @property (nonatomic, copy, readonly) NSArray *floors;
 
 /**
- * The index of the default floor to be shown.
+ * The index of the default floor to be shown initially when 
+ * the museum is loaded.
+ *
+ * @see defaultFloor
  */
 @property (nonatomic, assign, readonly) NSUInteger defaultFloorIndex;
+
+/**
+ * The default floor to be shown initially when the museum is loaded.
+ * The index of this floor is equals to \c defaultFloorIndex.
+ *
+ * @see defaultFloorIndex
+ */
+@property (nonatomic, strong, readonly) TCMuseumFloor *defaultFloor;
 
 /**
  * The static map to visually show where this museum is located.

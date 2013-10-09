@@ -23,6 +23,7 @@
         _speechText = [properties[@"speech"] copy];
         _defaultFloorIndex = [properties[@"default_floor"] unsignedIntegerValue];
         _floors = TCMuseumFloorsFromArrayProperty(properties[@"floors"]);
+        _defaultFloor = _floors[_defaultFloorIndex];
     }
     return self;
 }

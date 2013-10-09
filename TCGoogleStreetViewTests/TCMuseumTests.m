@@ -67,8 +67,10 @@
     XCTAssertEqualObjects(museum.speechText, @"The text to be spoken.", @"Speech string was not initialized properly from dictionary.");
     
     XCTAssertTrue(museum.defaultFloorIndex == 1, @"Default floor index was not initialized properly from dictionary.");
+    XCTAssertTrue(museum.defaultFloor == museum.floors[museum.defaultFloorIndex], @"Default floor property should reference the same object in array.");    
     XCTAssertTrue(museum.floors.count == 2, @"The museum's number of floors does not match dictionary.");
-    XCTAssertTrue([museum.floors[0] isKindOfClass:[TCMuseumFloor class]], @"The floors array should only contain TCMuseumFloor objects.");
+    XCTAssertTrue([museum.floors[0] isKindOfClass:[TCMuseumFloor class]] && [museum.floors[1] isKindOfClass:[TCMuseumFloor class]],
+                  @"The floors array should only contain TCMuseumFloor objects.");
 }
 
 /**
