@@ -52,10 +52,7 @@
 @property (nonatomic, strong) TCMuseum *museum;
 
 /**
- * Returns the currently selected floor of the museum.
- *
- * The \c selectedFloor property will be set to the museum's \c defaultFloor
- * property when the museum is first displayed.
+ * The currently selected floor of the museum.
  */
 @property (nonatomic, strong, readonly) TCMuseumFloor *selectedFloor;
 

@@ -13,26 +13,32 @@
 // Refer to http://stackoverflow.com/a/1271136
 #import <tgmath.h>
 
+#import "UIAlertView+NSErrorAdditions.h"
+
 #import "TCStreetViewController.h"
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
+#import "TCMuseumFloor.h"
 #import "TCStaticMap.h"
 #import "TCSpeechSynthesizer.h"
-
-#import "UIAlertView+NSErrorAdditions.h"
-#import "GMSPanorama+Debug.h"
-#import "GMSPanoramaCamera+Debug.h"
-#import "GMSPanoramaLayer+Debug.h"
 
 @interface TCStreetViewController ()
 
 /**
- * A reference to the GMSPanoramaView subview for easy access.
+ * A reference to the \c GMSPanoramaView subview for easy access.
  *
- * The \c panoramaView property is a weak reference because our
- * controller's view owns (strong reference) the \c GMSPanoramaView instance.
+ * The \c panoramaView property is a \b weak reference because our
+ * controller's view owns (\b strong reference) the \c GMSPanoramaView instance.
  */
 @property (nonatomic, weak) GMSPanoramaView *panoramaView;
+
+/**
+ * A reference to the \c TCFloorPickerView subview.
+ *
+ * The \c floorPicker property is a \b weak reference because our controller's 
+ * view owns (\b strong reference) the \c TCFloorPickerView instance.
+ */
+@property (nonatomic, weak) TCFloorPickerView *floorPicker;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -41,7 +47,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
 /**
- * The speech synthesizer that acts as the museum tour guide.
+ * The speech synthesizer that acts as the museum tour guide. It will speak
+ * the museum's description text when a museum's panorama view is displayed.
  */
 @property (nonatomic, strong, readonly) TCSpeechSynthesizer *speechSynthesizer;
 
@@ -50,6 +57,8 @@
 @implementation TCStreetViewController
 
 @synthesize speechSynthesizer = _speechSynthesizer;
+
+#pragma mark - Speech Synthesizer
 
 - (TCSpeechSynthesizer *)speechSynthesizer
 {
@@ -68,8 +77,13 @@
     // We have to create the GMSPanoramaView programatically because
     // Google Maps SDK require that we call the initWithFrame: method.
     [self createPanoramaView];
+
+    // Create the floor picker view that will be used to select the floors of
+    // a museum. We are creating it programatically because we do not know
+    // how many floors each museum have at design time.
+    [self createFloorPickerView];
     
-    // Show panorama view for the first museum in the list.
+    // Show panorama view for the first museum in the collection.
     [self updateViewWithMuseum:[self.dataController firstMuseum]];
 }
 
@@ -107,13 +121,48 @@
 }
 
 /**
+ * Create the floor picker view and add it as a subview to the controller's view.
+ * The floor picker view will update accordingly to match the number of floors in
+ * the currently displayed museum.
+ */
+- (void)createFloorPickerView
+{
+    TCFloorPickerView *floorPicker = [[TCFloorPickerView alloc] initWithDelegate:self];
+    [self.view addSubview:floorPicker];
+    self.floorPicker = floorPicker;
+
+    id topGuide = self.topLayoutGuide;
+    NSDictionary *metricsDictionary = @{@"horizontalPadding": @20,
+                                        @"verticalPadding": @20};
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(topGuide, floorPicker);
+
+    // Positions the floor picker view at the Top Right corner with the given
+    // horizontal and vertical padding.
+    // The floor picker view will calculate its own size from its subviews.
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:[floorPicker]-horizontalPadding-|"
+                                             options:0
+                                             metrics:metricsDictionary
+                                               views:viewsDictionary]];
+    // Note: We're using [topGuide] and not superview '|'.
+    // If we added a constraint relationship to the superview instead,
+    // the floor picker view will end up under the navigation bar.
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-verticalPadding-[floorPicker]"
+                                             options:0
+                                             metrics:metricsDictionary
+                                               views:viewsDictionary]];
+}
+
+/**
  * Updates the views to reflect the details of the given museum model object.
  *
  * @param museum The \c TCMuseum model object containing the data for the views.
  */
 - (void)updateViewWithMuseum:(TCMuseum *)museum
 {
-    [self.panoramaView moveNearCoordinate:museum.coordinate];
+    // Update floor picker to control the floors for the new museum.
+    self.floorPicker.museum = museum;
     
     self.titleLabel.text = museum.name;
     self.cityLabel.text = museum.city;
@@ -131,7 +180,7 @@
 {
     // Create the static map for the museum, if it does not exist yet.
     if (!museum.map) {
-        museum.map = [[TCStaticMap alloc] initWithMarkerLocation:museum.coordinate
+        museum.map = [[TCStaticMap alloc] initWithMarkerLocation:museum.defaultFloor.coordinate
                                                             zoom:12
                                                             size:self.mapImageView.bounds.size
                                                            scale:[[UIScreen mainScreen] scale]];
@@ -164,11 +213,9 @@
  */
 - (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    TCMuseum *museum = [self.dataController currentMuseum];
-    
-    // Update the camera for this panorama view.
-    // Each panorama view will have their own unique camera settings.
-    panoramaView.camera = museum.camera;
+    // Each museum floor will have its own ideal camera angle.
+    TCMuseumFloor *selectedFloor = self.floorPicker.selectedFloor;
+    panoramaView.camera = selectedFloor.camera;
 
     // Fade in the panorama view.
     panoramaView.alpha = 0.0f;
@@ -176,7 +223,15 @@
         panoramaView.alpha = 1.0f;
     }
     completion:^(BOOL finished) {
-        [self.speechSynthesizer startSpeakingWithString:museum.speechText];
+        TCMuseum *museum = [self.dataController currentMuseum];
+
+        // The speech synthesizer will only speak the museum's text for the
+        // initial museum floor. If user selects another floor in the same
+        // museum, the text will not be spoken again.
+        if (museum.defaultFloor == selectedFloor) {
+            //TODO: Enable speech again later.
+//            [self.speechSynthesizer startSpeakingWithString:museum.speechText];
+        }
     }];
     
     // Begin camera rotation animation.
@@ -284,6 +339,14 @@
     
     // Update view for the next (or previous) museum.
     [self updateViewWithMuseum:museum];
+}
+
+#pragma mark - TCFloorPickerViewDelegate
+
+- (void)floorPickerView:(TCFloorPickerView *)floorPickerView didSelectFloor:(TCMuseumFloor *)floor
+{
+    // User selected a new floor. Navigate panorama view to selected floor.
+    [self.panoramaView moveNearCoordinate:floor.coordinate];
 }
 
 @end

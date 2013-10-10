@@ -21,6 +21,9 @@
  */
 @property (nonatomic, weak) UIButton *selectedButton;
 
+/**
+ * The currently selected floor of the museum.
+ */
 @property (nonatomic, strong, readwrite) TCMuseumFloor *selectedFloor;
 
 @end
@@ -47,7 +50,8 @@
 }
 
 /**
- * Initializes this view which acts as the container view for the buttons.
+ * Initializes the floor picker view which acts as the container view for 
+ * the buttons.
  */
 - (void)initializeView
 {
@@ -131,7 +135,7 @@
  *
  * @param sender The \c UIButton that was tapped.
  */
-- (IBAction)selectFloor:(id)sender
+- (void)selectFloor:(id)sender
 {
     UIButton *newSelectedButton = (UIButton *)sender;
     
@@ -223,11 +227,12 @@
     // [button0] <- First Button
 
     NSMutableString *verticalLayoutFormat =
-    [[NSMutableString alloc] initWithString:@"V:|"];
-    
-    for (UIButton *button in [self.subviews reverseObjectEnumerator]) {
+        [[NSMutableString alloc] initWithString:@"V:|"];
+
+    [self.subviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
         [verticalLayoutFormat appendFormat:@"[button%lu(buttonHeight)]", (unsigned long)index];
-    }
+    }];
+    
     [verticalLayoutFormat appendString:@"|"];
     
     [self addConstraints:
@@ -246,7 +251,8 @@
 - (void)addHorizontalConstraintsWithMetrics:(NSDictionary *)metrics
                                       views:(NSDictionary *)views
 {
-    //
+    // The view will just fit the buttons with 0 horizontal space on
+    // either side.
     
     [self.subviews enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
         NSString *horizontalLayoutFormat = [[NSString alloc] initWithFormat:
@@ -266,19 +272,49 @@
     // Ignore if we're given the same TCMuseum object.
     if (_museum == museum) { return; }
 
-    // Different museum, so update our current museum to match.
+    // A new museum, so update our current museum to match.
     _museum = museum;
 
+    [self configureViewForMuseum:_museum];
+}
+
+/**
+ * Configures this floor picker view with the given museum model object.
+ *
+ * @param museum The \c TCMuseum model object describing the museum.
+ */
+- (void)configureViewForMuseum:(TCMuseum *)museum
+{
+    // Reset floor picker to empty state before creating the buttons for
+    // new museum's floors.
+    [self resetView];
+
+    // If museum is nil, then we're done after resetting the view.
+    if (nil == museum) { return; }
+
     // Create a button for each floor in the museum.
-    [self createButtonsWithFloors:_museum.floors];
+    [self createButtonsWithFloors:museum.floors];
 
     // Add the required auto layout constraints, so that the buttons
     // are in the correct position.
     [self configureConstraints];
 
-    // When a new museum is loaded, select the museum's default floor.
+    // When a museum is first loaded, initially select museum's default floor.
     // Sent an action method with the button at default floor index.
-    [self selectFloor:self.subviews[_museum.defaultFloorIndex]];
+    [self selectFloor:self.subviews[museum.defaultFloorIndex]];
+}
+
+/**
+ * Resets the floor picker view to its empty state
+ * (i.e. no subviews and no constraints).
+ */
+- (void)resetView
+{
+    // Remove all the buttons from the floor picker view.
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+    // Remove all the auto layout constraints, since we've removed the buttons.
+    [self removeConstraints:self.constraints];
 }
 
 @end

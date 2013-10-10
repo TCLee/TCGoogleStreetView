@@ -10,12 +10,14 @@
 
 @class TCMuseumDataController;
 
+#import "TCFloorPickerView.h"
+
 /**
  * This view controller manages a GMSPanoramaView instance that displays 
  * street views of the museums.
  */
 @interface TCStreetViewController : UIViewController
-    <GMSPanoramaViewDelegate>
+    <GMSPanoramaViewDelegate, TCFloorPickerViewDelegate>
 
 /** The data controller that manages the TCMuseum model objects. */
 @property (nonatomic, strong) TCMuseumDataController *dataController;
