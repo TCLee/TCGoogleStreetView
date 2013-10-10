@@ -27,12 +27,15 @@
 @end
 
 /**
- * The floor picker control is shown whenever a museum has more than one
- * level.
+ * The floor picker control allows the user to select different floors of 
+ * a museum to view.
  *
- * @note If a museum has only one level, the floor picker control will be
- * hidden automatically. To override this behavior, set 
- * \c hidden property to \c NO.
+ * To create a floor picker control:
+ * \code
+ * TCFloorPickerView *floorPicker = 
+ *   [TCFloorPickerView alloc] initWithDelegate:self];
+ * [self.view addSubview:floorPicker];
+ * \endcode
  */
 @interface TCFloorPickerView : UIView
 
@@ -42,9 +45,11 @@
 @property (nonatomic, weak) id<TCFloorPickerViewDelegate> delegate;
 
 /**
- * Returns the museum that this floor picker was created for.
+ * The museum that this floor picker is controlling the floors for.
+ *
+ * Set it to the museum that you want the floor picker to control the floors for.
  */
-@property (nonatomic, strong, readonly) TCMuseum *museum;
+@property (nonatomic, strong) TCMuseum *museum;
 
 /**
  * Returns the currently selected floor of the museum.
@@ -55,14 +60,13 @@
 @property (nonatomic, strong, readonly) TCMuseumFloor *selectedFloor;
 
 /**
- * Initializes the floor picker control with the given museum.
- * The floor picker control can then be used to select different floors
- * in this museum.
+ * Initializes the floor picker control with the given delegate object.
+ * The delegate object will be notified of the floor picker control's events.
  *
- * @param museum The \c TCMuseum model object describing the museum.
+ * @param delegate A delegate object that conforms to \c TCFloorPickerViewDelegate protocol.
  *
- * @return An initialized \c TCFloorPickerView control.
+ * @return An initialized \c TCFloorPickerView control that can be added to a view.
  */
-- (id)initWithMuseum:(TCMuseum *)museum;
+- (id)initWithDelegate:(id<TCFloorPickerViewDelegate>)delegate;
 
 @end
