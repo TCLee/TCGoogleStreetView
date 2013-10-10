@@ -37,6 +37,8 @@
 		81EFBA4217F1B2F100F6FCD4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */; };
 		81EFBA4317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */; };
 		81EFBA4417F1B2F100F6FCD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */; };
+		81F1329518052C6A00F2B806 /* TCFloorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F1329418052C6A00F2B806 /* TCFloorPickerView.m */; };
+		81F1329818052CFA00F2B806 /* UIButton+TCMuseumFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F1329718052CFA00F2B806 /* UIButton+TCMuseumFloor.m */; };
 		A2840343F485485B921D6A03 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,10 @@
 		81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
 		81EFBA4017F1B2F100F6FCD4 /* TCGoogleStreetViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCGoogleStreetViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		81F1329318052C6A00F2B806 /* TCFloorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFloorPickerView.h; sourceTree = "<group>"; };
+		81F1329418052C6A00F2B806 /* TCFloorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFloorPickerView.m; sourceTree = "<group>"; };
+		81F1329618052CFA00F2B806 /* UIButton+TCMuseumFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TCMuseumFloor.h"; sourceTree = "<group>"; };
+		81F1329718052CFA00F2B806 /* UIButton+TCMuseumFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TCMuseumFloor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				814B527817F2B9F6000606F1 /* Main.storyboard */,
+				81F1329318052C6A00F2B806 /* TCFloorPickerView.h */,
+				81F1329418052C6A00F2B806 /* TCFloorPickerView.m */,
+				81F1329618052CFA00F2B806 /* UIButton+TCMuseumFloor.h */,
+				81F1329718052CFA00F2B806 /* UIButton+TCMuseumFloor.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,8 +470,10 @@
 				814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */,
 				814B528417F2BA24000606F1 /* main.m in Sources */,
 				81960B3E1803AAEB008AD254 /* TCMuseumFloor.m in Sources */,
+				81F1329518052C6A00F2B806 /* TCFloorPickerView.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
 				812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */,
+				81F1329818052CFA00F2B806 /* UIButton+TCMuseumFloor.m in Sources */,
 				81BC48D618025F98005384DF /* TCSpeechSynthesizer.m in Sources */,
 				819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */,
 				81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */,
