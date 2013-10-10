@@ -23,10 +23,6 @@ static NSString * const kTCGoogleMapsAPIKey = @"AIzaSyAbmPatPdSYWzYNZip_26u3N8fH
 {
     [GMSServices provideAPIKey:kTCGoogleMapsAPIKey];
     
-//    TCPanoramaLogger *logger = [[TCPanoramaLogger alloc] init];
-//    [logger logCoordinatesWithPanoramaIDs:@[@"b1WOk8GtrzrJYZoDxieN2Q",
-//                                            @"QEf51Fz8_28ONq8SxSNmSw"]];
-
     // Create the data controller that manages the model objects and pass it to
     // the initial view controller.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
