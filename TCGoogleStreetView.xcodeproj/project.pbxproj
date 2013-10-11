@@ -27,7 +27,6 @@
 		81960B3E1803AAEB008AD254 /* TCMuseumFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */; };
 		819B43851807CCAB00B7634B /* TCSpeechGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B43841807CCAB00B7634B /* TCSpeechGuide.m */; };
 		819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 819D95581803F10000A33896 /* TCPanoramaLogger.m */; };
-		81BC48D618025F98005384DF /* TCSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC48D518025F98005384DF /* TCSpeechSynthesizer.m */; };
 		81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51317F8211C00A93925 /* TCMuseum.m */; };
 		81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51617F830C500A93925 /* TCMuseumDataController.m */; };
 		81E6C51917F95DCA00A93925 /* TCMuseumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51817F95DCA00A93925 /* TCMuseumTests.m */; };
@@ -89,8 +88,6 @@
 		819B43841807CCAB00B7634B /* TCSpeechGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpeechGuide.m; sourceTree = "<group>"; };
 		819D95571803F10000A33896 /* TCPanoramaLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPanoramaLogger.h; sourceTree = "<group>"; };
 		819D95581803F10000A33896 /* TCPanoramaLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPanoramaLogger.m; sourceTree = "<group>"; };
-		81BC48D418025F98005384DF /* TCSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSpeechSynthesizer.h; sourceTree = "<group>"; };
-		81BC48D518025F98005384DF /* TCSpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpeechSynthesizer.m; sourceTree = "<group>"; };
 		81E6C51217F8211C00A93925 /* TCMuseum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseum.h; sourceTree = "<group>"; };
 		81E6C51317F8211C00A93925 /* TCMuseum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseum.m; sourceTree = "<group>"; };
 		81E6C51517F830C500A93925 /* TCMuseumDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseumDataController.h; sourceTree = "<group>"; };
@@ -167,8 +164,6 @@
 		814B527217F2B9F6000606F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81BC48D418025F98005384DF /* TCSpeechSynthesizer.h */,
-				81BC48D518025F98005384DF /* TCSpeechSynthesizer.m */,
 				81E6C51517F830C500A93925 /* TCMuseumDataController.h */,
 				81E6C51617F830C500A93925 /* TCMuseumDataController.m */,
 				81E6C51217F8211C00A93925 /* TCMuseum.h */,
@@ -486,7 +481,6 @@
 				812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */,
 				819B43851807CCAB00B7634B /* TCSpeechGuide.m in Sources */,
 				81F1329818052CFA00F2B806 /* UIButton+TCMuseumFloor.m in Sources */,
-				81BC48D618025F98005384DF /* TCSpeechSynthesizer.m in Sources */,
 				819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */,
 				81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */,
 				81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */,
