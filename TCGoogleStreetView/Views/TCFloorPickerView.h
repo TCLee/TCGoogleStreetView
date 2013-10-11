@@ -53,6 +53,9 @@
 
 /**
  * The currently selected floor of the museum.
+ *
+ * The \c selectedFloor property can only be changed by the user interacting
+ * with the floor picker control.
  */
 @property (nonatomic, strong, readonly) TCMuseumFloor *selectedFloor;
 

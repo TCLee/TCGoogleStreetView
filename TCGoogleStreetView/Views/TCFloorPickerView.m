@@ -21,10 +21,8 @@
  */
 @property (nonatomic, weak) UIButton *selectedButton;
 
-/**
- * The currently selected floor of the museum.
- */
-@property (nonatomic, strong, readwrite) TCMuseumFloor *selectedFloor;
+// Private setter
+@property (nonatomic, strong) TCMuseumFloor *selectedFloor;
 
 @end
 
