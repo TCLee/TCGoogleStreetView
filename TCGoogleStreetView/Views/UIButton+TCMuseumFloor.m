@@ -21,7 +21,7 @@ static char TCMuseumFloorPropertyKey;
 
 @implementation UIButton (TCMuseumFloor)
 
-// 
+// We cannot use @synthesize in a category implementation.
 @dynamic floor;
 
 - (TCMuseumFloor *)floor
