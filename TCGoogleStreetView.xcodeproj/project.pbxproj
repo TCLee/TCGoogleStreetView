@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DD1D30E927F40449DDF250D /* libPods-TCGoogleStreetViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */; };
 		744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
 		812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */; };
@@ -24,6 +25,7 @@
 		814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */; };
 		814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */; };
 		81960B3E1803AAEB008AD254 /* TCMuseumFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */; };
+		819B43851807CCAB00B7634B /* TCSpeechGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B43841807CCAB00B7634B /* TCSpeechGuide.m */; };
 		819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 819D95581803F10000A33896 /* TCPanoramaLogger.m */; };
 		81BC48D618025F98005384DF /* TCSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC48D518025F98005384DF /* TCSpeechSynthesizer.m */; };
 		81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51317F8211C00A93925 /* TCMuseum.m */; };
@@ -55,6 +57,8 @@
 /* Begin PBXFileReference section */
 		00F96339919746DFA4BCB6CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		27A5E0350E1B4D76AD19A28A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCGoogleStreetViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCGoogleStreetViewTests.xcconfig"; path = "Pods/Pods-TCGoogleStreetViewTests.xcconfig"; sourceTree = "<group>"; };
 		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
 		812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaLayer+Debug.h"; sourceTree = "<group>"; };
 		812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaLayer+Debug.m"; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaCamera+Debug.m"; sourceTree = "<group>"; };
 		81960B3C1803AAEB008AD254 /* TCMuseumFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseumFloor.h; sourceTree = "<group>"; };
 		81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumFloor.m; sourceTree = "<group>"; };
+		819B43831807CCAB00B7634B /* TCSpeechGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSpeechGuide.h; sourceTree = "<group>"; };
+		819B43841807CCAB00B7634B /* TCSpeechGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpeechGuide.m; sourceTree = "<group>"; };
 		819D95571803F10000A33896 /* TCPanoramaLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPanoramaLogger.h; sourceTree = "<group>"; };
 		819D95581803F10000A33896 /* TCPanoramaLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPanoramaLogger.m; sourceTree = "<group>"; };
 		81BC48D418025F98005384DF /* TCSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSpeechSynthesizer.h; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				81EFBA4417F1B2F100F6FCD4 /* UIKit.framework in Frameworks */,
 				81EFBA4317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */,
 				744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */,
+				6DD1D30E927F40449DDF250D /* libPods-TCGoogleStreetViewTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +177,8 @@
 				81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */,
 				81316BEF17FABED700A2CA17 /* TCStaticMap.h */,
 				81316BF017FABED700A2CA17 /* TCStaticMap.m */,
+				819B43831807CCAB00B7634B /* TCSpeechGuide.h */,
+				819B43841807CCAB00B7634B /* TCSpeechGuide.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 				81EFBA2117F1B2F100F6FCD4 /* Frameworks */,
 				81EFBA2017F1B2F100F6FCD4 /* Products */,
 				00F96339919746DFA4BCB6CF /* Pods.xcconfig */,
+				4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +277,7 @@
 				81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */,
 				81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */,
 				27A5E0350E1B4D76AD19A28A /* libPods.a */,
+				471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -411,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-TCGoogleStreetViewTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		249509E7445B4E94A95AE486 /* Check Pods Manifest.lock */ = {
@@ -473,6 +484,7 @@
 				81F1329518052C6A00F2B806 /* TCFloorPickerView.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
 				812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */,
+				819B43851807CCAB00B7634B /* TCSpeechGuide.m in Sources */,
 				81F1329818052CFA00F2B806 /* UIButton+TCMuseumFloor.m in Sources */,
 				81BC48D618025F98005384DF /* TCSpeechSynthesizer.m in Sources */,
 				819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */,
@@ -639,7 +651,7 @@
 		};
 		81EFBA5517F1B2F100F6FCD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00F96339919746DFA4BCB6CF /* Pods.xcconfig */;
+			baseConfigurationReference = 4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TCGoogleStreetView.app/TCGoogleStreetView";
@@ -663,7 +675,7 @@
 		};
 		81EFBA5617F1B2F100F6FCD4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00F96339919746DFA4BCB6CF /* Pods.xcconfig */;
+			baseConfigurationReference = 4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TCGoogleStreetView.app/TCGoogleStreetView";

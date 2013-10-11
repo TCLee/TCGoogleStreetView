@@ -20,6 +20,8 @@
 #import "TCMuseum.h"
 #import "TCMuseumFloor.h"
 #import "TCStaticMap.h"
+
+#import "TCSpeechGuide.h"
 #import "TCSpeechSynthesizer.h"
 
 @interface TCStreetViewController ()
@@ -40,32 +42,32 @@
  */
 @property (nonatomic, weak) TCFloorPickerView *floorPicker;
 
+/**
+ * The speech guide will speak the museum's description text when a 
+ * museum's panorama view is displayed.
+ */
+@property (nonatomic, strong, readonly) TCSpeechGuide *speechGuide;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
-/**
- * The speech synthesizer that acts as the museum tour guide. It will speak
- * the museum's description text when a museum's panorama view is displayed.
- */
-@property (nonatomic, strong, readonly) TCSpeechSynthesizer *speechSynthesizer;
-
 @end
 
 @implementation TCStreetViewController
 
-@synthesize speechSynthesizer = _speechSynthesizer;
+@synthesize speechGuide = _speechGuide;
 
-#pragma mark - Speech Synthesizer
+#pragma mark - Speech Guide
 
-- (TCSpeechSynthesizer *)speechSynthesizer
+- (TCSpeechGuide *)speechGuide
 {
-    if (!_speechSynthesizer) {
-        _speechSynthesizer = [[TCSpeechSynthesizer alloc] init];
+    if (!_speechGuide) {
+        _speechGuide = [[TCSpeechGuide alloc] init];
     }
-    return _speechSynthesizer;
+    return _speechGuide;
 }
 
 #pragma mark - Views
@@ -79,8 +81,8 @@
     [self createPanoramaView];
 
     // Create the floor picker view that will be used to select the floors of
-    // a museum. We are creating it programatically because we do not know
-    // how many floors each museum have at design time.
+    // a museum. We are creating it programatically because each museum have
+    // different number of floors.
     [self createFloorPickerView];
     
     // Show panorama view for the first museum in the collection.
@@ -102,22 +104,21 @@
     [self.view insertSubview:panoView atIndex:0];
     self.panoramaView = panoView;
     
-    // Disable this, otherwise we get auto layout constraint conflicts!
+    // Disable this, otherwise we get auto layout constraint conflicts.
     panoView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    // Add the auto layout constraints for the Panorama View.
-    // Basically, we specify zero leading, trailing, top and bottom space to the superview.
+    // The panorama view is pinned on all sides to its superview.
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(panoView);
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[panoView]-0-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[panoView]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:viewsDictionary];
-    [self.view addConstraints:horizontalConstraints];
-    [self.view addConstraints:verticalConstraints];
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[panoView]|"
+                                             options:0
+                                             metrics:nil
+                                               views:viewsDictionary]];
+    [self.view addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[panoView]|"
+                                             options:0
+                                             metrics:nil
+                                               views:viewsDictionary]];
 }
 
 /**
@@ -136,7 +137,7 @@
                                         @"verticalPadding": @20};
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(topGuide, floorPicker);
 
-    // Positions the floor picker view at the Top Right corner with the given
+    // Pin the floor picker view at the Top Right corner with the given
     // horizontal and vertical padding.
     // The floor picker view will calculate its own size from its subviews.
     [self.view addConstraints:
@@ -161,7 +162,7 @@
  */
 - (void)updateViewWithMuseum:(TCMuseum *)museum
 {
-    // Update floor picker to control the floors for the new museum.
+    // Set floor picker to control the floors for the given museum.
     self.floorPicker.museum = museum;
     
     self.titleLabel.text = museum.name;
@@ -223,15 +224,9 @@
         panoramaView.alpha = 1.0f;
     }
     completion:^(BOOL finished) {
-        TCMuseum *museum = [self.dataController currentMuseum];
-
-        // The speech synthesizer will only speak the museum's text for the
-        // initial museum floor. If user selects another floor in the same
-        // museum, the text will not be spoken again.
-        if (museum.defaultFloor == selectedFloor) {
-            //TODO: Enable speech again later.
-//            [self.speechSynthesizer startSpeakingWithString:museum.speechText];
-        }
+        // Begins speaking museum's description, once the panorama view has
+        // faded in.
+        [self.speechGuide speakForMuseum:[self.dataController currentMuseum]];
     }];
     
     // Begin camera rotation animation.
@@ -331,12 +326,17 @@
  */
 - (void)navigateToMuseum:(TCMuseum *)museum
 {
-    // Clear the current panorama before moving to the next panorama.
+    // Clear the current panorama before moving to the next museum's panorama.
     self.panoramaView.panorama = nil;
-    
-    [self stopCameraRotation];    
-    [self.speechSynthesizer stopSpeaking];
-    
+
+    // Stop the speech guide as soon as possible, otherwise the speech will
+    // carry forward to the next museum.
+    [self.speechGuide stopSpeaking];
+
+    // Stop any ongoing camera rotation animation. The camera position will be
+    // set again when next museum's panorama is ready.
+    [self stopCameraRotation];
+
     // Update view for the next (or previous) museum.
     [self updateViewWithMuseum:museum];
 }
