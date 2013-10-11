@@ -20,9 +20,7 @@
 #import "TCMuseum.h"
 #import "TCMuseumFloor.h"
 #import "TCStaticMap.h"
-
 #import "TCSpeechGuide.h"
-#import "TCSpeechSynthesizer.h"
 
 @interface TCStreetViewController ()
 
@@ -164,6 +162,9 @@
 {
     // Set floor picker to control the floors for the given museum.
     self.floorPicker.museum = museum;
+    
+    // Floor picker control is hidden for museum with only one floor.
+    self.floorPicker.hidden = museum.floors.count <= 1;
     
     self.titleLabel.text = museum.name;
     self.cityLabel.text = museum.city;
