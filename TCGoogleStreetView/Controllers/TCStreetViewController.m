@@ -162,10 +162,7 @@
 {
     // Set floor picker to control the floors for the given museum.
     self.floorPicker.museum = museum;
-    
-    // Floor picker control is hidden for museum with only one floor.
-    self.floorPicker.hidden = museum.floors.count <= 1;
-    
+
     self.titleLabel.text = museum.name;
     self.cityLabel.text = museum.city;
     self.descriptionLabel.text = museum.text;
@@ -321,7 +318,7 @@
 }
 
 /**
- * Navigates the user to the given museum.
+ * Navigates the user to the new museum.
  *
  * @param museum The \c TCMuseum model object to navigate to.
  */
@@ -331,14 +328,14 @@
     self.panoramaView.panorama = nil;
 
     // Stop the speech guide as soon as possible, otherwise the speech will
-    // carry forward to the next museum.
+    // continue onto the next museum.
     [self.speechGuide stopSpeaking];
 
     // Stop any ongoing camera rotation animation. The camera position will be
     // set again when next museum's panorama is ready.
     [self stopCameraRotation];
 
-    // Update view for the next (or previous) museum.
+    // Update view for the next museum.
     [self updateViewWithMuseum:museum];
 }
 
@@ -346,7 +343,11 @@
 
 - (void)floorPickerView:(TCFloorPickerView *)floorPickerView didSelectFloor:(TCMuseumFloor *)floor
 {
-    // User selected a new floor. Navigate panorama view to selected floor.
+    // Stop the current camera rotation animation. The next floor will have
+    // its own camera position and angle.
+    [self stopCameraRotation];
+
+    // Each museum floor has their specific street view coordinates.
     [self.panoramaView moveNearCoordinate:floor.coordinate];
 }
 

@@ -274,6 +274,10 @@
     _museum = museum;
 
     [self configureViewForMuseum:_museum];
+
+    // Floor picker control is hidden for a museum with only one floor.
+    // There's no point in allowing user to select from only one floor.
+    self.hidden = _museum.floors.count <= 1;
 }
 
 /**
