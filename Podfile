@@ -4,4 +4,9 @@ platform :ios, '7.0'
 link_with ['TCGoogleStreetView', 'TCGoogleStreetViewTests']
 
 pod 'Google-Maps-iOS-SDK', '~> 1.5.0'
-pod 'SDWebImage'
+pod 'SDWebImage', '~> 3.5'
+
+# Add OCMock for our unit test target only.
+target 'TCGoogleStreetViewTests' do
+    pod 'OCMock', '~> 2.2.1'
+end
