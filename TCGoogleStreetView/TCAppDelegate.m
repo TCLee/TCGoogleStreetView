@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Lee Tze Cheun. All rights reserved.
 //
 
+// Google Maps iOS SDK
 #import <GoogleMaps/GoogleMaps.h>
 
 #import "TCAppDelegate.h"
 #import "TCStreetViewController.h"
 #import "TCMuseumDataController.h"
-
 #import "TCPanoramaLogger.h"
 
 // Replace with your own API key generated using Google APIs Console.

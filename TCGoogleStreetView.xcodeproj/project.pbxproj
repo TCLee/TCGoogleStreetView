@@ -10,6 +10,7 @@
 		6DD1D30E927F40449DDF250D /* libPods-TCGoogleStreetViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */; };
 		744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
 		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
+		8120A490180A719900FB8921 /* TCCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8120A48F180A719900FB8921 /* TCCameraController.m */; };
 		812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */; };
 		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
 		81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */; };
@@ -59,6 +60,8 @@
 		471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCGoogleStreetViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCGoogleStreetViewTests.xcconfig"; path = "Pods/Pods-TCGoogleStreetViewTests.xcconfig"; sourceTree = "<group>"; };
 		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
+		8120A48E180A719900FB8921 /* TCCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCameraController.h; sourceTree = "<group>"; };
+		8120A48F180A719900FB8921 /* TCCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCameraController.m; sourceTree = "<group>"; };
 		812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaLayer+Debug.h"; sourceTree = "<group>"; };
 		812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaLayer+Debug.m"; sourceTree = "<group>"; };
 		81316BE317FA73E300A2CA17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 			children = (
 				814B527017F2B9F6000606F1 /* TCStreetViewController.h */,
 				814B527117F2B9F6000606F1 /* TCStreetViewController.m */,
+				8120A48E180A719900FB8921 /* TCCameraController.h */,
+				8120A48F180A719900FB8921 /* TCCameraController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */,
 				814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */,
 				814B528417F2BA24000606F1 /* main.m in Sources */,
+				8120A490180A719900FB8921 /* TCCameraController.m in Sources */,
 				81960B3E1803AAEB008AD254 /* TCMuseumFloor.m in Sources */,
 				81F1329518052C6A00F2B806 /* TCFloorPickerView.m in Sources */,
 				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,

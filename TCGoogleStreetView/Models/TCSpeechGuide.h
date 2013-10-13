@@ -26,9 +26,12 @@
 @property (nonatomic, strong, readonly) TCMuseum *museum;
 
 /**
- * Begins speaking the museum's description immediately. If speech guide is 
- * currently speaking, it will stop its current speech and begins this new one.
- *
+ * @brief 
+ * Speak the given museum's description.
+ * 
+ * @detail 
+ * If speech guide is currently speaking, it will add this request to
+ * the queue. Otherwise, it begins speaking immediately.
  * Attempting to pass in the same museum object that speech guide is
  * currently speaking, will be ignored.
  *
@@ -41,5 +44,25 @@
  * speaking, this method does nothing.
  */
 - (void)stopSpeaking;
+
+/**
+ * Pauses the current speech immediately. If speech guide is not currently 
+ * speaking, this method does nothing.
+ *
+ * To resume the speech from where it was paused, send a \c continueSpeaking
+ * message to the speech guide.
+ *
+ * @see TCSpeechGuide::continueSpeaking
+ */
+- (void)pauseSpeaking;
+
+/**
+ * Continues the speech from the point at which it left off. This method does
+ * nothing, if speech guide was not paused previously by calling 
+ * \c pauseSpeaking.
+ *
+ * @see TCSpeechGuide::pauseSpeaking
+ */
+- (void)continueSpeaking;
 
 @end

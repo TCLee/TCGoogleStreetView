@@ -16,6 +16,7 @@
 #import "UIAlertView+NSErrorAdditions.h"
 
 #import "TCStreetViewController.h"
+#import "TCCameraController.h"
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
 #import "TCMuseumFloor.h"
@@ -46,6 +47,11 @@
  */
 @property (nonatomic, strong, readonly) TCSpeechGuide *speechGuide;
 
+/**
+ * The camera controller that will control the panorama view's camera.
+ */
+@property (nonatomic, strong, readonly) TCCameraController *cameraController;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
@@ -57,6 +63,7 @@
 @implementation TCStreetViewController
 
 @synthesize speechGuide = _speechGuide;
+@synthesize cameraController = _cameraController;
 
 #pragma mark - Speech Guide
 
@@ -68,11 +75,118 @@
     return _speechGuide;
 }
 
+#pragma mark - Camera Controller
+
+- (TCCameraController *)cameraController
+{
+    if (!_cameraController) {
+        _cameraController = [[TCCameraController alloc] initWithPanoramaView:self.panoramaView];
+    }
+    return _cameraController;
+}
+
+#pragma mark - Memory Management
+
+- (void)dealloc
+{
+    // Before an object that is observing notifications is deallocated,
+    // it must tell the notification center to stop sending it notifications.
+    // Otherwise, the next notification gets sent to a non-existent object and
+    // the program crashes.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - App State Events
+
+/**
+ * Register for app state notifications, so that our view controller will
+ * be notified when the app moves into the foreground or background.
+ */
+- (void)registerForAppNotifications
+{
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationWillResignActive:)
+     name:UIApplicationWillResignActiveNotification
+     object:nil];
+
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationDidBecomeActive:)
+     name:UIApplicationDidBecomeActiveNotification
+     object:nil];
+
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationDidEnterBackground:)
+     name:UIApplicationDidEnterBackgroundNotification
+     object:nil];
+
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationWillEnterForeground:)
+     name:UIApplicationWillEnterForegroundNotification
+     object:nil];
+}
+
+/**
+ * App is about to move from active to inactive state.
+ *
+ * @param notification The \c UIApplicationWillResignActiveNotification notification object.
+ */
+- (void)applicationWillResignActive:(NSNotification *)notification
+{
+    // Pause the speech guide immediately.
+    [self.speechGuide pauseSpeaking];
+
+    // Camera animations will automatically pause when app is in inactive state.
+}
+
+/**
+ * App has moved from inactive to active state.
+ *
+ * @param notification The \c UIApplicationDidBecomeActiveNotification notification object.
+ */
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+    // Resume the speech guide from where it paused.
+    [self.speechGuide continueSpeaking];
+
+    // Camera animations will automatically resume when app has moved from
+    // inactive to active state.
+}
+
+/**
+ * App has been moved to the background.
+ *
+ * @param notification The \c UIApplicationDidEnterBackgroundNotification notification object.
+ */
+- (void)applicationDidEnterBackground:(NSNotification *)notification
+{
+    // We store the camera animation state and pause it when app has moved into
+    // the background. This will allow us to resume the camera animations later.
+    [self.cameraController pauseCameraRotation];
+}
+
+/**
+ * App is about to enter the foreground.
+ *
+ * @param notification The \c UIApplicationWillEnterForegroundNotification notification object.
+ */
+- (void)applicationWillEnterForeground:(NSNotification *)notification
+{
+    // We resume camera animations from exactly where we paused.
+    // If there was no previously paused camera animations, nothing will happen.
+    [self.cameraController resumeCameraRotation];
+}
+
 #pragma mark - Views
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self registerForAppNotifications];
     
     // We have to create the GMSPanoramaView programatically because
     // Google Maps SDK require that we call the initWithFrame: method.
@@ -206,10 +320,6 @@
 
 #pragma mark - GMSPanoramaViewDelegate
 
-/**
- * Called when the panorama change was caused by invoking moveToPanoramaNearCoordinate:. 
- * The coordinate passed to that method will also be passed here.
- */
 - (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
 {
     // Each museum floor will have its own ideal camera angle.
@@ -228,20 +338,20 @@
     }];
     
     // Begin camera rotation animation.
-    [self rotatePanoramaCamera:panoramaView.camera];
+    [self.cameraController startCameraRotation];
 }
 
 - (void)panoramaView:(GMSPanoramaView *)view willMoveToPanoramaID:(NSString *)panoramaID
 {
     // When user double taps the screen to navigate around in the panorama,
     // we will stop the camera rotation.
-    [self stopCameraRotation];
+    [self.cameraController stopCameraRotation];
 }
 
 - (void)panoramaView:(GMSPanoramaView *)panoramaView didTap:(CGPoint)point
 {
     // When user taps anywhere on the screen, we will stop the camera rotation.
-    [self stopCameraRotation];
+    [self.cameraController stopCameraRotation];
 }
 
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -254,55 +364,6 @@
 {
     UIAlertView *alertView = [UIAlertView alertWithError:error];
     [alertView show];
-}
-
-#pragma mark - GMSPanoramaCamera Animations
-
-/**
- * Rotates the given panorama camera's heading by 360 degrees.
- * This camera animation loops forever and can only be interrupted by
- * the user's interaction.
- *
- * @note We are using Core Animation to animate the camera instead of
- * \c GMSPanoramaView built-in animation methods. This gives us more control
- * over each key frame of the camera animation.
- *
- * @param camera The \c GMSPanoramaCamera object to rotate the heading for.
- */
-- (void)rotatePanoramaCamera:(GMSPanoramaCamera *)camera
-{
-    // The camera headings representing the key frame values in the animation.
-    // We move the camera heading by +90 degrees each time, to rotate the
-    // camera clockwise. The final camera heading will be the same as the start
-    // camera heading.
-    CGFloat currentHeading = camera.orientation.heading;
-    NSArray *cameraHeadings = @[@(currentHeading),
-                                @(currentHeading + 90.0f),
-                                @(currentHeading + 180.0f),
-                                @(currentHeading + 270.0f),
-                                @(currentHeading + 360.0f)];
-    
-    // Create the animation with the cameraHeading property key path.
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:kGMSLayerPanoramaHeadingKey];
-    animation.values = cameraHeadings;
-    animation.duration = 40.0f;
-    animation.repeatCount = HUGE_VALF;
-    
-    // Add the animation to the layer to begin the animation.
-    [self.panoramaView.layer addAnimation:animation forKey:kGMSLayerPanoramaHeadingKey];    
-}
-
-/**
- * Stops the panorama view's camera rotation animation immediately.
- */
-- (void)stopCameraRotation
-{
-    [self.panoramaView.layer removeAnimationForKey:kGMSLayerPanoramaHeadingKey];
-    
-    // Update the model layer's camera heading with the value from the last frame
-    // of the animation before it was stopped. If we don't do this, the camera
-    // will jump back to the model layer's camera heading.
-    self.panoramaView.layer.cameraHeading = [self.panoramaView.layer.presentationLayer cameraHeading];
 }
 
 #pragma mark - Museum Navigation
@@ -333,7 +394,7 @@
 
     // Stop any ongoing camera rotation animation. The camera position will be
     // set again when next museum's panorama is ready.
-    [self stopCameraRotation];
+    [self.cameraController stopCameraRotation];
 
     // Update view for the next museum.
     [self updateViewWithMuseum:museum];
@@ -345,7 +406,7 @@
 {
     // Stop the current camera rotation animation. The next floor will have
     // its own camera position and angle.
-    [self stopCameraRotation];
+    [self.cameraController stopCameraRotation];
 
     // Each museum floor has their specific street view coordinates.
     [self.panoramaView moveNearCoordinate:floor.coordinate];
