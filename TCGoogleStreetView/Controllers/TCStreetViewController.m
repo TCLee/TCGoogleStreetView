@@ -215,6 +215,13 @@
     // Add to the bottom of all other subviews.
     [self.view insertSubview:panoView atIndex:0];
     self.panoramaView = panoView;
+
+    // Add a pan gesture recognizer so that we can track user interacting with
+    // the panorama camera.
+    UIPanGestureRecognizer *panGestureRecognizer =
+    [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(userDidMoveCamera:)];
+    [panoView addGestureRecognizer:panGestureRecognizer];
     
     // Disable this, otherwise we get auto layout constraint conflicts.
     panoView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -364,6 +371,13 @@
 {
     UIAlertView *alertView = [UIAlertView alertWithError:error];
     [alertView show];
+}
+
+// When user uses the pan gesture to move the camera, we will stop the
+// camera rotation animation.
+- (void)userDidMoveCamera:(UIPanGestureRecognizer *)gesture
+{
+    [self.cameraController stopCameraRotation];
 }
 
 #pragma mark - Museum Navigation
