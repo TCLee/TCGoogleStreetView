@@ -80,7 +80,8 @@
 - (TCCameraController *)cameraController
 {
     if (!_cameraController) {
-        _cameraController = [[TCCameraController alloc] initWithPanoramaView:self.panoramaView];
+        _cameraController = [[TCCameraController alloc]
+                             initWithPanoramaView:self.panoramaView];
     }
     return _cameraController;
 }
@@ -216,12 +217,12 @@
     [self.view insertSubview:panoView atIndex:0];
     self.panoramaView = panoView;
 
-    // Add a pan gesture recognizer so that we can track user interacting with
-    // the panorama camera.
-    UIPanGestureRecognizer *panGestureRecognizer =
+    // Add a pan gesture recognizer to the panorama view so that we can track
+    // user's interaction with the camera.
+    UIPanGestureRecognizer *panRecognizer =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(userDidMoveCamera:)];
-    [panoView addGestureRecognizer:panGestureRecognizer];
+    [panoView addGestureRecognizer:panRecognizer];
     
     // Disable this, otherwise we get auto layout constraint conflicts.
     panoView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -325,6 +326,24 @@
     }];
 }
 
+#pragma mark - UIPanGestureRecognizer
+
+/**
+ * When user performs a pan gesture to change the panorama view's camera, we
+ * will stop our camera rotation animation.
+ *
+ * @param recognizer The \c UIPanGestureRecognizer object that send this
+ *                   action to our view controller.
+ */
+- (void)userDidMoveCamera:(UIPanGestureRecognizer *)recognizer
+{
+    // Only stop the camera rotation animation, when gesture is
+    // recognized.
+    if (UIGestureRecognizerStateRecognized == recognizer.state) {
+        [self.cameraController stopCameraRotation];
+    }
+}
+
 #pragma mark - GMSPanoramaViewDelegate
 
 - (void)panoramaView:(GMSPanoramaView *)panoramaView didMoveToPanorama:(GMSPanorama *)panorama nearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -371,13 +390,6 @@
 {
     UIAlertView *alertView = [UIAlertView alertWithError:error];
     [alertView show];
-}
-
-// When user uses the pan gesture to move the camera, we will stop the
-// camera rotation animation.
-- (void)userDidMoveCamera:(UIPanGestureRecognizer *)gesture
-{
-    [self.cameraController stopCameraRotation];
 }
 
 #pragma mark - Museum Navigation
