@@ -90,10 +90,9 @@
 
 - (void)dealloc
 {
-    // Before an object that is observing notifications is deallocated,
-    // it must tell the notification center to stop sending it notifications.
-    // Otherwise, the next notification gets sent to a non-existent object and
-    // the program crashes.
+    // Before we're deallocated, we must tell notification center to stop
+    // sending us notifications. Otherwise, it will send the next notification
+    // to a non-existent object and the program crashes.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -105,18 +104,6 @@
  */
 - (void)registerForAppNotifications
 {
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(applicationWillResignActive:)
-     name:UIApplicationWillResignActiveNotification
-     object:nil];
-
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(applicationDidBecomeActive:)
-     name:UIApplicationDidBecomeActiveNotification
-     object:nil];
-
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(applicationDidEnterBackground:)
@@ -131,39 +118,15 @@
 }
 
 /**
- * App is about to move from active to inactive state.
- *
- * @param notification The \c UIApplicationWillResignActiveNotification notification object.
- */
-- (void)applicationWillResignActive:(NSNotification *)notification
-{
-    // Pause the speech guide immediately.
-    [self.speechGuide pauseSpeaking];
-
-    // Camera animations will automatically pause when app is in inactive state.
-}
-
-/**
- * App has moved from inactive to active state.
- *
- * @param notification The \c UIApplicationDidBecomeActiveNotification notification object.
- */
-- (void)applicationDidBecomeActive:(NSNotification *)notification
-{
-    // Resume the speech guide from where it paused.
-    [self.speechGuide continueSpeaking];
-
-    // Camera animations will automatically resume when app has moved from
-    // inactive to active state.
-}
-
-/**
  * App has been moved to the background.
  *
  * @param notification The \c UIApplicationDidEnterBackgroundNotification notification object.
  */
 - (void)applicationDidEnterBackground:(NSNotification *)notification
 {
+    // Pause the speech guide immediately.
+    [self.speechGuide pauseSpeaking];
+
     // We store the camera animation state and pause it when app has moved into
     // the background. This will allow us to resume the camera animations later.
     [self.cameraController pauseCameraRotation];
@@ -176,8 +139,10 @@
  */
 - (void)applicationWillEnterForeground:(NSNotification *)notification
 {
+    // Continue speech guide from where she paused talking.
+    [self.speechGuide continueSpeaking];
+
     // We resume camera animations from exactly where we paused.
-    // If there was no previously paused camera animations, nothing will happen.
     [self.cameraController resumeCameraRotation];
 }
 
