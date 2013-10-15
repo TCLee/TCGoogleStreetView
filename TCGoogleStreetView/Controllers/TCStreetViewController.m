@@ -17,6 +17,7 @@
 
 #import "TCStreetViewController.h"
 #import "TCCameraController.h"
+#import "TCTouchGestureRecognizer.h"
 #import "TCMuseumDataController.h"
 #import "TCMuseum.h"
 #import "TCMuseumFloor.h"
@@ -182,43 +183,16 @@
     [self.view insertSubview:panoView atIndex:0];
     self.panoramaView = panoView;
 
-    // Add gesture recognizers to the panorama view, so we can detect user
-    // gestures and stop the camera animation.
-    [self setupGesturesForPanoramaView:panoView];
+    // When user touches the panorama view, we will stop the camera animation.
+    // This is to prevent the camera animation from getting in the way of the user.
+    TCTouchGestureRecognizer *touchRecognizer =
+        [[TCTouchGestureRecognizer alloc] initWithTarget:self
+                                                  action:@selector(stopCameraAnimationOnGesture:)];
+    touchRecognizer.delegate = self;
+    [panoView addGestureRecognizer:touchRecognizer];
 
     // Pin the panorama view on all sides to the superview.
     [self setupConstraintsForPanoramaView:panoView];
-}
-
-/**
- * Adds a tap, pinch and pan gesture recognizer to the panorama view.
- *
- * When user performs any of these gestures to control the panorama's camera,
- * we will stop our camera animation and give full control to the user.
- */
-- (void)setupGesturesForPanoramaView:(GMSPanoramaView *)panoView
-{
-    // Single Tap anywhere on the panorama view.
-    // Double Tap to navigate around in the panorama.
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
-                                             initWithTarget:self
-                                             action:@selector(stopCameraAnimationOnGesture:)];
-    tapRecognizer.delegate = self;
-    [panoView addGestureRecognizer:tapRecognizer];
-
-    // Pinch to zoom camera in or out.
-    UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc]
-                                                 initWithTarget:self
-                                                 action:@selector(stopCameraAnimationOnGesture:)];
-    pinchRecognizer.delegate = self;
-    [panoView addGestureRecognizer:pinchRecognizer];
-
-    // Pan or drag to move camera's orientation.
-    UIPanGestureRecognizer *panRecognizer =
-    [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(stopCameraAnimationOnGesture:)];
-    panRecognizer.delegate = self;
-    [panoView addGestureRecognizer:panRecognizer];
 }
 
 /**
@@ -342,19 +316,14 @@
  */
 - (void)stopCameraAnimationOnGesture:(UIGestureRecognizer *)gesture
 {
-    // For continuous gestures such as Pan or Pinch, as soon as they are first
-    // recognized (UIGestureRecognizerStateBegan), we will stop the camera
-    // animation immediately. If we wait until UIGestureRecognizerStateEnded,
+    // For continuous gestures, as soon as they are first recognized
+    // (UIGestureRecognizerStateBegan), we will stop the camera animation
+    // immediately. If we wait until UIGestureRecognizerStateEnded,
     // the camera animation will still be running while user attempts to
     // manipulate the camera.
 
-    if (UIGestureRecognizerStateBegan == gesture.state ||
-        UIGestureRecognizerStateEnded == gesture.state) {
-
+    if (gesture.state == UIGestureRecognizerStateBegan) {
         [self.cameraController stopCameraRotation];
-
-        NSLog(@"\n\n%s\n%@\n%@\n\n",
-              __PRETTY_FUNCTION__, gesture, self.panoramaView.camera);
     }
 }
 
