@@ -1,18 +1,15 @@
 PODS:
   - Google-Maps-iOS-SDK (1.5.0)
-  - OCMock (2.2.1)
   - SDWebImage (3.5):
     - SDWebImage/Core
   - SDWebImage/Core (3.5)
 
 DEPENDENCIES:
   - Google-Maps-iOS-SDK (~> 1.5.0)
-  - OCMock (~> 2.2.1)
   - SDWebImage (~> 3.5)
 
 SPEC CHECKSUMS:
   Google-Maps-iOS-SDK: a7ae159dce2959927aeec2ebae1765f3b64e20b4
-  OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   SDWebImage: f1a72472f8a2d54445f1fedafe2090593d9caf7f
 
 COCOAPODS: 0.26.2
