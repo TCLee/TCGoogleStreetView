@@ -178,28 +178,68 @@
     panoView.streetNamesHidden = YES;
     panoView.delegate = self;
     
-    // Add to the bottom of all other subviews.
+    // Add panorama view below all the other subviews.
     [self.view insertSubview:panoView atIndex:0];
     self.panoramaView = panoView;
 
-    // Add a pan gesture recognizer to the panorama view so that we can track
-    // user's interaction with the camera.
+    // Add gesture recognizers to the panorama view, so we can detect user
+    // gestures and stop the camera animation.
+    [self setupGesturesForPanoramaView:panoView];
+
+    // Pin the panorama view on all sides to the superview.
+    [self setupConstraintsForPanoramaView:panoView];
+}
+
+/**
+ * Adds a tap, pinch and pan gesture recognizer to the panorama view.
+ *
+ * When user performs any of these gestures to control the panorama's camera,
+ * we will stop our camera animation and give full control to the user.
+ */
+- (void)setupGesturesForPanoramaView:(GMSPanoramaView *)panoView
+{
+    // Single Tap anywhere on the panorama view.
+    // Double Tap to navigate around in the panorama.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self
+                                             action:@selector(stopCameraAnimationOnGesture:)];
+    tapRecognizer.delegate = self;
+    [panoView addGestureRecognizer:tapRecognizer];
+
+    // Pinch to zoom camera in or out.
+    UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc]
+                                                 initWithTarget:self
+                                                 action:@selector(stopCameraAnimationOnGesture:)];
+    pinchRecognizer.delegate = self;
+    [panoView addGestureRecognizer:pinchRecognizer];
+
+    // Pan or drag to move camera's orientation.
     UIPanGestureRecognizer *panRecognizer =
     [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(userDidMoveCamera:)];
+                                            action:@selector(stopCameraAnimationOnGesture:)];
+    panRecognizer.delegate = self;
     [panoView addGestureRecognizer:panRecognizer];
-    
+}
+
+/**
+ * Create the layout constraints to pin the given panorama view on all sides 
+ * to its superview.
+ *
+ * @param panoView The \c panorama view to setup the layout constraints for.
+ */
+- (void)setupConstraintsForPanoramaView:(GMSPanoramaView *)panoView
+{
     // Disable this, otherwise we get auto layout constraint conflicts.
     panoView.translatesAutoresizingMaskIntoConstraints = NO;
-    
+
     // The panorama view is pinned on all sides to its superview.
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(panoView);
-    [self.view addConstraints:
+    [panoView.superview addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[panoView]|"
                                              options:0
                                              metrics:nil
                                                views:viewsDictionary]];
-    [self.view addConstraints:
+    [panoView.superview addConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[panoView]|"
                                              options:0
                                              metrics:nil
@@ -291,22 +331,39 @@
     }];
 }
 
-#pragma mark - UIPanGestureRecognizer
+#pragma mark - Panorama Camera Gestures
 
 /**
- * When user performs a pan gesture to change the panorama view's camera, we
- * will stop our camera rotation animation.
+ * Stops the camera rotation animation when we recognize user's
+ * gestures to manipulate the camera.
  *
- * @param recognizer The \c UIPanGestureRecognizer object that send this
- *                   action to our view controller.
+ * @param gesture The \c UIGestureRecognizer object that send this
+ *                action to our view controller.
  */
-- (void)userDidMoveCamera:(UIPanGestureRecognizer *)recognizer
+- (void)stopCameraAnimationOnGesture:(UIGestureRecognizer *)gesture
 {
-    // Only stop the camera rotation animation, when gesture is
-    // recognized.
-    if (UIGestureRecognizerStateRecognized == recognizer.state) {
+    // For continuous gestures such as Pan or Pinch, as soon as they are first
+    // recognized (UIGestureRecognizerStateBegan), we will stop the camera
+    // animation immediately. If we wait until UIGestureRecognizerStateEnded,
+    // the camera animation will still be running while user attempts to
+    // manipulate the camera.
+
+    if (UIGestureRecognizerStateBegan == gesture.state ||
+        UIGestureRecognizerStateEnded == gesture.state) {
+
         [self.cameraController stopCameraRotation];
+
+        NSLog(@"\n\n%s\n%@\n%@\n\n",
+              __PRETTY_FUNCTION__, gesture, self.panoramaView.camera);
     }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    // Must return YES to allow simultaneous gesture recognition.
+    // Otherwise, our gestures will interfere with GMSPanoramaView's
+    // built-in gestures.
+    return YES;
 }
 
 #pragma mark - GMSPanoramaViewDelegate
@@ -330,19 +387,6 @@
     
     // Begin camera rotation animation.
     [self.cameraController startCameraRotation];
-}
-
-- (void)panoramaView:(GMSPanoramaView *)view willMoveToPanoramaID:(NSString *)panoramaID
-{
-    // When user double taps the screen to navigate around in the panorama,
-    // we will stop the camera rotation.
-    [self.cameraController stopCameraRotation];
-}
-
-- (void)panoramaView:(GMSPanoramaView *)panoramaView didTap:(CGPoint)point
-{
-    // When user taps anywhere on the screen, we will stop the camera rotation.
-    [self.cameraController stopCameraRotation];
 }
 
 - (void) panoramaView:(GMSPanoramaView *)view error:(NSError *)error onMoveNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -399,7 +443,7 @@
     // its own camera position and angle.
     [self.cameraController stopCameraRotation];
 
-    // Each museum floor has their specific street view coordinates.
+    // Each museum floor have their specific street view coordinates.
     [self.panoramaView moveNearCoordinate:floor.coordinate];
 }
 

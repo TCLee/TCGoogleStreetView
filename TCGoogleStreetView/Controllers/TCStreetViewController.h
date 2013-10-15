@@ -17,7 +17,7 @@
  * street views of the museums.
  */
 @interface TCStreetViewController : UIViewController
-    <GMSPanoramaViewDelegate, TCFloorPickerViewDelegate>
+    <GMSPanoramaViewDelegate, TCFloorPickerViewDelegate, UIGestureRecognizerDelegate>
 
 /** The data controller that manages the TCMuseum model objects. */
 @property (nonatomic, strong) TCMuseumDataController *dataController;
