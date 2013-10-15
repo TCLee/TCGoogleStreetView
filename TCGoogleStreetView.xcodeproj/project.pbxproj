@@ -1,735 +1,1980 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		6DD1D30E927F40449DDF250D /* libPods-TCGoogleStreetViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */; };
-		744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
-		8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */ = {isa = PBXBuildFile; fileRef = 8104F7C717F553EE00FA96BB /* GoogleArtProject.json */; };
-		8120A490180A719900FB8921 /* TCCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8120A48F180A719900FB8921 /* TCCameraController.m */; };
-		8120A493180CEE4700FB8921 /* TCTouchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8120A492180CEE4700FB8921 /* TCTouchGestureRecognizer.m */; };
-		812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */; };
-		81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81316BE217FA73E300A2CA17 /* InfoPlist.strings */; };
-		81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */; };
-		81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 81316BEB17FAA22200A2CA17 /* MuseumTestData.json */; };
-		81316BF117FABED700A2CA17 /* TCStaticMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BF017FABED700A2CA17 /* TCStaticMap.m */; };
-		81316BF317FAECBB00A2CA17 /* TCStaticMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */; };
-		814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B527117F2B9F6000606F1 /* TCStreetViewController.m */; };
-		814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B527517F2B9F6000606F1 /* Images.xcassets */; };
-		814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 814B527E17F2BA24000606F1 /* InfoPlist.strings */; };
-		814B528417F2BA24000606F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528017F2BA24000606F1 /* main.m */; };
-		814B528617F2C104000606F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B527817F2B9F6000606F1 /* Main.storyboard */; };
-		814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */; };
-		814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */; };
-		814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */; };
-		81960B3E1803AAEB008AD254 /* TCMuseumFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */; };
-		819B43851807CCAB00B7634B /* TCSpeechGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B43841807CCAB00B7634B /* TCSpeechGuide.m */; };
-		819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 819D95581803F10000A33896 /* TCPanoramaLogger.m */; };
-		81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51317F8211C00A93925 /* TCMuseum.m */; };
-		81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51617F830C500A93925 /* TCMuseumDataController.m */; };
-		81E6C51917F95DCA00A93925 /* TCMuseumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E6C51817F95DCA00A93925 /* TCMuseumTests.m */; };
-		81ED17B51803B20B00A17140 /* TCMuseumFloorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81ED17B41803B20B00A17140 /* TCMuseumFloorTests.m */; };
-		81EFBA2317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */; };
-		81EFBA2517F1B2F100F6FCD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */; };
-		81EFBA2717F1B2F100F6FCD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */; };
-		81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */; };
-		81EFBA4217F1B2F100F6FCD4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */; };
-		81EFBA4317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */; };
-		81EFBA4417F1B2F100F6FCD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */; };
-		81F1329518052C6A00F2B806 /* TCFloorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F1329418052C6A00F2B806 /* TCFloorPickerView.m */; };
-		81F1329818052CFA00F2B806 /* UIButton+TCMuseumFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F1329718052CFA00F2B806 /* UIButton+TCMuseumFloor.m */; };
-		A2840343F485485B921D6A03 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A5E0350E1B4D76AD19A28A /* libPods.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		81EFBA4517F1B2F100F6FCD4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 81EFBA1717F1B2F100F6FCD4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81EFBA1E17F1B2F100F6FCD4;
-			remoteInfo = TCGoogleStreetView;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		00F96339919746DFA4BCB6CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		27A5E0350E1B4D76AD19A28A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCGoogleStreetViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCGoogleStreetViewTests.xcconfig"; path = "Pods/Pods-TCGoogleStreetViewTests.xcconfig"; sourceTree = "<group>"; };
-		8104F7C717F553EE00FA96BB /* GoogleArtProject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleArtProject.json; sourceTree = "<group>"; };
-		8120A48E180A719900FB8921 /* TCCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCameraController.h; sourceTree = "<group>"; };
-		8120A48F180A719900FB8921 /* TCCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCameraController.m; sourceTree = "<group>"; };
-		8120A491180CEE4700FB8921 /* TCTouchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTouchGestureRecognizer.h; sourceTree = "<group>"; };
-		8120A492180CEE4700FB8921 /* TCTouchGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTouchGestureRecognizer.m; sourceTree = "<group>"; };
-		812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaLayer+Debug.h"; sourceTree = "<group>"; };
-		812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaLayer+Debug.m"; sourceTree = "<group>"; };
-		81316BE317FA73E300A2CA17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetViewTests-Info.plist"; sourceTree = "<group>"; };
-		81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumDataControllerTests.m; sourceTree = "<group>"; };
-		81316BEB17FAA22200A2CA17 /* MuseumTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MuseumTestData.json; sourceTree = "<group>"; };
-		81316BEF17FABED700A2CA17 /* TCStaticMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStaticMap.h; sourceTree = "<group>"; };
-		81316BF017FABED700A2CA17 /* TCStaticMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStaticMap.m; sourceTree = "<group>"; };
-		81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStaticMapTests.m; sourceTree = "<group>"; };
-		814B527017F2B9F6000606F1 /* TCStreetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStreetViewController.h; sourceTree = "<group>"; };
-		814B527117F2B9F6000606F1 /* TCStreetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStreetViewController.m; sourceTree = "<group>"; };
-		814B527517F2B9F6000606F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		814B527917F2B9F6000606F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		814B527F17F2BA24000606F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		814B528017F2BA24000606F1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TCGoogleStreetView-Info.plist"; sourceTree = "<group>"; };
-		814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TCGoogleStreetView-Prefix.pch"; sourceTree = "<group>"; };
-		814B528817F2C951000606F1 /* UIAlertView+NSErrorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+NSErrorAdditions.h"; sourceTree = "<group>"; };
-		814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NSErrorAdditions.m"; sourceTree = "<group>"; };
-		814B528B17F3D65B000606F1 /* GMSPanorama+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanorama+Debug.h"; sourceTree = "<group>"; };
-		814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanorama+Debug.m"; sourceTree = "<group>"; };
-		814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSPanoramaCamera+Debug.h"; sourceTree = "<group>"; };
-		814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMSPanoramaCamera+Debug.m"; sourceTree = "<group>"; };
-		81960B3C1803AAEB008AD254 /* TCMuseumFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseumFloor.h; sourceTree = "<group>"; };
-		81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumFloor.m; sourceTree = "<group>"; };
-		819B43831807CCAB00B7634B /* TCSpeechGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSpeechGuide.h; sourceTree = "<group>"; };
-		819B43841807CCAB00B7634B /* TCSpeechGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpeechGuide.m; sourceTree = "<group>"; };
-		819D95571803F10000A33896 /* TCPanoramaLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPanoramaLogger.h; sourceTree = "<group>"; };
-		819D95581803F10000A33896 /* TCPanoramaLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPanoramaLogger.m; sourceTree = "<group>"; };
-		81E6C51217F8211C00A93925 /* TCMuseum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseum.h; sourceTree = "<group>"; };
-		81E6C51317F8211C00A93925 /* TCMuseum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseum.m; sourceTree = "<group>"; };
-		81E6C51517F830C500A93925 /* TCMuseumDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMuseumDataController.h; sourceTree = "<group>"; };
-		81E6C51617F830C500A93925 /* TCMuseumDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumDataController.m; sourceTree = "<group>"; };
-		81E6C51817F95DCA00A93925 /* TCMuseumTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumTests.m; sourceTree = "<group>"; };
-		81ED17B41803B20B00A17140 /* TCMuseumFloorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMuseumFloorTests.m; sourceTree = "<group>"; };
-		81EFBA1F17F1B2F100F6FCD4 /* TCGoogleStreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCGoogleStreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		81EFBA3117F1B2F100F6FCD4 /* TCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
-		81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
-		81EFBA4017F1B2F100F6FCD4 /* TCGoogleStreetViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCGoogleStreetViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		81F1329318052C6A00F2B806 /* TCFloorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCFloorPickerView.h; sourceTree = "<group>"; };
-		81F1329418052C6A00F2B806 /* TCFloorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCFloorPickerView.m; sourceTree = "<group>"; };
-		81F1329618052CFA00F2B806 /* UIButton+TCMuseumFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TCMuseumFloor.h"; sourceTree = "<group>"; };
-		81F1329718052CFA00F2B806 /* UIButton+TCMuseumFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TCMuseumFloor.m"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		81EFBA1C17F1B2F100F6FCD4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81EFBA2517F1B2F100F6FCD4 /* CoreGraphics.framework in Frameworks */,
-				81EFBA2717F1B2F100F6FCD4 /* UIKit.framework in Frameworks */,
-				81EFBA2317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */,
-				A2840343F485485B921D6A03 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81EFBA3D17F1B2F100F6FCD4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81EFBA4217F1B2F100F6FCD4 /* XCTest.framework in Frameworks */,
-				81EFBA4417F1B2F100F6FCD4 /* UIKit.framework in Frameworks */,
-				81EFBA4317F1B2F100F6FCD4 /* Foundation.framework in Frameworks */,
-				744E94EBC1AC48DD85773AFF /* libPods.a in Frameworks */,
-				6DD1D30E927F40449DDF250D /* libPods-TCGoogleStreetViewTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		81316BE117FA73E300A2CA17 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				81316BE217FA73E300A2CA17 /* InfoPlist.strings */,
-				81316BE417FA73E300A2CA17 /* TCGoogleStreetViewTests-Info.plist */,
-			);
-			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		81316BEA17FAA20A00A2CA17 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				81316BEB17FAA22200A2CA17 /* MuseumTestData.json */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		814B526F17F2B9F6000606F1 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				814B527017F2B9F6000606F1 /* TCStreetViewController.h */,
-				814B527117F2B9F6000606F1 /* TCStreetViewController.m */,
-				8120A48E180A719900FB8921 /* TCCameraController.h */,
-				8120A48F180A719900FB8921 /* TCCameraController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		814B527217F2B9F6000606F1 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				81E6C51517F830C500A93925 /* TCMuseumDataController.h */,
-				81E6C51617F830C500A93925 /* TCMuseumDataController.m */,
-				81E6C51217F8211C00A93925 /* TCMuseum.h */,
-				81E6C51317F8211C00A93925 /* TCMuseum.m */,
-				81960B3C1803AAEB008AD254 /* TCMuseumFloor.h */,
-				81960B3D1803AAEB008AD254 /* TCMuseumFloor.m */,
-				81316BEF17FABED700A2CA17 /* TCStaticMap.h */,
-				81316BF017FABED700A2CA17 /* TCStaticMap.m */,
-				819B43831807CCAB00B7634B /* TCSpeechGuide.h */,
-				819B43841807CCAB00B7634B /* TCSpeechGuide.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		814B527317F2B9F6000606F1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				814B527417F2B9F6000606F1 /* Assets */,
-				814B527617F2B9F6000606F1 /* Data */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		814B527417F2B9F6000606F1 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				814B527517F2B9F6000606F1 /* Images.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		814B527617F2B9F6000606F1 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				8104F7C717F553EE00FA96BB /* GoogleArtProject.json */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		814B527717F2B9F6000606F1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				814B527817F2B9F6000606F1 /* Main.storyboard */,
-				8120A491180CEE4700FB8921 /* TCTouchGestureRecognizer.h */,
-				8120A492180CEE4700FB8921 /* TCTouchGestureRecognizer.m */,
-				81F1329318052C6A00F2B806 /* TCFloorPickerView.h */,
-				81F1329418052C6A00F2B806 /* TCFloorPickerView.m */,
-				81F1329618052CFA00F2B806 /* UIButton+TCMuseumFloor.h */,
-				81F1329718052CFA00F2B806 /* UIButton+TCMuseumFloor.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		814B527D17F2BA24000606F1 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				814B527E17F2BA24000606F1 /* InfoPlist.strings */,
-				814B528017F2BA24000606F1 /* main.m */,
-				814B528117F2BA24000606F1 /* TCGoogleStreetView-Info.plist */,
-				814B528217F2BA24000606F1 /* TCGoogleStreetView-Prefix.pch */,
-			);
-			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		814B528717F2C902000606F1 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				814B528817F2C951000606F1 /* UIAlertView+NSErrorAdditions.h */,
-				814B528917F2C951000606F1 /* UIAlertView+NSErrorAdditions.m */,
-				814B528B17F3D65B000606F1 /* GMSPanorama+Debug.h */,
-				814B528C17F3D65B000606F1 /* GMSPanorama+Debug.m */,
-				814B528E17F3E863000606F1 /* GMSPanoramaCamera+Debug.h */,
-				814B528F17F3E863000606F1 /* GMSPanoramaCamera+Debug.m */,
-				812A33F217FEC06300DC5F3F /* GMSPanoramaLayer+Debug.h */,
-				812A33F317FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m */,
-				819D95571803F10000A33896 /* TCPanoramaLogger.h */,
-				819D95581803F10000A33896 /* TCPanoramaLogger.m */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		81EFBA1617F1B2F100F6FCD4 = {
-			isa = PBXGroup;
-			children = (
-				81EFBA2817F1B2F100F6FCD4 /* TCGoogleStreetView */,
-				81EFBA4717F1B2F100F6FCD4 /* TCGoogleStreetViewTests */,
-				81EFBA2117F1B2F100F6FCD4 /* Frameworks */,
-				81EFBA2017F1B2F100F6FCD4 /* Products */,
-				00F96339919746DFA4BCB6CF /* Pods.xcconfig */,
-				4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */,
-			);
-			sourceTree = "<group>";
-		};
-		81EFBA2017F1B2F100F6FCD4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				81EFBA1F17F1B2F100F6FCD4 /* TCGoogleStreetView.app */,
-				81EFBA4017F1B2F100F6FCD4 /* TCGoogleStreetViewTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		81EFBA2117F1B2F100F6FCD4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				81EFBA2217F1B2F100F6FCD4 /* Foundation.framework */,
-				81EFBA2417F1B2F100F6FCD4 /* CoreGraphics.framework */,
-				81EFBA2617F1B2F100F6FCD4 /* UIKit.framework */,
-				81EFBA4117F1B2F100F6FCD4 /* XCTest.framework */,
-				27A5E0350E1B4D76AD19A28A /* libPods.a */,
-				471159A19850400C9F0B07AB /* libPods-TCGoogleStreetViewTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		81EFBA2817F1B2F100F6FCD4 /* TCGoogleStreetView */ = {
-			isa = PBXGroup;
-			children = (
-				81EFBA3117F1B2F100F6FCD4 /* TCAppDelegate.h */,
-				81EFBA3217F1B2F100F6FCD4 /* TCAppDelegate.m */,
-				814B528717F2C902000606F1 /* Lib */,
-				814B527217F2B9F6000606F1 /* Models */,
-				814B526F17F2B9F6000606F1 /* Controllers */,
-				814B527717F2B9F6000606F1 /* Views */,
-				814B527317F2B9F6000606F1 /* Resources */,
-				814B527D17F2BA24000606F1 /* SupportingFiles */,
-			);
-			path = TCGoogleStreetView;
-			sourceTree = "<group>";
-		};
-		81EFBA4717F1B2F100F6FCD4 /* TCGoogleStreetViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				81316BE817FA922300A2CA17 /* TCMuseumDataControllerTests.m */,
-				81E6C51817F95DCA00A93925 /* TCMuseumTests.m */,
-				81ED17B41803B20B00A17140 /* TCMuseumFloorTests.m */,
-				81316BF217FAECBB00A2CA17 /* TCStaticMapTests.m */,
-				81316BEA17FAA20A00A2CA17 /* Data */,
-				81316BE117FA73E300A2CA17 /* SupportingFiles */,
-			);
-			path = TCGoogleStreetViewTests;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		81EFBA1E17F1B2F100F6FCD4 /* TCGoogleStreetView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81EFBA5117F1B2F100F6FCD4 /* Build configuration list for PBXNativeTarget "TCGoogleStreetView" */;
-			buildPhases = (
-				8557B0B79D9C491689AB964B /* Check Pods Manifest.lock */,
-				81EFBA1B17F1B2F100F6FCD4 /* Sources */,
-				81EFBA1C17F1B2F100F6FCD4 /* Frameworks */,
-				81EFBA1D17F1B2F100F6FCD4 /* Resources */,
-				EBEE1BA1B61D4BE98A64FF2E /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TCGoogleStreetView;
-			productName = TCGoogleStreetView;
-			productReference = 81EFBA1F17F1B2F100F6FCD4 /* TCGoogleStreetView.app */;
-			productType = "com.apple.product-type.application";
-		};
-		81EFBA3F17F1B2F100F6FCD4 /* TCGoogleStreetViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81EFBA5417F1B2F100F6FCD4 /* Build configuration list for PBXNativeTarget "TCGoogleStreetViewTests" */;
-			buildPhases = (
-				249509E7445B4E94A95AE486 /* Check Pods Manifest.lock */,
-				81EFBA3C17F1B2F100F6FCD4 /* Sources */,
-				81EFBA3D17F1B2F100F6FCD4 /* Frameworks */,
-				81EFBA3E17F1B2F100F6FCD4 /* Resources */,
-				1CB3BCBEB4A64DEF8FEB705B /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81EFBA4617F1B2F100F6FCD4 /* PBXTargetDependency */,
-			);
-			name = TCGoogleStreetViewTests;
-			productName = TCGoogleStreetViewTests;
-			productReference = 81EFBA4017F1B2F100F6FCD4 /* TCGoogleStreetViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		81EFBA1717F1B2F100F6FCD4 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = TC;
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Lee Tze Cheun";
-				TargetAttributes = {
-					81EFBA3F17F1B2F100F6FCD4 = {
-						TestTargetID = 81EFBA1E17F1B2F100F6FCD4;
-					};
-				};
-			};
-			buildConfigurationList = 81EFBA1A17F1B2F100F6FCD4 /* Build configuration list for PBXProject "TCGoogleStreetView" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 81EFBA1617F1B2F100F6FCD4;
-			productRefGroup = 81EFBA2017F1B2F100F6FCD4 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				81EFBA1E17F1B2F100F6FCD4 /* TCGoogleStreetView */,
-				81EFBA3F17F1B2F100F6FCD4 /* TCGoogleStreetViewTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		81EFBA1D17F1B2F100F6FCD4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8104F7C817F553EE00FA96BB /* GoogleArtProject.json in Resources */,
-				814B528617F2C104000606F1 /* Main.storyboard in Resources */,
-				814B528317F2BA24000606F1 /* InfoPlist.strings in Resources */,
-				814B527B17F2B9F6000606F1 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81EFBA3E17F1B2F100F6FCD4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81316BE517FA73E300A2CA17 /* InfoPlist.strings in Resources */,
-				81316BEC17FAA22200A2CA17 /* MuseumTestData.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1CB3BCBEB4A64DEF8FEB705B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-TCGoogleStreetViewTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		249509E7445B4E94A95AE486 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8557B0B79D9C491689AB964B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EBEE1BA1B61D4BE98A64FF2E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		81EFBA1B17F1B2F100F6FCD4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				814B527A17F2B9F6000606F1 /* TCStreetViewController.m in Sources */,
-				814B529017F3E863000606F1 /* GMSPanoramaCamera+Debug.m in Sources */,
-				814B528417F2BA24000606F1 /* main.m in Sources */,
-				8120A490180A719900FB8921 /* TCCameraController.m in Sources */,
-				8120A493180CEE4700FB8921 /* TCTouchGestureRecognizer.m in Sources */,
-				81960B3E1803AAEB008AD254 /* TCMuseumFloor.m in Sources */,
-				81F1329518052C6A00F2B806 /* TCFloorPickerView.m in Sources */,
-				81EFBA3317F1B2F100F6FCD4 /* TCAppDelegate.m in Sources */,
-				812A33F417FEC06300DC5F3F /* GMSPanoramaLayer+Debug.m in Sources */,
-				819B43851807CCAB00B7634B /* TCSpeechGuide.m in Sources */,
-				81F1329818052CFA00F2B806 /* UIButton+TCMuseumFloor.m in Sources */,
-				819D95591803F10000A33896 /* TCPanoramaLogger.m in Sources */,
-				81E6C51717F830C500A93925 /* TCMuseumDataController.m in Sources */,
-				81E6C51417F8211C00A93925 /* TCMuseum.m in Sources */,
-				814B528A17F2C951000606F1 /* UIAlertView+NSErrorAdditions.m in Sources */,
-				814B528D17F3D65B000606F1 /* GMSPanorama+Debug.m in Sources */,
-				81316BF117FABED700A2CA17 /* TCStaticMap.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		81EFBA3C17F1B2F100F6FCD4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81316BE917FA922300A2CA17 /* TCMuseumDataControllerTests.m in Sources */,
-				81316BF317FAECBB00A2CA17 /* TCStaticMapTests.m in Sources */,
-				81E6C51917F95DCA00A93925 /* TCMuseumTests.m in Sources */,
-				81ED17B51803B20B00A17140 /* TCMuseumFloorTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		81EFBA4617F1B2F100F6FCD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81EFBA1E17F1B2F100F6FCD4 /* TCGoogleStreetView */;
-			targetProxy = 81EFBA4517F1B2F100F6FCD4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		81316BE217FA73E300A2CA17 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				81316BE317FA73E300A2CA17 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		814B527817F2B9F6000606F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				814B527917F2B9F6000606F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		814B527E17F2BA24000606F1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				814B527F17F2BA24000606F1 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		81EFBA4F17F1B2F100F6FCD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Debug;
-		};
-		81EFBA5017F1B2F100F6FCD4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		81EFBA5217F1B2F100F6FCD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00F96339919746DFA4BCB6CF /* Pods.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch";
-				INFOPLIST_FILE = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		81EFBA5317F1B2F100F6FCD4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00F96339919746DFA4BCB6CF /* Pods.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch";
-				INFOPLIST_FILE = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		81EFBA5517F1B2F100F6FCD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TCGoogleStreetView.app/TCGoogleStreetView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TCGoogleStreetViewTests/SupportingFiles/TCGoogleStreetViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		81EFBA5617F1B2F100F6FCD4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F562AB541C44EDCB8B4BB0C /* Pods-TCGoogleStreetViewTests.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TCGoogleStreetView.app/TCGoogleStreetView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch";
-				INFOPLIST_FILE = "TCGoogleStreetViewTests/SupportingFiles/TCGoogleStreetViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		81EFBA1A17F1B2F100F6FCD4 /* Build configuration list for PBXProject "TCGoogleStreetView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81EFBA4F17F1B2F100F6FCD4 /* Debug */,
-				81EFBA5017F1B2F100F6FCD4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81EFBA5117F1B2F100F6FCD4 /* Build configuration list for PBXNativeTarget "TCGoogleStreetView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81EFBA5217F1B2F100F6FCD4 /* Debug */,
-				81EFBA5317F1B2F100F6FCD4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		81EFBA5417F1B2F100F6FCD4 /* Build configuration list for PBXNativeTarget "TCGoogleStreetViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				81EFBA5517F1B2F100F6FCD4 /* Debug */,
-				81EFBA5617F1B2F100F6FCD4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 81EFBA1717F1B2F100F6FCD4 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>091029FC1D18419E902A893A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27A5E0350E1B4D76AD19A28A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>24082D43375E4A9D852852B1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6870BE867640483692FF37C8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27A5E0350E1B4D76AD19A28A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3BF62AEA360E4EFF8FDEB275</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-test-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>3D0B803BF7D249FBBE931236</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>471159A19850400C9F0B07AB</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-TCGoogleStreetViewTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>6870BE867640483692FF37C8</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-test.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>6ABAFC0379194C448BC1B15E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>8104F7C717F553EE00FA96BB</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.json</string>
+			<key>path</key>
+			<string>GoogleArtProject.json</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8104F7C817F553EE00FA96BB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8104F7C717F553EE00FA96BB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8120A48E180A719900FB8921</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCCameraController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8120A48F180A719900FB8921</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCCameraController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8120A490180A719900FB8921</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8120A48F180A719900FB8921</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8120A491180CEE4700FB8921</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCTouchGestureRecognizer.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8120A492180CEE4700FB8921</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCTouchGestureRecognizer.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8120A493180CEE4700FB8921</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8120A492180CEE4700FB8921</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8120A494180D23AD00FB8921</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8120A495180D23AD00FB8921</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8120A494180D23AD00FB8921</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>812A33F217FEC06300DC5F3F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GMSPanoramaLayer+Debug.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>812A33F317FEC06300DC5F3F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GMSPanoramaLayer+Debug.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>812A33F417FEC06300DC5F3F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>812A33F317FEC06300DC5F3F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81316BE117FA73E300A2CA17</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81316BE217FA73E300A2CA17</string>
+				<string>81316BE417FA73E300A2CA17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>SupportingFiles</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BE217FA73E300A2CA17</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81316BE317FA73E300A2CA17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BE317FA73E300A2CA17</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BE417FA73E300A2CA17</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>TCGoogleStreetViewTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BE517FA73E300A2CA17</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81316BE217FA73E300A2CA17</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81316BE817FA922300A2CA17</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCMuseumDataControllerTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BE917FA922300A2CA17</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81316BE817FA922300A2CA17</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81316BEA17FAA20A00A2CA17</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81316BEB17FAA22200A2CA17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Data</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BEB17FAA22200A2CA17</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.json</string>
+			<key>path</key>
+			<string>MuseumTestData.json</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BEC17FAA22200A2CA17</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81316BEB17FAA22200A2CA17</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81316BEF17FABED700A2CA17</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCStaticMap.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BF017FABED700A2CA17</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCStaticMap.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BF117FABED700A2CA17</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81316BF017FABED700A2CA17</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81316BF217FAECBB00A2CA17</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCStaticMapTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81316BF317FAECBB00A2CA17</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81316BF217FAECBB00A2CA17</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B526F17F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527017F2B9F6000606F1</string>
+				<string>814B527117F2B9F6000606F1</string>
+				<string>8120A48E180A719900FB8921</string>
+				<string>8120A48F180A719900FB8921</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Controllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527017F2B9F6000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCStreetViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527117F2B9F6000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCStreetViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527217F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81E6C51517F830C500A93925</string>
+				<string>81E6C51617F830C500A93925</string>
+				<string>81E6C51217F8211C00A93925</string>
+				<string>81E6C51317F8211C00A93925</string>
+				<string>81960B3C1803AAEB008AD254</string>
+				<string>81960B3D1803AAEB008AD254</string>
+				<string>81316BEF17FABED700A2CA17</string>
+				<string>81316BF017FABED700A2CA17</string>
+				<string>819B43831807CCAB00B7634B</string>
+				<string>819B43841807CCAB00B7634B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527317F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527417F2B9F6000606F1</string>
+				<string>814B527617F2B9F6000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527417F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527517F2B9F6000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Assets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527517F2B9F6000606F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527617F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8104F7C717F553EE00FA96BB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Data</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527717F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527817F2B9F6000606F1</string>
+				<string>8120A491180CEE4700FB8921</string>
+				<string>8120A492180CEE4700FB8921</string>
+				<string>81F1329318052C6A00F2B806</string>
+				<string>81F1329418052C6A00F2B806</string>
+				<string>81F1329618052CFA00F2B806</string>
+				<string>81F1329718052CFA00F2B806</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527817F2B9F6000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527917F2B9F6000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527917F2B9F6000606F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527A17F2B9F6000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B527117F2B9F6000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B527B17F2B9F6000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B527517F2B9F6000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B527D17F2BA24000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527E17F2BA24000606F1</string>
+				<string>814B528017F2BA24000606F1</string>
+				<string>814B528117F2BA24000606F1</string>
+				<string>814B528217F2BA24000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>SupportingFiles</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527E17F2BA24000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B527F17F2BA24000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B527F17F2BA24000606F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528017F2BA24000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528117F2BA24000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>TCGoogleStreetView-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528217F2BA24000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCGoogleStreetView-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528317F2BA24000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B527E17F2BA24000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B528417F2BA24000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B528017F2BA24000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B528617F2C104000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B527817F2B9F6000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B528717F2C902000606F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>814B528817F2C951000606F1</string>
+				<string>814B528917F2C951000606F1</string>
+				<string>814B528B17F3D65B000606F1</string>
+				<string>814B528C17F3D65B000606F1</string>
+				<string>814B528E17F3E863000606F1</string>
+				<string>814B528F17F3E863000606F1</string>
+				<string>812A33F217FEC06300DC5F3F</string>
+				<string>812A33F317FEC06300DC5F3F</string>
+				<string>819D95571803F10000A33896</string>
+				<string>819D95581803F10000A33896</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Lib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528817F2C951000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>UIAlertView+NSErrorAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528917F2C951000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>UIAlertView+NSErrorAdditions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528A17F2C951000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B528917F2C951000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B528B17F3D65B000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GMSPanorama+Debug.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528C17F3D65B000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GMSPanorama+Debug.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528D17F3D65B000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B528C17F3D65B000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>814B528E17F3E863000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GMSPanoramaCamera+Debug.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B528F17F3E863000606F1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GMSPanoramaCamera+Debug.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>814B529017F3E863000606F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>814B528F17F3E863000606F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81960B3C1803AAEB008AD254</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCMuseumFloor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81960B3D1803AAEB008AD254</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCMuseumFloor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81960B3E1803AAEB008AD254</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81960B3D1803AAEB008AD254</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>819B43831807CCAB00B7634B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCSpeechGuide.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>819B43841807CCAB00B7634B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCSpeechGuide.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>819B43851807CCAB00B7634B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>819B43841807CCAB00B7634B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>819D95571803F10000A33896</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCPanoramaLogger.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>819D95581803F10000A33896</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCPanoramaLogger.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>819D95591803F10000A33896</key>
+		<dict>
+			<key>fileRef</key>
+			<string>819D95581803F10000A33896</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81E6C51217F8211C00A93925</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCMuseum.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81E6C51317F8211C00A93925</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCMuseum.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81E6C51417F8211C00A93925</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81E6C51317F8211C00A93925</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81E6C51517F830C500A93925</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCMuseumDataController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81E6C51617F830C500A93925</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCMuseumDataController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81E6C51717F830C500A93925</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81E6C51617F830C500A93925</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81E6C51817F95DCA00A93925</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCMuseumTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81E6C51917F95DCA00A93925</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81E6C51817F95DCA00A93925</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81ED17B41803B20B00A17140</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCMuseumFloorTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81ED17B51803B20B00A17140</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81ED17B41803B20B00A17140</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA1617F1B2F100F6FCD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81EFBA2817F1B2F100F6FCD4</string>
+				<string>81EFBA4717F1B2F100F6FCD4</string>
+				<string>81EFBA2117F1B2F100F6FCD4</string>
+				<string>81EFBA2017F1B2F100F6FCD4</string>
+				<string>8120A494180D23AD00FB8921</string>
+				<string>94B1A155DFE34579A82C836A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA1717F1B2F100F6FCD4</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>TC</string>
+				<key>LastUpgradeCheck</key>
+				<string>0500</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Lee Tze Cheun</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>81EFBA3F17F1B2F100F6FCD4</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>81EFBA1E17F1B2F100F6FCD4</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>81EFBA1A17F1B2F100F6FCD4</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>81EFBA1617F1B2F100F6FCD4</string>
+			<key>productRefGroup</key>
+			<string>81EFBA2017F1B2F100F6FCD4</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>81EFBA1E17F1B2F100F6FCD4</string>
+				<string>81EFBA3F17F1B2F100F6FCD4</string>
+			</array>
+		</dict>
+		<key>81EFBA1A17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>81EFBA4F17F1B2F100F6FCD4</string>
+				<string>81EFBA5017F1B2F100F6FCD4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>81EFBA1B17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>814B527A17F2B9F6000606F1</string>
+				<string>814B529017F3E863000606F1</string>
+				<string>814B528417F2BA24000606F1</string>
+				<string>8120A490180A719900FB8921</string>
+				<string>8120A493180CEE4700FB8921</string>
+				<string>81960B3E1803AAEB008AD254</string>
+				<string>81F1329518052C6A00F2B806</string>
+				<string>81EFBA3317F1B2F100F6FCD4</string>
+				<string>812A33F417FEC06300DC5F3F</string>
+				<string>819B43851807CCAB00B7634B</string>
+				<string>81F1329818052CFA00F2B806</string>
+				<string>819D95591803F10000A33896</string>
+				<string>81E6C51717F830C500A93925</string>
+				<string>81E6C51417F8211C00A93925</string>
+				<string>814B528A17F2C951000606F1</string>
+				<string>814B528D17F3D65B000606F1</string>
+				<string>81316BF117FABED700A2CA17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>81EFBA1C17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>81EFBA2517F1B2F100F6FCD4</string>
+				<string>81EFBA2717F1B2F100F6FCD4</string>
+				<string>81EFBA2317F1B2F100F6FCD4</string>
+				<string>091029FC1D18419E902A893A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>81EFBA1D17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8120A495180D23AD00FB8921</string>
+				<string>8104F7C817F553EE00FA96BB</string>
+				<string>814B528617F2C104000606F1</string>
+				<string>814B528317F2BA24000606F1</string>
+				<string>814B527B17F2B9F6000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>81EFBA1E17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>81EFBA5117F1B2F100F6FCD4</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F943F713EBC944EE8EF5DD9F</string>
+				<string>81EFBA1B17F1B2F100F6FCD4</string>
+				<string>81EFBA1C17F1B2F100F6FCD4</string>
+				<string>81EFBA1D17F1B2F100F6FCD4</string>
+				<string>3D0B803BF7D249FBBE931236</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TCGoogleStreetView</string>
+			<key>productName</key>
+			<string>TCGoogleStreetView</string>
+			<key>productReference</key>
+			<string>81EFBA1F17F1B2F100F6FCD4</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>81EFBA1F17F1B2F100F6FCD4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TCGoogleStreetView.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>81EFBA2017F1B2F100F6FCD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81EFBA1F17F1B2F100F6FCD4</string>
+				<string>81EFBA4017F1B2F100F6FCD4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA2117F1B2F100F6FCD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81EFBA2217F1B2F100F6FCD4</string>
+				<string>81EFBA2417F1B2F100F6FCD4</string>
+				<string>81EFBA2617F1B2F100F6FCD4</string>
+				<string>81EFBA4117F1B2F100F6FCD4</string>
+				<string>27A5E0350E1B4D76AD19A28A</string>
+				<string>471159A19850400C9F0B07AB</string>
+				<string>DF97F00FB34943B6A76D441F</string>
+				<string>C2D35A85DA374B2DB032F6D6</string>
+				<string>6870BE867640483692FF37C8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA2217F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>81EFBA2317F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA2217F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA2417F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>81EFBA2517F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA2417F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA2617F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>81EFBA2717F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA2617F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA2817F1B2F100F6FCD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81EFBA3117F1B2F100F6FCD4</string>
+				<string>81EFBA3217F1B2F100F6FCD4</string>
+				<string>814B528717F2C902000606F1</string>
+				<string>814B527217F2B9F6000606F1</string>
+				<string>814B526F17F2B9F6000606F1</string>
+				<string>814B527717F2B9F6000606F1</string>
+				<string>814B527317F2B9F6000606F1</string>
+				<string>814B527D17F2BA24000606F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TCGoogleStreetView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA3117F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA3217F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA3317F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA3217F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA3C17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>81316BE917FA922300A2CA17</string>
+				<string>81316BF317FAECBB00A2CA17</string>
+				<string>81E6C51917F95DCA00A93925</string>
+				<string>81ED17B51803B20B00A17140</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>81EFBA3D17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>81EFBA4217F1B2F100F6FCD4</string>
+				<string>81EFBA4417F1B2F100F6FCD4</string>
+				<string>81EFBA4317F1B2F100F6FCD4</string>
+				<string>24082D43375E4A9D852852B1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>81EFBA3E17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>81316BE517FA73E300A2CA17</string>
+				<string>81316BEC17FAA22200A2CA17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>81EFBA3F17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>81EFBA5417F1B2F100F6FCD4</string>
+			<key>buildPhases</key>
+			<array>
+				<string>6ABAFC0379194C448BC1B15E</string>
+				<string>81EFBA3C17F1B2F100F6FCD4</string>
+				<string>81EFBA3D17F1B2F100F6FCD4</string>
+				<string>81EFBA3E17F1B2F100F6FCD4</string>
+				<string>3BF62AEA360E4EFF8FDEB275</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>81EFBA4617F1B2F100F6FCD4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TCGoogleStreetViewTests</string>
+			<key>productName</key>
+			<string>TCGoogleStreetViewTests</string>
+			<key>productReference</key>
+			<string>81EFBA4017F1B2F100F6FCD4</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>81EFBA4017F1B2F100F6FCD4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TCGoogleStreetViewTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>81EFBA4117F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>81EFBA4217F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA4117F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA4317F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA2217F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA4417F1B2F100F6FCD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81EFBA2617F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81EFBA4517F1B2F100F6FCD4</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>81EFBA1717F1B2F100F6FCD4</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>81EFBA1E17F1B2F100F6FCD4</string>
+			<key>remoteInfo</key>
+			<string>TCGoogleStreetView</string>
+		</dict>
+		<key>81EFBA4617F1B2F100F6FCD4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>81EFBA1E17F1B2F100F6FCD4</string>
+			<key>targetProxy</key>
+			<string>81EFBA4517F1B2F100F6FCD4</string>
+		</dict>
+		<key>81EFBA4717F1B2F100F6FCD4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>81316BE817FA922300A2CA17</string>
+				<string>81E6C51817F95DCA00A93925</string>
+				<string>81ED17B41803B20B00A17140</string>
+				<string>81316BF217FAECBB00A2CA17</string>
+				<string>81316BEA17FAA20A00A2CA17</string>
+				<string>81316BE117FA73E300A2CA17</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TCGoogleStreetViewTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81EFBA4F17F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_TREAT_WARNINGS_AS_ERRORS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>81EFBA5017F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_TREAT_WARNINGS_AS_ERRORS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>81EFBA5117F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>81EFBA5217F1B2F100F6FCD4</string>
+				<string>81EFBA5317F1B2F100F6FCD4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>81EFBA5217F1B2F100F6FCD4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8120A494180D23AD00FB8921</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>81EFBA5317F1B2F100F6FCD4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8120A494180D23AD00FB8921</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>81EFBA5417F1B2F100F6FCD4</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>81EFBA5517F1B2F100F6FCD4</string>
+				<string>81EFBA5617F1B2F100F6FCD4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>81EFBA5517F1B2F100F6FCD4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>94B1A155DFE34579A82C836A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/TCGoogleStreetView.app/TCGoogleStreetView</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>TCGoogleStreetViewTests/SupportingFiles/TCGoogleStreetViewTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>81EFBA5617F1B2F100F6FCD4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>94B1A155DFE34579A82C836A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/TCGoogleStreetView.app/TCGoogleStreetView</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TCGoogleStreetView/SupportingFiles/TCGoogleStreetView-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TCGoogleStreetViewTests/SupportingFiles/TCGoogleStreetViewTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>81F1329318052C6A00F2B806</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TCFloorPickerView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81F1329418052C6A00F2B806</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TCFloorPickerView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81F1329518052C6A00F2B806</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81F1329418052C6A00F2B806</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>81F1329618052CFA00F2B806</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>UIButton+TCMuseumFloor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81F1329718052CFA00F2B806</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>UIButton+TCMuseumFloor.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>81F1329818052CFA00F2B806</key>
+		<dict>
+			<key>fileRef</key>
+			<string>81F1329718052CFA00F2B806</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>94B1A155DFE34579A82C836A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-test.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods-test.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C2D35A85DA374B2DB032F6D6</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-TCGoogleStreetView-TCGoogleStreetViewTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>DF97F00FB34943B6A76D441F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-TCGoogleStreetView.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F943F713EBC944EE8EF5DD9F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>81EFBA1717F1B2F100F6FCD4</string>
+</dict>
+</plist>

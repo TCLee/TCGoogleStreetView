@@ -48,6 +48,17 @@
 - (NSArray *)allMuseums;
 
 /**
+ * @brief
+ * Removes all the museum objects from the collection.
+ *
+ * @detail
+ * This method is automatically called to release resources when there is
+ * a memory warning notification. The museum objects will be reloaded and
+ * cached again when you attempt to access the collection the next time.
+ */
+- (void)removeAllMuseums;
+
+/**
  * Initialize the data controller with data from the given URL.
  *
  * @param url The URL of the data.

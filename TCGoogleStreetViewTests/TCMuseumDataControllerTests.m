@@ -120,4 +120,23 @@
     XCTAssertEqualObjects(lastMuseum, [self.dataController currentMuseum], @"Current museum should be the last museum object.");
 }
 
+/**
+ * Test removing all museums from the list. The museums should be
+ * recreated and cached again, when we access it the next time.
+ */
+- (void)testRemoveAllMuseums
+{
+    NSArray *oldMuseumsArray = [self.dataController allMuseums];
+    [self.dataController removeAllMuseums];
+    NSArray *newMuseumsArray = [self.dataController allMuseums];
+
+    XCTAssertTrue(newMuseumsArray != oldMuseumsArray, @"Museums array should have been re-created after it was released.");
+    XCTAssertNotNil(newMuseumsArray, @"The museum objects should be re-created after they were removed.");
+    XCTAssertNoThrow([self.dataController currentMuseum], @"Should be able to access the current museum object.");
+    XCTAssertNoThrow([self.dataController firstMuseum], @"Should be able to access the first museum object.");
+    XCTAssertNoThrow([self.dataController lastMuseum], @"Should be able to access the last museum object.");
+    XCTAssertNoThrow([self.dataController nextMuseum], @"Should be able to access the next museum object.");
+    XCTAssertNoThrow([self.dataController previousMuseum], @"Should be able to access the previous museum object.");
+}
+
 @end
