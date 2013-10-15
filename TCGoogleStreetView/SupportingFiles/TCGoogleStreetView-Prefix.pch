@@ -16,4 +16,9 @@
     @import CoreLocation;
 
     #import <GoogleMaps/GoogleMaps.h>
+
+    // Override description method.
+    #import "GMSPanoramaCamera+Debug.h"
+    #import "GMSPanorama+Debug.h"
+    #import "GMSPanoramaLayer+Debug.h"
 #endif
