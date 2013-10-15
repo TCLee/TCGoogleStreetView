@@ -33,8 +33,10 @@
 
 - (void)speakForMuseum:(TCMuseum *)theMuseum
 {
-    // Ignore if it's the same museum.
-    if (_museum == theMuseum) { return; }
+    // Ignore if speech guide is already speaking for the given museum.
+    if ([_museum.name isEqualToString:theMuseum.name]) {
+        return;
+    }
 
     // It's a different museum, so update our speech guide's current museum.
     _museum = theMuseum;
