@@ -11,6 +11,11 @@
 @interface TCCameraController ()
 
 /**
+ * The panorama view that owns the camera and the layer.
+ */
+@property (nonatomic, strong) GMSPanoramaView *panoramaView;
+
+/**
  * Reference to the \c GMSPanoramaView layer for easy access.
  *
  * This is a \b weak reference because the \c GMSPanoramaLayer is owned by
@@ -19,10 +24,11 @@
 @property (nonatomic, weak) GMSPanoramaLayer *panoramaLayer;
 
 /**
- * The current camera animation running. If animation has stopped, 
- * this property will be \c nil.
+ * The camera animation object that was saved when \c pauseCameraRotation
+ * is called. This animation object will be restored on \c resumeCameraRotation.
+ * This will be \c nil if the animation was not paused.
  */
-@property (nonatomic, copy) CAAnimation *cameraAnimation;
+@property (nonatomic, copy) CAAnimation *pausedCameraAnimation;
 
 @end
 
@@ -57,7 +63,7 @@
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:kGMSLayerPanoramaHeadingKey];
     animation.values = cameraHeadings;
     animation.duration = 40.0f;
-    animation.repeatCount = HUGE_VALF;
+    animation.repeatCount = HUGE_VALF; // Loops forever
 
     // Add the animation to the layer to begin the animation.
     [self.panoramaLayer addAnimation:animation
@@ -66,23 +72,28 @@
 
 - (void)stopCameraRotation
 {
-    // Camera animation has stopped, so we should not keep an outdated reference.
-    self.cameraAnimation = nil;
+    // If camera animation has been removed from layer, animation has
+    // stopped already.
+    if (nil == [self.panoramaLayer animationForKey:kGMSLayerPanoramaHeadingKey]) {
+        return;
+    }
+
+    // Set the current camera heading to match the camera heading values when
+    // the animation was stopped.
+    self.panoramaLayer.cameraHeading = [self.panoramaLayer.presentationLayer cameraHeading];
 
     [self.panoramaLayer removeAnimationForKey:kGMSLayerPanoramaHeadingKey];
-
-    // Update the model layer's camera heading with the value from the last frame
-    // of the animation before it was stopped. If we don't do this, the camera
-    // will jump back to the model layer's camera heading.
-    self.panoramaLayer.cameraHeading = [self.panoramaLayer.presentationLayer cameraHeading];
 }
 
 - (void)pauseCameraRotation
 {
     // When app moves into the background, it automatically removes all
-    // animations from the layer. So, we save a copy of the animation object
-    // and restore it when camera animation is resumed.
-    self.cameraAnimation = [self.panoramaLayer animationForKey:kGMSLayerPanoramaHeadingKey];
+    // animations from the layer. We save a copy of the animation object
+    // and restore it when app returns to foreground.
+    self.pausedCameraAnimation = [self.panoramaLayer animationForKey:kGMSLayerPanoramaHeadingKey];
+
+    // If camera animation has been stopped already, there's no animation to pause.
+    if (nil == self.pausedCameraAnimation) { return; }
 
     // Pause the camera rotation animation and record the time
     // when it was paused.
@@ -93,16 +104,15 @@
 
 - (void)resumeCameraRotation
 {
+    // If there's no paused animation, there's nothing to resume.
+    if (nil == self.pausedCameraAnimation) { return; }
+
     // Using the animation object that we saved when we pause the camera
-    // animation, we re-add the animation object back to the layer.
+    // animation, we re-add this animation object back to the layer.
     // This is only needed if the app is moving from the background to the
     // foreground.
-    if (self.cameraAnimation &&
-        ![self.panoramaLayer animationForKey:kGMSLayerPanoramaHeadingKey]) {
-
-        [self.panoramaLayer addAnimation:self.cameraAnimation
-                                  forKey:kGMSLayerPanoramaHeadingKey];
-    }
+    [self.panoramaLayer addAnimation:self.pausedCameraAnimation
+                              forKey:kGMSLayerPanoramaHeadingKey];
 
     // Resume the camera rotation animation from the time when it was
     // previously paused.

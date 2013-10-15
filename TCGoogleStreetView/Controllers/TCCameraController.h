@@ -7,14 +7,10 @@
 //
 
 /**
- * <#Description#>
+ * The \c TCCameraController class controls the camera of a 
+ * \c GMSPanoramaView.
  */
 @interface TCCameraController : NSObject
-
-/**
- * The panorama view that this camera controller is controlling the camera for.
- */
-@property (nonatomic, strong, readonly) GMSPanoramaView *panoramaView;
 
 /**
  * Initializes the camera controller with the panorama view that it will 
@@ -48,6 +44,7 @@
  * Pauses the camera heading rotation animation.
  *
  * @see https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/AdvancedAnimationTricks/AdvancedAnimationTricks.html#//apple_ref/doc/uid/TP40004514-CH8-SW15
+ * @see http://stackoverflow.com/a/10084306
  */
 - (void)pauseCameraRotation;
 
@@ -55,6 +52,7 @@
  * Resumes the camera heading rotation animation from when it was paused.
  *
  * @see https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/AdvancedAnimationTricks/AdvancedAnimationTricks.html#//apple_ref/doc/uid/TP40004514-CH8-SW15
+ * @see http://stackoverflow.com/a/10084306
  */
 - (void)resumeCameraRotation;
 
