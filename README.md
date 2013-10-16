@@ -50,8 +50,8 @@ $ open TCGoogleStreetView.xcworkspace
 TCGoogleStreetView includes a suite of unit tests in the `TCGoogleStreetViewTests` directory. The unit test framework used is **XCTest**, so you can run the unit tests easily from XCode using the shortcut &#8984;U.
 
 ##See Also
-* Google Maps SDK for iOS - [https://developers.google.com/maps/documentation/ios/]
-* SDWebImage - [https://github.com/rs/SDWebImage]
+* Google Maps SDK for iOS - <https://developers.google.com/maps/documentation/ios/>
+* SDWebImage - <https://github.com/rs/SDWebImage>
 
 ##License
 This project's source code is provided for educational purposes only. Street View logo is the copyright of Google. See the LICENSE file for more info.
