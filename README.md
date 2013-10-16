@@ -12,7 +12,7 @@ This app also features a speaking tour guide that makes use of the new class int
 * Double tap in the panorama view to navigate around the museum.
 * Drag to change where the camera is facing.
 * Pinch to zoom camera in and out.
-* App supports both landscape and portrait orientation, so you can rotate the device to get the best view.
+* App supports both landscape and portrait orientation, so you can rotate the device to get the best view of the museum.
 
 ##How to Build and Run
 
@@ -23,13 +23,11 @@ This app also features a speaking tour guide that makes use of the new class int
   <dd>iOS 7 or later, iPad only</dd>
 </dl>
 
-###Step 1: Download and Install CocoaPods
-
+####Step 1: Download and Install CocoaPods
 If you've already installed CocoaPods, you can skip to **Step 2**.  
-Otherwise, install CocoaPods by following the installation guide at <http://cocoapods.org/>.
+Otherwise, install CocoaPods by following the quick installation guide at <http://cocoapods.org/>.
 
-###Step 2: Install Library Dependencies
-
+####Step 2: Install Library Dependencies
 This sample app needs to download and install the required libraries before it can be build. We'll let CocoaPods to do all the hard work for us.
 
 Run the following commands in `Terminal.app`: 
@@ -39,8 +37,7 @@ $ pod install
 $ open TCGoogleStreetView.xcworkspace
 ```
 
-###Step 3: Generate your Google API Key
-
+####Step 3: Generate your Google API Key
 1. Go to [Google API Console](https://code.google.com/apis/console/) and generate your API key.
 2. In Xcode, open `TCGoogleStreetView\AppDelegate.m` and replace with your own API key:
   
@@ -48,6 +45,9 @@ $ open TCGoogleStreetView.xcworkspace
   // Replace with your own API key generated using Google APIs Console.
   static NSString * const kTCGoogleMapsAPIKey = @"YOUR-API-KEY";
   ```
+
+###Unit Tests
+TCGoogleStreetView includes a suite of unit tests in the `TCGoogleStreetViewTests` directory. The unit test framework used is **XCTest**, so you can run the unit tests easily from XCode using the shortcut &#8984;U.
 
 ##See Also
 * Google Maps SDK for iOS - <https://developers.google.com/maps/documentation/ios/>
