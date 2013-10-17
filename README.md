@@ -3,7 +3,7 @@
 This sample app uses Google Street View technology to give users a virtual tour of the museums featured in Google Art Project.
 This app also features a speaking tour guide that makes use of the new class introduced in iOS 7 - `AVSpeechSynthesizer`.
 
-![App Screenshot](README-Images/Screenshot.jpg "App Screenshot")
+![App Screenshot](http://tclee.github.io/TCGoogleStreetView/images/Screenshot.jpg "App Screenshot")
 
 #### Quick Guide to Using the App
 * Use the floor picker control on the top right corner to select different floors of a museum to view.
