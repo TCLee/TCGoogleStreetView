@@ -28,7 +28,7 @@ If you've already installed CocoaPods, you can skip to **Step 2**.
 Otherwise, install CocoaPods by following the quick installation guide at <http://cocoapods.org/>.
 
 ####Step 2: Install Library Dependencies
-This sample app needs to download and install the required libraries before it can be build. We'll let CocoaPods to do all the hard work for us.
+This sample app needs to download and install the required libraries before it can be build. We'll let CocoaPods do all the hard work for us.
 
 Run the following commands in `Terminal.app`: 
 ```
